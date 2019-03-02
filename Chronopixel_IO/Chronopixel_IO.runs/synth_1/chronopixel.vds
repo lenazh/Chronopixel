@@ -1,0 +1,435 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Mar  1 18:53:15 2019
+# Process ID: 20164
+# Current directory: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1
+# Command line: vivado.exe -log chronopixel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source chronopixel.tcl
+# Log file: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.vds
+# Journal file: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source chronopixel.tcl -notrace
+Command: synth_design -top chronopixel -part xc7a50tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 42672 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 363.324 ; gain = 100.246
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'chronopixel' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:72]
+	Parameter DIFF_TERM bound to: 0 - type: bool 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_0' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:79]
+	Parameter DIFF_TERM bound to: 0 - type: bool 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_1' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:87]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:96]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: 0 - type: bool 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'sys_clk_IBUFDS' to cell 'IBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:103]
+WARNING: [Synth 8-3848] Net hi_out in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:26]
+WARNING: [Synth 8-3848] Net led in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:28]
+WARNING: [Synth 8-3848] Net ddr3_addr in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:30]
+WARNING: [Synth 8-3848] Net ddr3_ba in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:31]
+WARNING: [Synth 8-3848] Net ddr3_odt in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:32]
+WARNING: [Synth 8-3848] Net TSCNT in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:38]
+WARNING: [Synth 8-3848] Net RADR in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:39]
+WARNING: [Synth 8-3848] Net ColAdr in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:40]
+WARNING: [Synth 8-3848] Net hi_muxsel in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:41]
+WARNING: [Synth 8-3848] Net spi_dout in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:48]
+WARNING: [Synth 8-3848] Net ddr3_ras_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:49]
+WARNING: [Synth 8-3848] Net ddr3_cas_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:50]
+WARNING: [Synth 8-3848] Net ddr3_we_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:51]
+WARNING: [Synth 8-3848] Net ddr3_reset_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:52]
+WARNING: [Synth 8-3848] Net ddr3_cke in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:53]
+WARNING: [Synth 8-3848] Net CKCAL in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:54]
+WARNING: [Synth 8-3848] Net CKC in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:55]
+WARNING: [Synth 8-3848] Net CKA in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:56]
+WARNING: [Synth 8-3848] Net CKB in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:57]
+WARNING: [Synth 8-3848] Net SET in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:58]
+WARNING: [Synth 8-3848] Net RMEM_SEL in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:59]
+WARNING: [Synth 8-3848] Net TNIN in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:60]
+WARNING: [Synth 8-3848] Net TIN in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:61]
+WARNING: [Synth 8-3848] Net RAdrValid in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:62]
+WARNING: [Synth 8-3848] Net RdTstH in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:63]
+WARNING: [Synth 8-3848] Net RdClk in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:64]
+WARNING: [Synth 8-3848] Net RdParLD in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:65]
+WARNING: [Synth 8-3848] Net PDRST in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:67]
+WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:73]
+WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_T in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:75]
+WARNING: [Synth 8-3848] Net ddr3_ck_OBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'chronopixel' (1#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:72]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port led[7]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port led[6]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port led[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port led[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port led[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port led[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port led[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port led[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[14]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[13]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[12]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[11]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[10]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[9]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[8]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[7]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[6]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_odt[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[11]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[10]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[9]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[8]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[7]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[6]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TSCNT[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RADR[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RADR[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RADR[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RADR[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RADR[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RADR[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ColAdr[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ColAdr[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ColAdr[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ColAdr[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ColAdr[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ColAdr[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_muxsel
+WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_dout
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ras_n
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cas_n
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_we_n
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_reset_n
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cke
+WARNING: [Synth 8-3331] design chronopixel has unconnected port CKCAL
+WARNING: [Synth 8-3331] design chronopixel has unconnected port CKC
+WARNING: [Synth 8-3331] design chronopixel has unconnected port CKA
+WARNING: [Synth 8-3331] design chronopixel has unconnected port CKB
+WARNING: [Synth 8-3331] design chronopixel has unconnected port SET
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RMEM_SEL
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TNIN
+WARNING: [Synth 8-3331] design chronopixel has unconnected port TIN
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RAdrValid
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RdTstH
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RdClk
+WARNING: [Synth 8-3331] design chronopixel has unconnected port RdParLD
+WARNING: [Synth 8-3331] design chronopixel has unconnected port PDRST
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[15]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[14]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[13]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[12]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[11]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[10]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[9]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[8]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[7]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[6]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[15]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[14]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[13]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[12]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[11]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[10]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[9]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[8]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[7]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[6]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[5]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 419.156 ; gain = 156.078
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 419.156 ; gain = 156.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 419.156 ; gain = 156.078
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7a50tfgg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]
+WARNING: [Constraints 18-96] Setting input delay on a clock pin 'hi_in[0]' is not supported, ignoring it [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:41]
+WARNING: [Constraints 18-96] Setting input delay on a clock pin 'hi_in[0]' is not supported, ignoring it [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:42]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:58]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:58]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:58]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:58]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:58]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:58]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:58]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:58]
+Finished Parsing XDC File [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/chronopixel_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/chronopixel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 702.352 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 702.352 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS, OBUFTDS): 2 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 702.352 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 702.352 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 702.352 ; gain = 439.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a50tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 702.352 ; gain = 439.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 702.352 ; gain = 439.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 702.352 ; gain = 439.273
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 702.352 ; gain = 439.273
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 720.625 ; gain = 457.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 720.625 ; gain = 457.547
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 730.156 ; gain = 467.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 730.156 ; gain = 467.078
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 730.156 ; gain = 467.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 730.156 ; gain = 467.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 730.156 ; gain = 467.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 730.156 ; gain = 467.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 730.156 ; gain = 467.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |IBUFDS  |     1|
+|2     |IOBUFDS |     2|
+|3     |OBUFDS  |     1|
+|4     |OBUFT   |    73|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    77|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 730.156 ; gain = 467.078
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 120 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 730.156 ; gain = 183.883
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 730.156 ; gain = 467.078
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 739.781 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS, OBUFTDS): 2 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 141 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 739.895 ; gain = 486.699
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 739.895 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file chronopixel_utilization_synth.rpt -pb chronopixel_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  1 18:53:37 2019...
