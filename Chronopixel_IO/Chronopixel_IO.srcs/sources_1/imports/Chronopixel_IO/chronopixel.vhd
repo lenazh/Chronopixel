@@ -75,8 +75,20 @@ architecture STRUCTURE of chronopixel is
   signal ddr3_dqs_IOBUFDS_T : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal ddr3_ck_OBUFDS_I : STD_LOGIC_VECTOR ( 0 downto 0 );
   signal sys_clk_IBUFDS_O : STD_LOGIC;
-  signal clk : STD_LOGIC;
+  signal clk_div8, clk_div64 : STD_LOGIC;
+  signal led_reg : std_logic_vector (7 downto 0);
+  signal rst : std_logic := '0'; -- global reset 
+  
+  component heartbeat is
+    port ( clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           led : out STD_LOGIC);
+  end component;  
+  
 begin
+  led <= not(led_reg);
+
+  rst <= '0'; -- there are no buttons on board to do reset, tie to GND for now
 
   ddr3_dqs_IOBUFDS_0: unisim.vcomponents.IOBUFDS
     port map (
@@ -118,12 +130,30 @@ begin
       SIM_DEVICE => "7SERIES" -- Must be set to "7SERIES"
     )
     port map (
-      O => clk,
+      O => clk_div8,
       CE => '1',
       CLR => '0', 
       I => sys_clk_IBUFDS_O
     );
+ 
+-- divide clock by 64    
+  BUFR_inst2 : unisim.vcomponents.BUFR
+    generic map (
+      BUFR_DIVIDE => "8", -- Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8"
+      SIM_DEVICE => "7SERIES" -- Must be set to "7SERIES"
+    )
+    port map (
+      O => clk_div64,
+      CE => '1',
+      CLR => '0', 
+      I => clk_div8
+    );   
     
-
+  heartbeat_inst : heartbeat
+  port map (
+    clk => clk_div64,
+    rst => rst,
+    led => led_reg(0)
+  );
 
 end STRUCTURE;

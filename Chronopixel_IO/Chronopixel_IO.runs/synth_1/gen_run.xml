@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1551496154">
+<GenRun Id="synth_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1551738574">
   <File Type="PA-TCL" Name="chronopixel.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="chronopixel_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="chronopixel_reports.tcl"/>
@@ -11,6 +11,12 @@
   <File Type="VDS-TIMING-PB" Name="chronopixel_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/heartbeat.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/Chronopixel_IO/chronopixel.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/chronopixel.vhd"/>
@@ -52,7 +58,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
