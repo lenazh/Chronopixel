@@ -47,11 +47,11 @@ entity chrono_driver is
            RAdrValid : out STD_LOGIC;
            Vth : out STD_LOGIC;
            Hit_imlar : out STD_LOGIC;
-           inc_tstmp : out STD_LOGIC;
-           reading_d : out STD_LOGIC;
-           incCntr : out STD_LOGIC;
-           wrchrdat : out STD_LOGIC;
-           Rd_out : in STD_LOGIC);
+           inc_tstmp : out STD_LOGIC;  -- is it really needed?
+           reading_d : out STD_LOGIC;  -- is it really needed?
+           incCntr : out STD_LOGIC;  -- is it really needed?
+           wrchrdat : out STD_LOGIC;  -- is it really needed?
+           Rd_out : in STD_LOGIC); 
 end chrono_driver;
 
 architecture rtl of chrono_driver is
@@ -166,7 +166,7 @@ architecture rtl of chrono_driver is
   constant drdtst_RdParLd : std_logic_vector (0 to 129)    := "0000000000111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
   constant drdtst_RdArdValid : std_logic_vector (0 to 129) := "0000000111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
   -- determines when the data is latched (12 bit total)        0    5    10   15   20   25   30   35   40   45   50   55   60   65   70   75   80   85   90   95   100  105  110  115  120  125  130
-  constant drdtst_latch : std_logic_vector (0 to 129)      := "0000000000000000000000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000000000";
+  constant drdtst_latch : std_logic_vector (0 to 129)      := "0000000000000000000000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000000000";
   constant drdtst_incCntr : std_logic_vector (0 to 129)    := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000";
   constant drdtst_wrchrdat : std_logic_vector (0 to 129)   := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000";
   -- please note that the incCntr and wrchr pulses here have to be 1 bit long, unlike in the spec waveform sheet
@@ -178,20 +178,155 @@ architecture rtl of chrono_driver is
   --
   -- Is Chronopixel data presented on rising or falling edge, 
   -- and how long does it take to settle? (assumed rising, affected: drdtst_latch)
+ 
+   
+  -- trancseiver states
+  type t_trcv_state is (
+		s_init,   -- initialize the FSM variables
+		s_idle, 	-- wait for transmission
+		s_start,  -- start the transmission
+		s_trcv, -- transmit & receive data
+    s_done    -- done with data
+	);
+	signal trcv_state : t_trcv_state := s_init;
+	
+	-- received data output
+	constant recv_buf_len : integer := 12;
+	constant recv_ctr_len : integer := 8;
+	signal recv_data : std_logic_vector ((recv_buf_len-1) downto 0) := (others => '0');
+	
+	-- how many bits send to the Chronopixel
+	signal trcv_Nbits_to_send : unsigned ((recv_ctr_len-1) downto 0) := (others => '0');
+	
+	-- write '1' here to start the transmission
+	signal trcv_start : std_logic := '0';
+	
+	-- reads '1' once the transmission is complete
+	signal trcv_rdy : std_logic := '0';
+	
+	-- reads '1' when chronopixel data needs to be latched
+	signal trcv_latch : std_logic := '0';
   
   -- output buffers for the signals (130 bit shift registers)
-  signal CKA_buf, CKB_buf, CKC_buf, CALCLK_buf : std_logic_vector (0 to 129) := (others => '0');
-  signal TIN_buf, TNIN_buf, PDRST_buf, RdParLd_buf : std_logic_vector (0 to 129) := (others => '0');
-  signal RdClk_buf, RAdrValid_buf, SET_buf : std_logic_vector (0 to 129) := (others => '0');
-  
+  constant buf_max_len : integer := 130; 
+  signal CKA_buf, CKB_buf, CKC_buf, CALCLK_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
+  signal TIN_buf, TNIN_buf, PDRST_buf, RdParLd_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
+  signal RdClk_buf, RAdrValid_buf, SET_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
   -- internal state buffers 
-  signal latch_buf, incCntr_buf, wrchrdat_buf : std_logic_vector (0 to 129) := (others => '0');
+  signal latch_buf, incCntr_buf, wrchrdat_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
     
-  -- bit counter for output buffers
-  signal send_ctr : unsigned (7 downto 0) := (others => '0');
+  -- bit counter for output buffers 
+  signal send_bits_left : unsigned ((recv_ctr_len-1) downto 0) := (others => '0');
   
-  -- data receiver buffer (12 bit shift register, big-endian order)
-  signal recv_buf : std_logic_vector (11 downto 0) := (others => '0');
+  -- data in buffer (12 bit shift register, big-endian order)
+  signal recv_buf : std_logic_vector ((recv_buf_len-1) downto 0) := (others => '0');
+
 begin
 
+  -- transceiver state update logic
+  process (clk) 
+  begin
+    if rising_edge(clk) then
+      if (rst = '1') then
+        trcv_state <= s_init;
+      else
+        case (trcv_state) is
+        when s_init =>
+          trcv_state <= s_idle;
+        when s_idle =>
+          if (trcv_start = '1') then
+            trcv_state <= s_start;
+          else
+            trcv_state <= s_idle;
+          end if;
+        when s_start =>
+          trcv_state <= s_trcv;
+        when s_trcv =>
+          if (send_bits_left = 0) then
+            trcv_state <= s_done;
+          else
+            trcv_state <= s_trcv;
+          end if;
+        when s_done =>
+          trcv_state <= s_idle;
+        when others =>
+          -- should never happen
+          trcv_state <= s_idle;
+        end case;
+      end if;
+    end if;
+  end process; 
+
+  -- transceiver FSM logic
+  process (clk) 
+  begin
+    if rising_edge(clk) then
+      case (trcv_state) is
+      when s_init =>
+        recv_data <= (others => '0');
+        recv_buf <= (others => '0');
+        trcv_start <= '0';
+        trcv_rdy <= '0';
+        trcv_latch <= '0';
+        send_bits_left <= (others => '0');
+		  when s_idle =>
+		  when s_start =>
+		    trcv_start <= '0';
+		    trcv_rdy <= '0';
+		    send_bits_left <= trcv_Nbits_to_send;
+		    recv_buf <= (others => '0');
+		    trcv_latch <= '0';
+		  when s_trcv =>
+		    -- update the data counter and state
+		    send_bits_left <= send_bits_left - 1;
+		    trcv_latch <= latch_buf(0);
+		    
+		    -- place the data on the data lines
+		    cka <= CKA_buf(0);
+		    ckb <= CKB_buf(0);
+		    ckc <= CKC_buf(0);
+		    calclk <= CALCLK_buf(0);
+		    tin <= TIN_buf(0);
+		    tnin <= TNIN_buf(0);
+		    pdrst <= PDRST_buf(0);
+		    set <= SET_buf(0);
+		    RdParLd <= RdParLd_buf(0);
+		    RdClk <= RdClk_buf(0);
+		    RAdrValid <= RAdrValid_buf(0);	
+		    incCntr <= incCntr_buf(0);	  -- is it really needed?  
+		    wrchrdat <= wrchrdat_buf(0);  -- is it really needed? 
+		 
+		    -- shift registers -- TODO: find a less repetitive way of writing this 
+		    CKA_buf(0 to (buf_max_len-2)) <= CKA_buf(1 to (buf_max_len-1));		    
+		    CKB_buf(0 to (buf_max_len-2)) <= CKB_buf(1 to (buf_max_len-1));
+        CKC_buf(0 to (buf_max_len-2)) <= CKC_buf(1 to (buf_max_len-1));
+        CALCLK_buf(0 to (buf_max_len-2)) <= CALCLK_buf(1 to (buf_max_len-1));
+        TIN_buf(0 to (buf_max_len-2)) <= TIN_buf(1 to (buf_max_len-1));
+        TNIN_buf(0 to (buf_max_len-2)) <= TNIN_buf(1 to (buf_max_len-1));
+        PDRST_buf(0 to (buf_max_len-2)) <= PDRST_buf(1 to (buf_max_len-1));
+        SET_buf(0 to (buf_max_len-2)) <= SET_buf(1 to (buf_max_len-1));
+        RdParLd_buf(0 to (buf_max_len-2)) <= RdParLd_buf(1 to (buf_max_len-1));
+        RdClk_buf(0 to (buf_max_len-2)) <= RdClk_buf(1 to (buf_max_len-1));
+        RAdrValid_buf(0 to (buf_max_len-2)) <= RAdrValid_buf(1 to (buf_max_len-1));
+        -- internal state registers
+        latch_buf(0 to (buf_max_len-2)) <= latch_buf(1 to (buf_max_len-1));
+        incCntr_buf(0 to (buf_max_len-2)) <= incCntr_buf(1 to (buf_max_len-1)); -- is it really needed?
+        wrchrdat_buf(0 to (buf_max_len-2)) <= wrchrdat_buf(1 to (buf_max_len-1)); -- is it really needed?
+
+        -- read in chronopixel data
+        if (trcv_latch = '1') then
+          recv_buf(0 to (recv_buf_len-2)) <= recv_buf(1 to (recv_buf_len-1));
+          recv_buf(0) <= Rd_out;
+        else
+          recv_buf <= recv_buf;
+        end if;
+
+      when s_done =>
+        trcv_rdy <= '1';
+        recv_data <= recv_buf;
+      when others =>
+        -- should never happen
+      end case;
+    end if;
+  end process;
 end rtl;
