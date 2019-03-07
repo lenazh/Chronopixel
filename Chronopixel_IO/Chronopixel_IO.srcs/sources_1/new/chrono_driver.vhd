@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: Elena Zhivun
+-- Engineer: Elena Zhivun <zhivun@gmail.com>
 -- 
 -- Create Date: 03/04/2019 06:14:54 PM
 -- Design Name: 
@@ -8,14 +8,28 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: This module interfaces the chronopixel and generates the waveforms
+-- Description: 
+--         This module interfaces the chronopixel, reads and
+--  generates the waveforms. Select the waveform with opcode,
+--  start the transmission by setting start to '1'. Once the
+--  transmission is complete, ready = '1' and the data is in
+--  'recv_data' (if opcode = op_drdtst).
 -- 
 -- Dependencies: 
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
 -- Additional Comments:
--- 
+--
+-- TODO - Hit_imlar is not connected
+--
+-- Things that are not clear to me:
+--
+-- where are these signals going ?
+--   Hit_imlar, RMEMSEL, RdTstH, Bias_EN, Hit_imsm
+--
+-- Is Chronopixel data presented on rising or falling edge, 
+-- and how long does it take to settle? (assumed rising, affected: drdtst_latch)
 ----------------------------------------------------------------------------------
 
 
@@ -31,48 +45,45 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+library work;
+use work.interfaces.all;
+
 entity chrono_driver is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
-           cka : out STD_LOGIC;
-           ckb : out STD_LOGIC;
-           ckc : out STD_LOGIC;
-           calclk : out STD_LOGIC;
-           tin : out STD_LOGIC;
-           tnin : out STD_LOGIC;
-           pdrst : out STD_LOGIC;
-           set : out STD_LOGIC;
-           RdParLd : out STD_LOGIC;
-           RdClk : out STD_LOGIC;
-           RAdrValid : out STD_LOGIC;
-           Vth : out STD_LOGIC;
-           Hit_imlar : out STD_LOGIC;
-           inc_tstmp : out STD_LOGIC;  -- is it really needed?
-           reading_d : out STD_LOGIC;  -- is it really needed?
-           incCntr : out STD_LOGIC;  -- is it really needed?
-           wrchrdat : out STD_LOGIC;  -- is it really needed?
-           Rd_out : in STD_LOGIC); 
+           o_chrono : out t_to_chronopixel;
+           i_chrono : in t_from_chronopixel;
+           opcode : in t_driver_op;
+           start : in std_logic; -- write 1 here to start data transmission
+           ready : out std_logic;
+           error : out std_logic;
+           signal recv_data : out std_logic_vector ((recv_buf_len-1) downto 0) -- chronopixel readout
+           ); 
 end chrono_driver;
 
 architecture rtl of chrono_driver is
+  -- if you change std_logic into a std_logic_vector in these constant definitions
+  -- you also need to update the s_start logic
+  
   -- calib4 waveform definition                          0    5    10   15   20   25   30   35
   constant calib4_CKA : std_logic_vector(0 to 39)    := "0000000000000000000011111110000000000000";
   constant calib4_CKC : std_logic_vector(0 to 39)    := "0000000000000000000011111110000000000000";
   constant calib4_CALCLK : std_logic_vector(0 to 39) := "0000000011111110000000000000000000000000";
   constant calib4_TIN : std_logic_vector(0 to 39)    := "0000011110000000000011100000000000111100";
-  constant calib4_TNTIN : std_logic_vector(0 to 39)  := "1111000000111110000000011110000000000000";
+  constant calib4_TNIN : std_logic_vector(0 to 39)   := "1111000000111110000000011110000000000000";
   constant calib4_PDRST : std_logic_vector(0 to 39)  := "1100000000000000000000000000000000000000";
   constant calib4_Vth : std_logic := '1';
   constant calib4_SET : std_logic := '0';
   constant calib4_CKB : std_logic := '0';
   constant calib4_RdParLd : std_logic := '0';
   constant calib4_RdClk : std_logic := '0';
-  constant calib4_RdAdrValid : std_logic := '0';
+  constant calib4_RAdrValid : std_logic := '0';
   constant calib4_Hit_imlar : std_logic := '0';
   constant calib4_inc_tstmp : std_logic := '0';
   constant calib4_reading_d : std_logic := '0';
   constant calib4_incCntr : std_logic := '0';
   constant calib4_wrchrdat : std_logic := '0';
+  constant calib4_len : integer := 40;
 
   -- calin4 waveform definition
   constant calin4_CKA : std_logic := '0';
@@ -80,18 +91,19 @@ architecture rtl of chrono_driver is
   constant calin4_CKC : std_logic := '1';
   constant calin4_CALCLK : std_logic := '1';
   constant calin4_TIN : std_logic_vector(0 to 39) := calib4_TIN;
-  constant calin4_TNTIN : std_logic_vector(0 to 39) := calib4_TNTIN;
+  constant calin4_TNIN : std_logic_vector(0 to 39) := calib4_TNIN;
   constant calin4_PDRST : std_logic_vector(0 to 39) := calib4_PDRST;
   constant calin4_SET : std_logic := '0';
   constant calin4_RdParLd : std_logic := '0';
   constant calin4_RdClk : std_logic := '0';
-  constant calin4_RdAdrValid : std_logic := '0';
+  constant calin4_RAdrValid : std_logic := '0';
   constant calin4_Vth : std_logic := '1';
   constant calin4_Hit_imlar : std_logic := '0';
   constant calin4_inc_tstmp : std_logic := '0';
   constant calin4_reading_d : std_logic := '0';
   constant calin4_incCntr : std_logic := '0';
   constant calin4_wrchrdat : std_logic := '0';
+  constant calin4_len : integer := 40;
   
   -- mrst4 waveform definition    
   constant mrst4_CKA : std_logic_vector(0 to 39) := calib4_CKA;
@@ -101,21 +113,22 @@ architecture rtl of chrono_driver is
   constant mrst4_TIN : std_logic_vector(0 to 39)    := "0000011110000000000011100000000000001111";
   constant mrst4_SET : std_logic_vector(0 to 39)    := "1111100000000000000000000000000000000000";
   constant mrst4_PDRST : std_logic_vector(0 to 39)  := calib4_PDRST;
-  constant mrst4_TNTIN : std_logic_vector(0 to 39)  := calib4_TNTIN;
+  constant mrst4_TNIN : std_logic_vector(0 to 39)  := calib4_TNIN;
   constant mrst4_Hit_imlar : std_logic_vector(0 to 39) := (39 => '0', others => '1');
   constant mrst4_RdParLd : std_logic := '0';
   constant mrst4_RdClk : std_logic := '0';
-  constant mrst4_RdAdrValid : std_logic := '0';
+  constant mrst4_RAdrValid : std_logic := '0';
   constant mrst4_Vth : std_logic := '1';
   constant mrst4_inc_tstmp : std_logic := '0';
   constant mrst4_reading_d : std_logic := '0';
   constant mrst4_incCntr : std_logic := '0';
   constant mrst4_wrchrdat : std_logic := '0';
+  constant mrst4_len : integer := 40;
   
   -- wrtsig waveform definition
   constant wrtsig_CKA : std_logic_vector(0 to 39) := calib4_CKA;
   constant wrtsig_TIN : std_logic_vector(0 to 39) := calib4_TIN;
-  constant wrtsig_TNTIN : std_logic_vector(0 to 39) := calib4_TNTIN;
+  constant wrtsig_TNIN : std_logic_vector(0 to 39) := calib4_TNIN;
   constant wrtsig_PDRST : std_logic_vector(0 to 39) := calib4_PDRST;
   constant wrtsig_Vth : std_logic := '0';
   -- assuming here that wires not mentioned in spec are tied to GND
@@ -125,12 +138,13 @@ architecture rtl of chrono_driver is
   constant wrtsig_SET : std_logic := '0';
   constant wrtsig_RdParLd : std_logic := '0';
   constant wrtsig_RdClk : std_logic := '0';
-  constant wrtsig_RdAdrValid : std_logic := '0';
+  constant wrtsig_RAdrValid : std_logic := '0';
   constant wrtsig_Hit_imlar : std_logic := '0';
   constant wrtsig_inc_tstmp : std_logic := '0';
   constant wrtsig_reading_d : std_logic := '0';
   constant wrtsig_incCntr : std_logic := '0';
   constant wrtsig_wrchrdat : std_logic := '0';
+  constant wrtsig_len : integer := 40;
   
   -- idle4 waveform definition
   constant idle4_CKA : std_logic := '0';
@@ -138,18 +152,19 @@ architecture rtl of chrono_driver is
   constant idle4_CKC : std_logic := '0';
   constant idle4_CALCLK : std_logic := '0';
   constant idle4_TIN : std_logic_vector(0 to 39) := calib4_TIN;
-  constant idle4_TNTIN : std_logic_vector(0 to 39) := calib4_TNTIN;
+  constant idle4_TNIN : std_logic_vector(0 to 39) := calib4_TNIN;
   constant idle4_PDRST : std_logic_vector(0 to 39) := calib4_PDRST;
   constant idle4_Vth : std_logic := '0';
   constant idle4_SET : std_logic := '0';
   constant idle4_RdParLd : std_logic := '0';
   constant idle4_RdClk : std_logic := '0';
-  constant idle4_RdAdrValid : std_logic := '0';
+  constant idle4_RAdrValid : std_logic := '0';
   constant idle4_Hit_imlar : std_logic := '0';
   constant idle4_inc_tstmp : std_logic := '0';
   constant idle4_reading_d : std_logic := '0';
   constant idle4_incCntr : std_logic := '0';
   constant idle4_wrchrdat : std_logic := '0';
+  constant idle4_len : integer := 40;
   
   -- drdtst waveform definition -- TODO: convert into an FSM
   constant drdtst_CKA : std_logic := '0';
@@ -164,86 +179,50 @@ architecture rtl of chrono_driver is
   constant drdtst_TNIN : std_logic_vector (0 to 129)       := "1111000000000000000000000000111100000000000000000000000011110000000000000000000000001111000000000000000000000000111100000000000000";
   constant drdtst_RdClk : std_logic_vector (0 to 129)      := "0000000000000111110001111000011110000111100001111000011110000111100001111000011110000111100001111000011110000111100000000000000000";
   constant drdtst_RdParLd : std_logic_vector (0 to 129)    := "0000000000111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-  constant drdtst_RdArdValid : std_logic_vector (0 to 129) := "0000000111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+  constant drdtst_RAdrValid : std_logic_vector (0 to 129) := "0000000111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
   -- determines when the data is latched (12 bit total)        0    5    10   15   20   25   30   35   40   45   50   55   60   65   70   75   80   85   90   95   100  105  110  115  120  125  130
   constant drdtst_latch : std_logic_vector (0 to 129)      := "0000000000000000000000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000000000";
   constant drdtst_incCntr : std_logic_vector (0 to 129)    := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000";
   constant drdtst_wrchrdat : std_logic_vector (0 to 129)   := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000";
+  constant drdtst_SET : std_logic := '0'; -- not specified, assuming zero
+  constant drdtst_len : integer := 130;
+  
   -- please note that the incCntr and wrchr pulses here have to be 1 bit long, unlike in the spec waveform sheet
   
-  -- Things that are not clear to me:
-  --
-  -- where are these signals going ?
-  --   Hit_imlar, RMEMSEL, RdTstH, Bias_EN, Hit_imsm
-  --
-  -- Is Chronopixel data presented on rising or falling edge, 
-  -- and how long does it take to settle? (assumed rising, affected: drdtst_latch)
+
  
    
   -- trancseiver states
   type t_trcv_state is (
-  s_init,   -- initialize the FSM variables
-  s_idle,  -- wait for transmission
-  s_start,  -- start the transmission
-  s_trcv, -- transmit & receive data
+    s_init,   -- initialize the FSM variables
+    s_idle,  -- wait for transmission
+    s_start,  -- start the transmission
+    s_trcv, -- transmit & receive data
     s_done    -- done with data
- );
- signal trcv_state : t_trcv_state := s_init;
+  );
+  signal trcv_state : t_trcv_state := s_init;  
  
- -- received data output
- constant recv_buf_len : integer := 12;
- constant recv_ctr_len : integer := 8;
- signal recv_data : std_logic_vector ((recv_buf_len-1) downto 0) := (others => '0');
+  -- how many bits send to the Chronopixel
+  signal trcv_Nbits_to_send : unsigned ((recv_ctr_len-1) downto 0) := (others => '0');
  
- -- how many bits send to the Chronopixel
- signal trcv_Nbits_to_send : unsigned ((recv_ctr_len-1) downto 0) := (others => '0');
- 
- -- write '1' here to start the transmission
- signal trcv_start : std_logic := '0';
- 
- -- reads '1' once the transmission is complete
- signal trcv_rdy : std_logic := '0';
- 
- -- reads '1' when chronopixel data needs to be latched
- signal trcv_latch : std_logic := '0';
+  -- reads '1' when chronopixel data needs to be latched
+  signal trcv_latch : std_logic := '0';
   
- -- output buffers for the signals (130 bit shift registers)
- constant buf_max_len : integer := 130; 
- signal CKA_buf, CKB_buf, CKC_buf, CALCLK_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
- signal TIN_buf, TNIN_buf, PDRST_buf, RdParLd_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
- signal RdClk_buf, RAdrValid_buf, SET_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
- -- internal state buffers 
- signal latch_buf, incCntr_buf, wrchrdat_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
+  -- output buffers for the signals (130 bit shift registers)
+  constant buf_max_len : integer := 130; 
+  signal CKA_buf, CKB_buf, CKC_buf, CALCLK_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
+  signal TIN_buf, TNIN_buf, PDRST_buf, RdParLd_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
+  signal RdClk_buf, RAdrValid_buf, SET_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
+  -- internal state buffers 
+  signal latch_buf, incCntr_buf, wrchrdat_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
     
- -- bit counter for output buffers 
- signal send_bits_left : unsigned ((recv_ctr_len-1) downto 0) := (others => '0');
+  -- bit counter for output buffers 
+  signal send_bits_left : unsigned ((recv_ctr_len-1) downto 0) := (others => '0');
   
- -- data in buffer (12 bit shift register, big-endian order)
- signal recv_buf : std_logic_vector ((recv_buf_len-1) downto 0) := (others => '0');
+  -- data in buffer (12 bit shift register, big-endian order)
+  signal recv_buf : std_logic_vector ((recv_buf_len-1) downto 0) := (others => '0');
 
 
- -- TODO: are there pulses on imlar ?
- -- trancseiver states
- type t_ctrl_state is (
-   s_init,        -- initialize the FSM variables
-   s_idle4_start, -- prepare idle4 sequence
-   s_idle4_wait,  -- wait for idle4 sequence to finish
-   s_calin4_start,
-   s_calin4_wait,
-   s_calib4_start,
-   s_calib4_wait,
-   s_mrst_start,
-   s_mrst_wait,
-   s_wrtsig_start,
-   s_wrtsig_wait,
-   s_drdtst_start,
-   s_drdtst_wait
- );
- signal ctrl_state : t_ctrl_state := s_init;
-
- -- sequence repetitions left 
- constant ctrl_seq_ctr_len : integer := 12;
- signal ctrl_seq_ctr : unsigned ((ctrl_seq_ctr_len-1) downto 0) := (others => '0');
 
 begin
 
@@ -258,7 +237,7 @@ begin
         when s_init =>
           trcv_state <= s_idle;
         when s_idle =>
-          if (trcv_start = '1') then
+          if (start = '1') then
             trcv_state <= s_start;
           else
             trcv_state <= s_idle;
@@ -289,36 +268,148 @@ begin
       when s_init =>
         recv_data <= (others => '0');
         recv_buf <= (others => '0');
-        trcv_start <= '0';
-        trcv_rdy <= '0';
+        ready <= '0';
         trcv_latch <= '0';
         send_bits_left <= (others => '0');
     when s_idle =>
     when s_start =>
-      trcv_start <= '0';
-      trcv_rdy <= '0';
+      ready <= '0';
       send_bits_left <= trcv_Nbits_to_send;
       recv_buf <= (others => '0');
       trcv_latch <= '0';
+      
+      -- load the correct data into the buffer registers
+      case opcode is
+      when op_idle =>
+        CKA_buf <= (others => idle4_CKA);
+        CKB_buf <= (others => idle4_CKB);
+        CKC_buf <= (others => idle4_CKC);
+        CALCLK_buf <= (others => idle4_CALCLK);
+        for i in 0 to idle4_len-1 loop
+          TIN_buf(i) <= idle4_TIN(i);
+          TNIN_buf(i) <= idle4_TNIN(i);
+          PDRST_buf(i) <= idle4_PDRST(i);
+        end loop;
+        RdParLd_buf <= (others => idle4_RdParLd);
+        RdClk_buf <= (others => idle4_RdClk); 
+        RAdrValid_buf <= (others => idle4_RAdrValid);
+        SET_buf <= (others => idle4_set);        
+        latch_buf <= (others => '0');
+        incCntr_buf <= (others => '0');
+        wrchrdat_buf <= (others => '0');
+        
+      when op_calin4 =>
+        CKA_buf <= (others => calin4_CKA);
+        CKB_buf <= (others => calin4_CKB);
+        CKC_buf <= (others => calin4_CKC);
+        CALCLK_buf <= (others => calin4_CALCLK);
+        for i in 0 to calin4_len-1 loop
+          TIN_buf(i) <= calin4_TIN(i);
+          TNIN_buf(i) <= calin4_TNIN(i);
+          PDRST_buf(i) <= calin4_PDRST(i);
+        end loop;
+        RdParLd_buf <= (others => calin4_RdParLd);
+        RdClk_buf <= (others => calin4_RdClk); 
+        RAdrValid_buf <= (others => calin4_RAdrValid);
+        SET_buf <= (others => calin4_set);        
+        latch_buf <= (others => '0');
+        incCntr_buf <= (others => '0');
+        wrchrdat_buf <= (others => '0');
+        
+      when op_calib4 =>        
+        for i in 0 to calib4_len-1 loop
+          CKA_buf(i) <= calib4_CKA(i);          
+          CKC_buf(i) <= calib4_CKC(i);
+          CALCLK_buf(i) <= calib4_CALCLK(i);
+          TIN_buf(i) <= calib4_TIN(i);
+          TNIN_buf(i) <= calib4_TNIN(i);
+          PDRST_buf(i) <= calib4_PDRST(i);
+        end loop;
+        CKB_buf <= (others => calib4_CKB);
+        RdParLd_buf <= (others => calib4_RdParLd);
+        RdClk_buf <= (others => calib4_RdClk); 
+        RAdrValid_buf <= (others => calib4_RAdrValid);
+        SET_buf <= (others => calib4_set);        
+        latch_buf <= (others => '0');
+        incCntr_buf <= (others => '0');
+        wrchrdat_buf <= (others => '0');
+        
+      when op_mrst4 =>
+        for i in 0 to mrst4_len-1 loop
+          CKA_buf(i) <= mrst4_CKA(i);                              
+          TIN_buf(i) <= mrst4_TIN(i);
+          TNIN_buf(i) <= mrst4_TNIN(i);
+          PDRST_buf(i) <= mrst4_PDRST(i);
+          SET_buf(i) <= mrst4_set(i); 
+        end loop;
+        CKB_buf <= (others => mrst4_CKB);
+        CALCLK_buf <= (others => mrst4_CALCLK);
+        CKC_buf <= (others => mrst4_CKC);
+        RdParLd_buf <= (others => mrst4_RdParLd);
+        RdClk_buf <= (others => mrst4_RdClk); 
+        RAdrValid_buf <= (others => mrst4_RAdrValid);               
+        latch_buf <= (others => '0');
+        incCntr_buf <= (others => '0');
+        wrchrdat_buf <= (others => '0');
+        
+      when op_wrtsig =>
+        for i in 0 to wrtsig_len-1 loop
+          CKA_buf(i) <= wrtsig_CKA(i);                              
+          TIN_buf(i) <= wrtsig_TIN(i);
+          TNIN_buf(i) <= wrtsig_TNIN(i);
+          PDRST_buf(i) <= wrtsig_PDRST(i);          
+        end loop;
+        SET_buf <= (others => wrtsig_SET);
+        CKB_buf <= (others => wrtsig_CKB);
+        CALCLK_buf <= (others => wrtsig_CALCLK);
+        CKC_buf <= (others => wrtsig_CKC);
+        RdParLd_buf <= (others => wrtsig_RdParLd);
+        RdClk_buf <= (others => wrtsig_RdClk); 
+        RAdrValid_buf <= (others => wrtsig_RAdrValid);               
+        latch_buf <= (others => '0');
+        incCntr_buf <= (others => '0');
+        wrchrdat_buf <= (others => '0');
+        
+      when op_drdtst =>
+        for i in 0 to drdtst_len-1 loop                       
+          TIN_buf(i) <= drdtst_TIN(i);
+          TNIN_buf(i) <= drdtst_TNIN(i);          
+          RdParLd_buf(i) <= drdtst_RdParLd(i);
+          RdClk_buf(i) <= drdtst_RdClk(i); 
+          RAdrValid_buf(i) <= drdtst_RAdrValid(i);  
+          latch_buf(i) <= drdtst_latch(i);
+          incCntr_buf(i) <= drdtst_incCntr(i);
+          wrchrdat_buf(i) <= drdtst_wrchrdat(i);      
+        end loop;
+        SET_buf <= (others => drdtst_SET);
+        CKB_buf <= (others => drdtst_CKB);
+        CKA_buf <= (others => drdtst_CKA);
+        CALCLK_buf <= (others => drdtst_CALCLK);
+        CKC_buf <= (others => drdtst_CKC);
+        PDRST_buf <= (others => drdtst_PDRST);
+        
+      when others =>
+        error <= '1';
+      end case;
     when s_trcv =>
       -- update the data counter and state
       send_bits_left <= send_bits_left - 1;
       trcv_latch <= latch_buf(0);
       
       -- place the data on the data lines
-      cka <= CKA_buf(0);
-      ckb <= CKB_buf(0);
-      ckc <= CKC_buf(0);
-      calclk <= CALCLK_buf(0);
-      tin <= TIN_buf(0);
-      tnin <= TNIN_buf(0);
-      pdrst <= PDRST_buf(0);
-      set <= SET_buf(0);
-      RdParLd <= RdParLd_buf(0);
-      RdClk <= RdClk_buf(0);
-      RAdrValid <= RAdrValid_buf(0); 
-      incCntr <= incCntr_buf(0);   -- is it really needed?  
-      wrchrdat <= wrchrdat_buf(0);  -- is it really needed? 
+      o_chrono.cka <= CKA_buf(0);
+      o_chrono.ckb <= CKB_buf(0);
+      o_chrono.ckc <= CKC_buf(0);
+      o_chrono.calclk <= CALCLK_buf(0);
+      o_chrono.tin <= TIN_buf(0);
+      o_chrono.tnin <= TNIN_buf(0);
+      o_chrono.pdrst <= PDRST_buf(0);
+      o_chrono.set <= SET_buf(0);
+      o_chrono.RdParLd <= RdParLd_buf(0);
+      o_chrono.RdClk <= RdClk_buf(0);
+      o_chrono.RAdrValid <= RAdrValid_buf(0); 
+      o_chrono.incCntr <= incCntr_buf(0);   -- is it really needed?  
+      o_chrono.wrchrdat <= wrchrdat_buf(0);  -- is it really needed? 
    
       -- shift registers -- TODO: find a less repetitive way of writing this 
       CKA_buf(0 to (buf_max_len-2)) <= CKA_buf(1 to (buf_max_len-1));      
@@ -340,59 +431,18 @@ begin
       -- read in chronopixel data
       if (trcv_latch = '1') then
         recv_buf(1 to (recv_buf_len-1)) <= recv_buf(0 to (recv_buf_len-2));
-        recv_buf(0) <= Rd_out;
-      else
-        recv_buf <= recv_buf;
+        recv_buf(0) <= i_chrono.Rd_out;
       end if;
 
       when s_done =>
-        trcv_rdy <= '1';
+        ready <= '1';
         recv_data <= recv_buf;
       when others =>
+        error <= '1';
         -- should never happen
       end case;
     end if;
   end process;
   
-  -- controller state update logic
-  process (clk) 
-  begin
-    if rising_edge(clk) then
-      if (rst = '1') then
-        ctrl_state <= s_init;
-      else
-      case (ctrl_state) is
-      when s_init =>
-        ctrl_state <= s_idle4_start;
-      when s_idle4_start =>
-        ctrl_state <= s_idle4_wait; 
-      when s_idle4_wait => 
-        if (trcv_rdy = '1') then
-          if (ctrl_seq_ctr = 0) then
-            ctrl_state <= s_calin4_start;
-          else
-            ctrl_state <= s_idle4_wait;
-          end if;
-        else
-          ctrl_state <= s_idle4_start;
-        end if; 
-
-      when s_calin4_start =>
-      when s_calin4_wait =>
-      when s_calib4_start =>
-      when s_calib4_wait =>
-      when s_mrst_start =>
-      when s_mrst_wait =>
-      when s_wrtsig_start =>
-      when s_wrtsig_wait =>
-      when s_drdtst_start =>
-      when s_drdtst_wait =>
-      when others =>
-        ctrl_state <= s_init;
-        -- should never happen
-      end case;
-      end if;
-    end if;
-  end process;
   
 end rtl;

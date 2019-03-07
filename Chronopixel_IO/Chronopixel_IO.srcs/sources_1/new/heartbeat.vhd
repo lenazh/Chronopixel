@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: Elena ZHivun
+-- Engineer: Elena Zhivun <zhivun@gmail.com>
 -- 
 -- Create Date: 03/04/2019 04:37:43 PM
 -- Design Name: 
