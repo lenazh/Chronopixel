@@ -9,6 +9,9 @@
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a50tfgg484-1
 -- Engineer    : Elena Zhivun <zhivun@gmail.com>
+--
+-- TODO There are no timing constraints whatsoever on the chronopixel pins
+-- (due to the lack of any specs), this can result in unstable performance 
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -60,9 +63,9 @@ entity chronopixel is
     spi_dout : out STD_LOGIC;
 
     -- Chronopixel
-    TSCNT : out STD_LOGIC_VECTOR ( 11 downto 0 );  -- no driver
-    RADR : out STD_LOGIC_VECTOR ( 5 downto 0 );  -- no driver
-    ColAdr : out STD_LOGIC_VECTOR ( 5 downto 0 );  -- no driver
+    TSCNT : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    RADR : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    ColAdr : out STD_LOGIC_VECTOR ( 5 downto 0 );
     CKCAL : out STD_LOGIC;
     CKC : out STD_LOGIC;
     CKA : out STD_LOGIC;
@@ -101,6 +104,7 @@ architecture STRUCTURE of chronopixel is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
            o_chrono : out t_to_chronopixel;
+           o_chrono_addr : out t_chronopixel_addr;
            i_chrono : in t_from_chronopixel;
            leds : out t_ctrl_leds); 
   end component;
@@ -193,6 +197,9 @@ begin
     o_chrono.RdParLd => RdParLd,
     o_chrono.RdClk => RdClk,
     o_chrono.RAdrValid => RAdrValid,
+    o_chrono_addr.TSCNT => TSCNT,    -- TODO verify the bit ordering (defined in interfaces.vhd)
+    o_chrono_addr.RADR => RADR,      -- TODO verify the bit ordering
+    o_chrono_addr.ColAdr => ColAdr,  -- TODO verify the bit ordering
     -- o_chrono.Vth => Vth, -- no output wire with such name
     -- o_chrono.Hit_imlar => Hit_imlar, -- not connected in the module, no output wire
     -- o_chrono.inc_tstmp -- no output wire with such name 

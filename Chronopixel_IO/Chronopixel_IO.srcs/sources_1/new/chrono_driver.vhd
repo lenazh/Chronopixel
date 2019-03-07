@@ -25,7 +25,7 @@
 --
 -- Things that are not clear to me:
 --
--- where are these signals going ?
+-- where are these signals even going ?
 --   Hit_imlar, RMEMSEL, RdTstH, Bias_EN, Hit_imsm
 --
 -- Is Chronopixel data presented on rising or falling edge, 
@@ -52,6 +52,7 @@ entity chrono_driver is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
            o_chrono : out t_to_chronopixel;
+           addr_chrono : out t_chronopixel_addr;
            i_chrono : in t_from_chronopixel;
            opcode : in t_driver_op;
            start : in std_logic; -- write 1 here to start data transmission
@@ -64,6 +65,7 @@ end chrono_driver;
 architecture rtl of chrono_driver is
   -- if you change std_logic into a std_logic_vector in these constant definitions
   -- you also need to update the s_start logic
+  -- these waveforms are legacy, they are not optimal and need to be reconsidered 
   
   -- calib4 waveform definition                          0    5    10   15   20   25   30   35
   constant calib4_CKA : std_logic_vector(0 to 39)    := "0000000000000000000011111110000000000000";
@@ -249,8 +251,9 @@ begin
           end if;
         when s_done =>
           trcv_state <= s_idle;
-        when others =>
-          -- unknown state, should never happen
+          
+        -- unknown state, should never happen
+        when others =>          
           trcv_state <= s_idle;
         end case;
       end if;
@@ -267,7 +270,7 @@ begin
         recv_buf <= (others => '0');
         ready <= '0';
         trcv_latch <= '0';
-        send_bits_left <= (others => '0');
+        send_bits_left <= (others => '0');        
     when s_idle =>
     when s_start =>
       ready <= '0';      
@@ -275,8 +278,9 @@ begin
       trcv_latch <= '0';
       
       -- load the correct data into the buffer registers
+      -- for each selected operation
       case opcode is
-      when op_idle =>
+      when op_idle4 =>
         send_bits_left <= to_unsigned(idle4_len, recv_ctr_len);
         CKA_buf <= (others => idle4_CKA);
         CKB_buf <= (others => idle4_CKB);
@@ -390,8 +394,8 @@ begin
         CKC_buf <= (others => drdtst_CKC);
         PDRST_buf <= (others => drdtst_PDRST);
         
-      when others =>
-        -- unknown operation, don't send anything
+      -- unknown operation, don't send anything
+      when others =>        
         send_bits_left <= (others => '0');
         SET_buf <= (others => '0');
         CKB_buf <= (others => '0');
@@ -410,8 +414,8 @@ begin
         error <= '1';
       end case;
       
-    when s_trcv =>
-      -- update the data counter and state
+    -- clock out the data and update the counter
+    when s_trcv =>      
       send_bits_left <= send_bits_left - 1;
       trcv_latch <= latch_buf(0);
       
@@ -427,8 +431,8 @@ begin
       o_chrono.RdParLd <= RdParLd_buf(0);
       o_chrono.RdClk <= RdClk_buf(0);
       o_chrono.RAdrValid <= RAdrValid_buf(0); 
-      o_chrono.incCntr <= incCntr_buf(0);   -- is it really needed?  
-      o_chrono.wrchrdat <= wrchrdat_buf(0);  -- is it really needed? 
+      o_chrono.incCntr <= incCntr_buf(0);   -- TODO is it really needed?  
+      o_chrono.wrchrdat <= wrchrdat_buf(0);  -- TODO is it really needed? 
    
       -- shift registers -- TODO: find a less repetitive way of writing this 
       CKA_buf(0 to (buf_max_len-2)) <= CKA_buf(1 to (buf_max_len-1));      
@@ -444,8 +448,8 @@ begin
       RAdrValid_buf(0 to (buf_max_len-2)) <= RAdrValid_buf(1 to (buf_max_len-1));
       -- internal state registers
       latch_buf(0 to (buf_max_len-2)) <= latch_buf(1 to (buf_max_len-1));
-      incCntr_buf(0 to (buf_max_len-2)) <= incCntr_buf(1 to (buf_max_len-1)); -- is it really needed?
-      wrchrdat_buf(0 to (buf_max_len-2)) <= wrchrdat_buf(1 to (buf_max_len-1)); -- is it really needed?
+      incCntr_buf(0 to (buf_max_len-2)) <= incCntr_buf(1 to (buf_max_len-1)); -- TODO is it really needed?
+      wrchrdat_buf(0 to (buf_max_len-2)) <= wrchrdat_buf(1 to (buf_max_len-1)); -- TODO is it really needed?
 
       -- read in chronopixel data
       if (trcv_latch = '1') then
@@ -453,17 +457,16 @@ begin
         recv_buf(0) <= i_chrono.Rd_out;
       end if;
 
-      when s_done =>
-        -- data transmission complete, output the received data
+      -- data transmission complete, output the received data
+      when s_done =>        
         ready <= '1';
         recv_data <= recv_buf;
         
+      -- unknown state, should never happen        
       when others =>
         error <= '1';
-        -- unknown state, should never happen
       end case;
     end if;
   end process;
-  
-  
+
 end rtl;
