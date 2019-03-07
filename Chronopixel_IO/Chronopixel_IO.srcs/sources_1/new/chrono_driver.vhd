@@ -202,9 +202,6 @@ architecture rtl of chrono_driver is
   );
   signal trcv_state : t_trcv_state := s_init;  
  
-  -- how many bits send to the Chronopixel
-  signal trcv_Nbits_to_send : unsigned ((recv_ctr_len-1) downto 0) := (others => '0');
- 
   -- reads '1' when chronopixel data needs to be latched
   signal trcv_latch : std_logic := '0';
   
@@ -253,7 +250,7 @@ begin
         when s_done =>
           trcv_state <= s_idle;
         when others =>
-          -- should never happen
+          -- unknown state, should never happen
           trcv_state <= s_idle;
         end case;
       end if;
@@ -273,14 +270,14 @@ begin
         send_bits_left <= (others => '0');
     when s_idle =>
     when s_start =>
-      ready <= '0';
-      send_bits_left <= trcv_Nbits_to_send;
+      ready <= '0';      
       recv_buf <= (others => '0');
       trcv_latch <= '0';
       
       -- load the correct data into the buffer registers
       case opcode is
       when op_idle =>
+        send_bits_left <= to_unsigned(idle4_len, recv_ctr_len);
         CKA_buf <= (others => idle4_CKA);
         CKB_buf <= (others => idle4_CKB);
         CKC_buf <= (others => idle4_CKC);
@@ -299,6 +296,7 @@ begin
         wrchrdat_buf <= (others => '0');
         
       when op_calin4 =>
+        send_bits_left <= to_unsigned(calin4_len, recv_ctr_len);
         CKA_buf <= (others => calin4_CKA);
         CKB_buf <= (others => calin4_CKB);
         CKC_buf <= (others => calin4_CKC);
@@ -317,6 +315,7 @@ begin
         wrchrdat_buf <= (others => '0');
         
       when op_calib4 =>        
+        send_bits_left <= to_unsigned(calib4_len, recv_ctr_len);
         for i in 0 to calib4_len-1 loop
           CKA_buf(i) <= calib4_CKA(i);          
           CKC_buf(i) <= calib4_CKC(i);
@@ -335,6 +334,7 @@ begin
         wrchrdat_buf <= (others => '0');
         
       when op_mrst4 =>
+        send_bits_left <= to_unsigned(mrst4_len, recv_ctr_len);
         for i in 0 to mrst4_len-1 loop
           CKA_buf(i) <= mrst4_CKA(i);                              
           TIN_buf(i) <= mrst4_TIN(i);
@@ -353,6 +353,7 @@ begin
         wrchrdat_buf <= (others => '0');
         
       when op_wrtsig =>
+        send_bits_left <= to_unsigned(wrtsig_len, recv_ctr_len);
         for i in 0 to wrtsig_len-1 loop
           CKA_buf(i) <= wrtsig_CKA(i);                              
           TIN_buf(i) <= wrtsig_TIN(i);
@@ -371,6 +372,7 @@ begin
         wrchrdat_buf <= (others => '0');
         
       when op_drdtst =>
+        send_bits_left <= to_unsigned(drdtst_len, recv_ctr_len);
         for i in 0 to drdtst_len-1 loop                       
           TIN_buf(i) <= drdtst_TIN(i);
           TNIN_buf(i) <= drdtst_TNIN(i);          
@@ -389,8 +391,25 @@ begin
         PDRST_buf <= (others => drdtst_PDRST);
         
       when others =>
+        -- unknown operation, don't send anything
+        send_bits_left <= (others => '0');
+        SET_buf <= (others => '0');
+        CKB_buf <= (others => '0');
+        CKA_buf <= (others => '0');
+        CALCLK_buf <= (others => '0');
+        CKC_buf <= (others => '0');
+        PDRST_buf <= (others => '0');
+        TIN_buf <= (others => '0');
+        TNIN_buf <= (others => '0');          
+        RdParLd_buf <= (others => '0');
+        RdClk_buf <= (others => '0'); 
+        RAdrValid_buf <= (others => '0');  
+        latch_buf <= (others => '0');
+        incCntr_buf <= (others => '0');
+        wrchrdat_buf <= (others => '0'); 
         error <= '1';
       end case;
+      
     when s_trcv =>
       -- update the data counter and state
       send_bits_left <= send_bits_left - 1;
@@ -435,11 +454,13 @@ begin
       end if;
 
       when s_done =>
+        -- data transmission complete, output the received data
         ready <= '1';
         recv_data <= recv_buf;
+        
       when others =>
         error <= '1';
-        -- should never happen
+        -- unknown state, should never happen
       end case;
     end if;
   end process;
