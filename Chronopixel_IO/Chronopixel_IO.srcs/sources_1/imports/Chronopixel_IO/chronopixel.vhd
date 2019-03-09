@@ -10,8 +10,10 @@
 -- Device      : xc7a50tfgg484-1
 -- Engineer    : Elena Zhivun <zhivun@gmail.com>
 --
--- TODO There are no timing constraints whatsoever on the chronopixel pins
--- (due to the lack of any specs), this can result in unstable performance 
+-- TODO 
+-- - There are no timing constraints whatsoever on the chronopixel pins
+--   (due to the lack of any doccs), this can result in unstable performance 
+-- - Let the USB host issue rst?
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -93,6 +95,17 @@ architecture STRUCTURE of chronopixel is
   signal clk_div8, clk_div64 : STD_LOGIC;
   signal led_reg : std_logic_vector (7 downto 0);
   signal rst : std_logic := '0'; -- global reset 
+  signal chrono_clock : std_logic; -- chronopixel logic clock
+  signal okHostClock : std_logic;  -- Opal Kelly host clock
+  signal controller_leds : t_ctrl_leds;
+
+  signal fifo_wr_en, fifo_rd_en, fifo_full, fifo_empty : STD_LOGIC;
+  signal fifo_din, fifo_dout : STD_LOGIC_VECTOR(11 DOWNTO 0);
+  signal fifo_wr_rst_busy, fifo_rd_rst_busy : STD_LOGIC;
+  signal host_connected : STD_LOGIC; -- indicates whether the USB host is connected
+  
+  -- TODO remove these?
+  signal Vth, Hit_imlar, inc_tstmp, reading_d, incCntr, wrchrdat : STD_LOGIC;
   
   component heartbeat is
     port ( clk : in STD_LOGIC;
@@ -105,15 +118,35 @@ architecture STRUCTURE of chronopixel is
            rst : in STD_LOGIC;
            o_chrono : out t_to_chronopixel;
            o_chrono_addr : out t_chronopixel_addr;
-           i_chrono : in t_from_chronopixel;
+           i_chrono : in t_from_chronopixel;   
+           fifo_din : out STD_LOGIC_VECTOR(11 DOWNTO 0);
+           fifo_wr_en : out STD_LOGIC;
+           fifo_rd_rst_busy : in STD_LOGIC;
+           host_connected : in STD_LOGIC; 
            leds : out t_ctrl_leds); 
   end component;
   
-  signal controller_leds : t_ctrl_leds;
+  component chrono_fifo IS
+  PORT (
+    rst : IN STD_LOGIC;
+    wr_clk : IN STD_LOGIC;
+    rd_clk : IN STD_LOGIC;
+    din : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+    wr_en : IN STD_LOGIC;
+    rd_en : IN STD_LOGIC;
+    dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+    full : OUT STD_LOGIC;
+    empty : OUT STD_LOGIC;
+    wr_rst_busy : OUT STD_LOGIC;
+    rd_rst_busy : OUT STD_LOGIC
+  );
+END component;
+
 begin
   led <= not(led_reg);
-
   rst <= '0'; -- there are no buttons on board to do reset, tie to GND for now
+  chrono_clock <= clk_div8;
+  okHostClock <= hi_in(0);
 
   ddr3_dqs_IOBUFDS_0: unisim.vcomponents.IOBUFDS
     port map (
@@ -181,11 +214,25 @@ begin
     led => led_reg(0)
   );
 
+  fifo_inst : chrono_fifo
+  PORT MAP (
+    rst => rst,
+    wr_clk => chrono_clock,
+    rd_clk => okHostClock,
+    din => fifo_din,
+    wr_en => fifo_wr_en,
+    rd_en => fifo_rd_en,
+    dout => fifo_dout,
+    wr_rst_busy => fifo_wr_rst_busy,
+    rd_rst_busy => fifo_rd_rst_busy
+  );
+
   
   controller_inst : chrono_controller
   port map (
-    clk => clk_div64,
+    clk => chrono_clock,
     rst => rst,
+    
     o_chrono.cka => CKA,
     o_chrono.ckb => CKB,
     o_chrono.ckc => CKC,
@@ -197,16 +244,23 @@ begin
     o_chrono.RdParLd => RdParLd,
     o_chrono.RdClk => RdClk,
     o_chrono.RAdrValid => RAdrValid,
+    o_chrono.Vth => Vth, -- no output wire with such name
+    o_chrono.Hit_imlar => Hit_imlar, -- not connected in the module, no output wire
+    o_chrono.inc_tstmp => inc_tstmp, -- no output wire with such name 
+    o_chrono.reading_d => reading_d,  -- no output wire with such name
+    o_chrono.incCntr => incCntr, -- no output wire with such name
+    o_chrono.wrchrdat => wrchrdat, -- no output wire with such name
+    
     o_chrono_addr.TSCNT => TSCNT,    -- TODO verify the bit ordering (defined in interfaces.vhd)
     o_chrono_addr.RADR => RADR,      -- TODO verify the bit ordering
     o_chrono_addr.ColAdr => ColAdr,  -- TODO verify the bit ordering
-    -- o_chrono.Vth => Vth, -- no output wire with such name
-    -- o_chrono.Hit_imlar => Hit_imlar, -- not connected in the module, no output wire
-    -- o_chrono.inc_tstmp -- no output wire with such name 
-    -- o_chrono.reading_d -- no output wire with such name
-    -- o_chrono.incCntr -- no output wire with such name
-    -- _chrono.wrchrdat -- no output wire with such name
+    
     i_chrono.Rd_out => Rd_out,
+    
+    fifo_din => fifo_din,
+    fifo_wr_en => fifo_wr_en,
+    fifo_rd_rst_busy => fifo_rd_rst_busy, 
+    host_connected => host_connected, 
     leds => controller_leds
   ); 
 

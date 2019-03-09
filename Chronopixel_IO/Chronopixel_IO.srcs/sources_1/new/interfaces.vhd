@@ -30,7 +30,7 @@ package interfaces is
   constant recv_ctr_len : integer := 8;  
   
   -- wires going to Chronopixel
-  type t_to_chronopixel is record -- driven by chrono_driver
+  type t_to_chronopixel is record -- driven by chrono_serial
     cka : STD_LOGIC;
     ckb : STD_LOGIC;
     ckc : STD_LOGIC;

@@ -1,0 +1,7 @@
+vhdl xpm  \
+"D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl fifo_generator_v13_2_3  \
+"../../../ipstatic/hdl/fifo_generator_v13_2_rfs.vhd" \
+
+nosort

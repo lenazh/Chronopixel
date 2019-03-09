@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 03/04/2019 06:14:54 PM
 -- Design Name: 
--- Module Name: chrono_driver - rtl
+-- Module Name: chrono_serial - rtl
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -48,7 +48,7 @@ use IEEE.NUMERIC_STD.ALL;
 library work;
 use work.interfaces.all;
 
-entity chrono_driver is
+entity chrono_serial is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
            o_chrono : out t_to_chronopixel;
@@ -60,9 +60,9 @@ entity chrono_driver is
            error : out std_logic;
            signal recv_data : out std_logic_vector ((recv_buf_len-1) downto 0) -- chronopixel readout
            ); 
-end chrono_driver;
+end chrono_serial;
 
-architecture rtl of chrono_driver is
+architecture rtl of chrono_serial is
   -- if you change std_logic into a std_logic_vector in these constant definitions
   -- you also need to update the s_start logic
   -- these waveforms are legacy, they are not optimal and need to be reconsidered 
@@ -270,12 +270,13 @@ begin
         recv_buf <= (others => '0');
         ready <= '0';
         trcv_latch <= '0';
-        send_bits_left <= (others => '0');        
+        send_bits_left <= (others => '0');   
+        error <= '0';     
     when s_idle =>
     when s_start =>
       ready <= '0';      
       recv_buf <= (others => '0');
-      trcv_latch <= '0';
+      trcv_latch <= '0';      
       
       -- load the correct data into the buffer registers
       -- for each selected operation
@@ -453,7 +454,7 @@ begin
 
       -- read in chronopixel data
       if (trcv_latch = '1') then
-        recv_buf(1 to (recv_buf_len-1)) <= recv_buf(0 to (recv_buf_len-2));
+        recv_buf((recv_buf_len-1) downto 1) <= recv_buf((recv_buf_len-2) downto 0);
         recv_buf(0) <= i_chrono.Rd_out;
       end if;
 
