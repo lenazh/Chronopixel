@@ -44,10 +44,6 @@ package interfaces is
     RAdrValid : STD_LOGIC;
     Vth : STD_LOGIC;
     Hit_imlar : STD_LOGIC;
-    inc_tstmp : STD_LOGIC;  -- TODO is it really needed?
-    reading_d : STD_LOGIC;  -- TODO is it really needed?
-    incCntr : STD_LOGIC;    -- TODO is it really needed?
-    wrchrdat : STD_LOGIC;   -- TODO is it really needed?    
   end record t_to_chronopixel;
   
   constant TSCNT_len : integer := 12;

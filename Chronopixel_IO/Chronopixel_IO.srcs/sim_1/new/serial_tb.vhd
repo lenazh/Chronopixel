@@ -89,11 +89,11 @@ begin
   process -- ctrl
   begin
     -- reset the instance
-    rst <= '1';
+    --rst <= '1';
+    --driver_start <= '0';
+    --wait for 10 ns;    
+    rst <= '0';
     i_chrono.Rd_out <= '0';
-    driver_start <= '0';
-    wait for 10 ns;    
-    rst <= '0';    
     wait for 10 ns;
     
     -- initiate idle4 sequence        
@@ -101,14 +101,73 @@ begin
     driver_start <= '1';
     wait for 10 ns;
     driver_start <= '0';
-    wait for 450 ns;
+    wait until driver_ready = '1';
+    wait for 10 ns;
     
     -- initiate op_calin4 sequence        
     driver_opcode <= op_calin4;
     driver_start <= '1';
     wait for 10 ns;
+    driver_start <= '0';    
+    wait until driver_ready = '1';
+    wait for 10 ns;
+    
+    -- initiate op_calib4 sequence        
+    driver_opcode <= op_calib4;
+    driver_start <= '1';
+    wait for 10 ns;
     driver_start <= '0';
-    wait for 450 ns;
+    wait until driver_ready = '1';
+    wait for 10 ns;
+    
+    -- initiate op_mrst4 sequence        
+    driver_opcode <= op_mrst4;
+    driver_start <= '1';
+    wait for 10 ns;
+    driver_start <= '0';
+    wait until driver_ready = '1';
+    wait for 10 ns;
+    
+    -- initiate op_wrtsig sequence        
+    driver_opcode <= op_wrtsig;
+    driver_start <= '1';
+    wait for 10 ns;
+    driver_start <= '0';
+    wait until driver_ready = '1';
+    wait for 10 ns;
+    
+    -- initiate op_drdtst sequence        
+    driver_opcode <= op_drdtst;
+    driver_start <= '1';    
+    wait for 10 ns;
+    driver_start <= '0';
+    -- recv_data should read 100110111000
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '1';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '0';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '0';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '1';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '1';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '0';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '1';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '1';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '1';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '0';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '0';
+    wait until falling_edge(o_chrono.RdClk);
+    i_chrono.Rd_out <= '0';
+    wait until driver_ready = '1';
+    wait for 10 ns;
     
   end process;
 
