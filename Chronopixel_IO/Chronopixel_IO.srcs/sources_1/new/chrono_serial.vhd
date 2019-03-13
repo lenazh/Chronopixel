@@ -207,6 +207,7 @@ architecture rtl of chrono_serial is
   signal CKA_buf, CKB_buf, CKC_buf, CALCLK_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
   signal TIN_buf, TNIN_buf, PDRST_buf, RdParLd_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
   signal RdClk_buf, RAdrValid_buf, SET_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
+  signal Hit_imlar_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
   -- internal state buffers 
   signal latch_buf : std_logic_vector (0 to (buf_max_len-1)) := (others => '0');
     
@@ -304,9 +305,9 @@ begin
         RdClk_buf <= (others => idle4_RdClk); 
         RAdrValid_buf <= (others => idle4_RAdrValid);
         SET_buf <= (others => idle4_set);        
-        latch_buf <= (others => '0');     
-        o_chrono.Vth <= idle4_Vth;
-        o_chrono.Hit_imlar <= idle4_Hit_imlar;
+        latch_buf <= (others => '0');
+        Hit_imlar_buf <= (others => idle4_Hit_imlar);     
+        o_chrono.Vth <= idle4_Vth;        
         
       when op_calin4 =>
         send_bits_left <= to_unsigned(calin4_len, recv_ctr_len);
@@ -324,8 +325,8 @@ begin
         RAdrValid_buf <= (others => calin4_RAdrValid);
         SET_buf <= (others => calin4_set);        
         latch_buf <= (others => '0');
+        Hit_imlar_buf <= (others => calin4_Hit_imlar); 
         o_chrono.Vth <= calin4_Vth;
-        o_chrono.Hit_imlar <= calin4_Hit_imlar;
         
       when op_calib4 =>        
         send_bits_left <= to_unsigned(calib4_len, recv_ctr_len);
@@ -343,8 +344,8 @@ begin
         RAdrValid_buf <= (others => calib4_RAdrValid);
         SET_buf <= (others => calib4_set);        
         latch_buf <= (others => '0');
+        Hit_imlar_buf <= (others => calib4_Hit_imlar); 
         o_chrono.Vth <= calib4_Vth;
-        o_chrono.Hit_imlar <= calib4_Hit_imlar;
         
       when op_mrst4 =>
         send_bits_left <= to_unsigned(mrst4_len, recv_ctr_len);
@@ -353,7 +354,8 @@ begin
           TIN_buf(i) <= mrst4_TIN(i);
           TNIN_buf(i) <= mrst4_TNIN(i);
           PDRST_buf(i) <= mrst4_PDRST(i);
-          SET_buf(i) <= mrst4_set(i); 
+          SET_buf(i) <= mrst4_set(i);
+          Hit_imlar_buf(i) <= mrst4_Hit_imlar(i);
         end loop;
         CKB_buf <= (others => mrst4_CKB);
         CALCLK_buf <= (others => mrst4_CALCLK);
@@ -361,9 +363,9 @@ begin
         RdParLd_buf <= (others => mrst4_RdParLd);
         RdClk_buf <= (others => mrst4_RdClk); 
         RAdrValid_buf <= (others => mrst4_RAdrValid);               
-        latch_buf <= (others => '0');
+        latch_buf <= (others => '0');         
         o_chrono.Vth <= mrst4_Vth;
-        o_chrono.Hit_imlar <= '0'; -- TODO this is not correct; review the specs; mrst4_Hit_imlar;
+
         
       when op_wrtsig =>
         send_bits_left <= to_unsigned(wrtsig_len, recv_ctr_len);
@@ -381,8 +383,8 @@ begin
         RdClk_buf <= (others => wrtsig_RdClk); 
         RAdrValid_buf <= (others => wrtsig_RAdrValid);               
         latch_buf <= (others => '0');
+        Hit_imlar_buf <= (others => wrtsig_Hit_imlar);
         o_chrono.Vth <= wrtsig_Vth;
-        o_chrono.Hit_imlar <= wrtsig_Hit_imlar;
         
       when op_drdtst =>
         send_bits_left <= to_unsigned(drdtst_len, recv_ctr_len);
@@ -400,8 +402,8 @@ begin
         CALCLK_buf <= (others => drdtst_CALCLK);
         CKC_buf <= (others => drdtst_CKC);
         PDRST_buf <= (others => drdtst_PDRST);
+        Hit_imlar_buf <= (others => drdtst_Hit_imlar);
         o_chrono.Vth <= drdtst_Vth;
-        o_chrono.Hit_imlar <= drdtst_Hit_imlar;
         
       -- unknown operation, don't send anything
       when others =>        
@@ -418,8 +420,8 @@ begin
         RdClk_buf <= (others => '0'); 
         RAdrValid_buf <= (others => '0');  
         latch_buf <= (others => '0');
+        Hit_imlar_buf <= (others => '0');
         o_chrono.Vth <= '0';
-        o_chrono.Hit_imlar <= '0';
         o_serial.error <= '1';
       end case;
       
@@ -439,7 +441,8 @@ begin
       o_chrono.set <= SET_buf(0);
       o_chrono.RdParLd <= RdParLd_buf(0);
       o_chrono.RdClk <= RdClk_buf(0);
-      o_chrono.RAdrValid <= RAdrValid_buf(0); 
+      o_chrono.RAdrValid <= RAdrValid_buf(0);
+      o_chrono.Hit_imlar <= Hit_imlar_buf(0);
    
       -- shift registers -- TODO: find a less repetitive way of writing this 
       CKA_buf(0 to (buf_max_len-2)) <= CKA_buf(1 to (buf_max_len-1));      
@@ -453,6 +456,7 @@ begin
       RdParLd_buf(0 to (buf_max_len-2)) <= RdParLd_buf(1 to (buf_max_len-1));
       RdClk_buf(0 to (buf_max_len-2)) <= RdClk_buf(1 to (buf_max_len-1));
       RAdrValid_buf(0 to (buf_max_len-2)) <= RAdrValid_buf(1 to (buf_max_len-1));
+      Hit_imlar_buf(0 to (buf_max_len-2)) <= Hit_imlar_buf(1 to (buf_max_len-1));
       -- internal state registers
       latch_buf(0 to (buf_max_len-2)) <= latch_buf(1 to (buf_max_len-1));
 
