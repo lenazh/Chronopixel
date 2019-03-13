@@ -27,7 +27,7 @@ use work.interfaces.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -53,6 +53,23 @@ architecture Behavioral of controller_tb is
            host_connected : in STD_LOGIC; 
            leds : out t_ctrl_leds); 
   end component;
+  
+  component LFSR is
+  generic (
+    g_Num_Bits : integer := recv_buf_len
+    );
+  port (
+    i_Clk    : in std_logic;
+    i_Enable : in std_logic;
+ 
+    -- Optional Seed Value
+    i_Seed_DV   : in std_logic;
+    i_Seed_Data : in std_logic_vector(g_Num_Bits-1 downto 0);
+     
+    o_LFSR_Data : out std_logic_vector(g_Num_Bits-1 downto 0);
+    o_LFSR_Done : out std_logic
+    );
+ end component;
 
   signal o_chrono_addr : t_chronopixel_addr;
   signal i_chrono : t_from_chronopixel;
@@ -63,6 +80,8 @@ architecture Behavioral of controller_tb is
   signal i_serial : t_to_serial;
   signal o_serial : t_from_serial;
   signal serial_init : std_logic := '1';
+  
+  signal o_LFSR_Done : std_logic;
 
 begin
 
@@ -78,6 +97,16 @@ begin
     fifo_rd_rst_busy => fifo_rd_rst_busy,  
     host_connected => host_connected,
     leds => leds
+  );
+  
+  lfsr_inst : LFSR
+  port map (
+    i_Clk => clk,
+    i_Enable => i_serial.start,
+    i_Seed_DV => '0',
+    i_Seed_Data => (others => '0'),     
+    o_LFSR_Data => o_serial.recv_data,
+    o_LFSR_Done => o_LFSR_Done
   );
   
   process -- CLK
@@ -106,10 +135,10 @@ begin
   begin
     i_chrono.Rd_out <= '0';
     o_serial.error <= '0';
-    o_serial.recv_data <= (others => '0');
     fifo_rd_rst_busy <= '0';
     host_connected <= '1';
     rst <= '0';
+    
     wait for 1 ms;
   end process;
 
