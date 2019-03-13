@@ -39,9 +39,9 @@ use work.interfaces.all;
 entity chrono_controller is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
-           o_chrono : out t_to_chronopixel;
            o_chrono_addr : out t_chronopixel_addr;
-           i_chrono : in t_from_chronopixel;   
+           i_serial : out t_to_serial;
+           o_serial : in t_from_serial;
            fifo_din : out STD_LOGIC_VECTOR(11 DOWNTO 0);
            fifo_wr_en : out STD_LOGIC;
            fifo_rd_rst_busy : in STD_LOGIC; -- TODO handle this pin correctly
@@ -62,20 +62,6 @@ architecture rtl of chrono_controller is
   signal driver_opcode : t_driver_op;
   signal driver_start, driver_ready, driver_error : std_logic;
   signal recv_data : std_logic_vector ((recv_buf_len-1) downto 0);
-
-  component chrono_serial is
-    Port ( clk : in STD_LOGIC;
-           rst : in STD_LOGIC;
-           o_chrono : out t_to_chronopixel;
-           addr_chrono : out t_chronopixel_addr;
-           i_chrono : in t_from_chronopixel;
-           opcode : in t_driver_op;
-           start : in std_logic; -- write 1 here to start data transmission
-           ready : out std_logic;
-           error : out std_logic;
-           signal recv_data : out std_logic_vector ((recv_buf_len-1) downto 0) -- chronopixel readout
-             ); 
-  end component;
 
  -- TODO: are there pulses on imlar ?
  -- trancseiver states
@@ -116,19 +102,12 @@ architecture rtl of chrono_controller is
  
  signal ctrl_seq_ctr : unsigned ((ctrl_seq_ctr_len-1) downto 0) := (others => '0');
 begin
-  -- Instantiate Chronopixel driver
-  chrono_serial_inst : chrono_serial
-  port map ( 
-    clk => clk,
-    rst => rst,
-    o_chrono => o_chrono,
-    i_chrono => i_chrono,
-    opcode => driver_opcode,
-    start => driver_start,
-    ready => driver_ready,
-    error => driver_error,
-    recv_data => recv_data
-  );
+  -- serial lines driver
+  i_serial.opcode <= driver_opcode;
+  i_serial.start <= driver_start;
+  driver_ready <= o_serial.ready;
+  driver_error <= o_serial.error;
+  recv_data <= o_serial.recv_data;
 
   o_chrono_addr.TSCNT <= std_logic_vector(TSCNT);
   o_chrono_addr.RADR <= std_logic_vector(RADR);
@@ -281,7 +260,9 @@ begin
       -- initialize variables here
       when s_idle4_setup =>
         ctrl_seq_ctr <= to_unsigned(idle4_rep-1, ctrl_seq_ctr_len);
-        TSCNT <= (others => '0');        
+        TSCNT <= (others => '0');
+        RADR <= (others => '0');
+        ColAdr <= (others => '0');       
         
       when s_calib4_setup =>
         ctrl_seq_ctr <= to_unsigned(calib4_rep-1, ctrl_seq_ctr_len);        

@@ -46,6 +46,7 @@ package interfaces is
     Hit_imlar : STD_LOGIC;
   end record t_to_chronopixel;
   
+  
   constant TSCNT_len : integer := 12;
   constant chrono_addr_len : integer := 6;
   type t_chronopixel_addr is record -- driven by chrono_controller
@@ -56,6 +57,20 @@ package interfaces is
   
   -- which sequence to send
   type t_driver_op is (op_idle4, op_calin4, op_calib4, op_mrst4, op_wrtsig, op_drdtst);
+  
+  
+  -- to serial lines controller
+  type t_to_serial is record
+    opcode : t_driver_op;
+    start : std_logic;
+  end record t_to_serial;
+  
+  -- from serial lines controller
+  type t_from_serial is record
+    ready : std_logic;
+    error : std_logic;
+    recv_data : std_logic_vector ((recv_buf_len-1) downto 0); -- chronopixel readout
+  end record t_from_serial;
   
   -- wires coming from Chronopixel
   type t_from_chronopixel is record

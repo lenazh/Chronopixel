@@ -36,23 +36,21 @@ use work.interfaces.all;
 
 -- TODO: make sure global RST is issued, or the circuit works w/o global reset
 
-entity serial_tb is    
+entity serial_tb is   
+--  Port ( ); 
 end serial_tb;
 
 architecture Behavioral of serial_tb is
 
   component chrono_serial is
-    Port ( clk : in STD_LOGIC;
-           rst : in STD_LOGIC;
-           o_chrono : out t_to_chronopixel;
-           addr_chrono : out t_chronopixel_addr;
-           i_chrono : in t_from_chronopixel;
-           opcode : in t_driver_op;
-           start : in std_logic; -- write 1 here to start data transmission
-           ready : out std_logic;
-           error : out std_logic;
-           signal recv_data : out std_logic_vector ((recv_buf_len-1) downto 0) -- chronopixel readout
-             ); 
+    Port ( 
+      clk : in STD_LOGIC;
+      rst : in STD_LOGIC;
+      i_chrono : in t_from_chronopixel;
+      o_chrono : out t_to_chronopixel;
+      i_serial : in t_to_serial;
+      o_serial : out t_from_serial  
+    ); 
   end component;
   
   signal o_chrono: t_to_chronopixel;
@@ -71,11 +69,11 @@ begin
     rst => rst,
     o_chrono => o_chrono,
     i_chrono => i_chrono,
-    opcode => driver_opcode,
-    start => driver_start,
-    ready => driver_ready,
-    error => driver_error,
-    recv_data => recv_data
+    i_serial.opcode => driver_opcode,
+    i_serial.start => driver_start,
+    o_serial.ready => driver_ready,
+    o_serial.error => driver_error,
+    o_serial.recv_data => recv_data
   );
   
   process -- CLK
@@ -93,6 +91,7 @@ begin
     --driver_start <= '0';
     --wait for 10 ns;    
     rst <= '0';
+    driver_start <= '0';
     i_chrono.Rd_out <= '0';
     wait for 10 ns;
     
@@ -167,6 +166,7 @@ begin
     wait until falling_edge(o_chrono.RdClk);
     i_chrono.Rd_out <= '0';
     wait until driver_ready = '1';
+    assert (recv_data = "100110111000") report "recv_data is wrong" severity failure;
     wait for 10 ns;
     
   end process;

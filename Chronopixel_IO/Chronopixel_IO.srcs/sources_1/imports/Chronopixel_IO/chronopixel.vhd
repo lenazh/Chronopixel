@@ -107,6 +107,9 @@ architecture STRUCTURE of chronopixel is
   signal host_connected : STD_LOGIC; -- indicates whether the USB host is connected
   signal led_heartbeat : std_logic;
   
+  signal i_serial : t_to_serial;
+  signal o_serial : t_from_serial;
+  
   -- TODO remove these?
   signal Vth, Hit_imlar, inc_tstmp, reading_d, incCntr, wrchrdat : STD_LOGIC;
   
@@ -115,18 +118,31 @@ architecture STRUCTURE of chronopixel is
            rst : in STD_LOGIC;
            led : out STD_LOGIC);
   end component; 
-  
+
   component chrono_controller is
-    Port ( clk : in STD_LOGIC;
-           rst : in STD_LOGIC;
-           o_chrono : out t_to_chronopixel;
-           o_chrono_addr : out t_chronopixel_addr;
-           i_chrono : in t_from_chronopixel;   
-           fifo_din : out STD_LOGIC_VECTOR(11 DOWNTO 0);
-           fifo_wr_en : out STD_LOGIC;
-           fifo_rd_rst_busy : in STD_LOGIC;
-           host_connected : in STD_LOGIC; 
-           leds : out t_ctrl_leds); 
+    Port ( 
+      clk : in STD_LOGIC;
+      rst : in STD_LOGIC;
+      o_chrono_addr : out t_chronopixel_addr;
+      i_serial : out t_to_serial;
+      o_serial : in t_from_serial;
+      fifo_din : out STD_LOGIC_VECTOR(11 DOWNTO 0);
+      fifo_wr_en : out STD_LOGIC;
+      fifo_rd_rst_busy : in STD_LOGIC; -- TODO handle this pin correctly
+      host_connected : in STD_LOGIC; 
+      leds : out t_ctrl_leds
+    ); 
+  end component;
+  
+  component chrono_serial is
+    Port ( 
+      clk : in STD_LOGIC;
+      rst : in STD_LOGIC;
+      i_chrono : in t_from_chronopixel;
+      o_chrono : out t_to_chronopixel;      
+      i_serial : in t_to_serial;
+      o_serial : out t_from_serial   
+    ); 
   end component;
   
   component chrono_fifo IS
@@ -244,12 +260,10 @@ begin
     rd_rst_busy => fifo_rd_rst_busy
   );
 
-  
-  controller_inst : chrono_controller
-  port map (
+  serial_inst : chrono_serial 
+  Port map (
     clk => chrono_clock,
     rst => rst,
-    
     o_chrono.cka => CKA,
     o_chrono.ckb => CKB,
     o_chrono.ckc => CKC,
@@ -263,13 +277,20 @@ begin
     o_chrono.RAdrValid => RAdrValid,
     o_chrono.Vth => Vth, -- no output wire with such name
     o_chrono.Hit_imlar => Hit_imlar,
-    
+    i_chrono.Rd_out => Rd_out,
+    i_serial => i_serial,
+    o_serial => o_serial
+  ); 
+  
+  controller_inst : chrono_controller
+  port map (
+    clk => chrono_clock,
+    rst => rst,
     o_chrono_addr.TSCNT => TSCNT,    -- TODO verify the bit ordering (defined in interfaces.vhd)
     o_chrono_addr.RADR => RADR,      -- TODO verify the bit ordering
-    o_chrono_addr.ColAdr => ColAdr,  -- TODO verify the bit ordering
-    
-    i_chrono.Rd_out => Rd_out,
-    
+    o_chrono_addr.ColAdr => ColAdr,  -- TODO verify the bit ordering  
+    i_serial => i_serial,
+    o_serial => o_serial,  
     fifo_din => fifo_din,
     fifo_wr_en => fifo_wr_en,
     fifo_rd_rst_busy => fifo_rd_rst_busy, 

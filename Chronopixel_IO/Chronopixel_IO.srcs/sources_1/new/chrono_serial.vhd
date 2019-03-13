@@ -52,17 +52,14 @@ library work;
 use work.interfaces.all;
 
 entity chrono_serial is
-    Port ( clk : in STD_LOGIC;
-           rst : in STD_LOGIC;
-           o_chrono : out t_to_chronopixel;
-           addr_chrono : out t_chronopixel_addr;
-           i_chrono : in t_from_chronopixel;
-           opcode : in t_driver_op;
-           start : in std_logic; -- write 1 here to start data transmission
-           ready : out std_logic;
-           error : out std_logic;
-           signal recv_data : out std_logic_vector ((recv_buf_len-1) downto 0) -- chronopixel readout
-           ); 
+  Port ( 
+    clk : in STD_LOGIC;
+    rst : in STD_LOGIC;
+    i_chrono : in t_from_chronopixel;
+    o_chrono : out t_to_chronopixel;
+    i_serial : in t_to_serial;
+    o_serial : out t_from_serial        
+  ); 
 end chrono_serial;
 
 architecture rtl of chrono_serial is
@@ -190,12 +187,7 @@ architecture rtl of chrono_serial is
   constant drdtst_incCntr : std_logic_vector (0 to 129)    := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000";
   constant drdtst_wrchrdat : std_logic_vector (0 to 129)   := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000";
   constant drdtst_SET : std_logic := '0'; -- not specified, assuming zero
-  constant drdtst_len : integer := 130;
-  
-  -- please note that the incCntr and wrchr pulses here have to be 1 bit long, unlike in the spec waveform sheet
-  
-
- 
+  constant drdtst_len : integer := 130;  
    
   -- trancseiver states
   type t_trcv_state is (
@@ -225,7 +217,6 @@ architecture rtl of chrono_serial is
   signal recv_buf : std_logic_vector ((recv_buf_len-1) downto 0) := (others => '0');
 
 
-
 begin
 
   -- transceiver state update logic
@@ -239,7 +230,7 @@ begin
         when s_init =>
           trcv_state <= s_idle;
         when s_idle =>
-          if (start = '1') then
+          if (i_serial.start = '1') then
             trcv_state <= s_start;
           else
             trcv_state <= s_idle;
@@ -269,12 +260,12 @@ begin
     if rising_edge(clk) then
       case (trcv_state) is
       when s_init =>
-        recv_data <= (others => '0');
+        o_serial.recv_data <= (others => '0');
         recv_buf <= (others => '0');
-        ready <= '0';
+        o_serial.ready <= '0';
         trcv_latch <= '0';
         send_bits_left <= (others => '0');   
-        error <= '0';
+        o_serial.error <= '0';
         o_chrono.cka <= '0';
         o_chrono.ckb <= '0';
         o_chrono.ckc <= '0';
@@ -291,13 +282,13 @@ begin
         
     when s_idle =>
     when s_start =>
-      ready <= '0';      
+      o_serial.ready <= '0';      
       recv_buf <= (others => '0');
       trcv_latch <= '0';      
       
       -- load the correct data into the buffer registers
       -- for each selected operation
-      case opcode is
+      case i_serial.opcode is
       when op_idle4 =>
         send_bits_left <= to_unsigned(idle4_len, recv_ctr_len);
         CKA_buf <= (others => idle4_CKA);
@@ -429,7 +420,7 @@ begin
         latch_buf <= (others => '0');
         o_chrono.Vth <= '0';
         o_chrono.Hit_imlar <= '0';
-        error <= '1';
+        o_serial.error <= '1';
       end case;
       
     -- clock out the data and update the counter
@@ -473,12 +464,12 @@ begin
 
       -- data transmission complete, output the received data
       when s_done =>        
-        ready <= '1';
-        recv_data <= recv_buf;
+        o_serial.ready <= '1';
+        o_serial.recv_data <= recv_buf;
         
       -- unknown state, should never happen        
       when others =>
-        error <= '1';
+        o_serial.error <= '1';
       end case;
     end if;
   end process;
