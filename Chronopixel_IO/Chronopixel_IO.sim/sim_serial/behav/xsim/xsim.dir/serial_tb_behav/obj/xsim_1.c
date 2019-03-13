@@ -52,35 +52,34 @@ extern void execute_6(char*, char *);
 extern void execute_7(char*, char *);
 extern void execute_8(char*, char *);
 extern void execute_9(char*, char *);
-extern void execute_53(char*, char *);
-extern void execute_54(char*, char *);
-extern void execute_55(char*, char *);
+extern void execute_76(char*, char *);
+extern void execute_77(char*, char *);
+extern void execute_78(char*, char *);
+extern void execute_79(char*, char *);
+extern void execute_80(char*, char *);
 extern void execute_39(char*, char *);
 extern void execute_40(char*, char *);
-extern void execute_41(char*, char *);
 extern void execute_42(char*, char *);
-extern void execute_43(char*, char *);
-extern void execute_44(char*, char *);
-extern void execute_45(char*, char *);
-extern void execute_46(char*, char *);
-extern void execute_47(char*, char *);
-extern void execute_48(char*, char *);
-extern void execute_49(char*, char *);
-extern void execute_50(char*, char *);
-extern void execute_51(char*, char *);
-extern void execute_52(char*, char *);
+extern void execute_74(char*, char *);
+extern void execute_75(char*, char *);
+extern void execute_53(char*, char *);
 extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
 extern void transaction_32(char*, char*, unsigned, unsigned, unsigned);
 extern void vhdl_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-extern void transaction_41(char*, char*, unsigned, unsigned, unsigned);
-funcp funcTab[29] = {(funcp)execute_2, (funcp)execute_3, (funcp)execute_4, (funcp)execute_5, (funcp)execute_6, (funcp)execute_7, (funcp)execute_8, (funcp)execute_9, (funcp)execute_53, (funcp)execute_54, (funcp)execute_55, (funcp)execute_39, (funcp)execute_40, (funcp)execute_41, (funcp)execute_42, (funcp)execute_43, (funcp)execute_44, (funcp)execute_45, (funcp)execute_46, (funcp)execute_47, (funcp)execute_48, (funcp)execute_49, (funcp)execute_50, (funcp)execute_51, (funcp)execute_52, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_32, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_41};
-const int NumRelocateId= 29;
+extern void transaction_34(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_35(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_36(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_37(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_38(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_39(char*, char*, unsigned, unsigned, unsigned);
+funcp funcTab[28] = {(funcp)execute_2, (funcp)execute_3, (funcp)execute_4, (funcp)execute_5, (funcp)execute_6, (funcp)execute_7, (funcp)execute_8, (funcp)execute_9, (funcp)execute_76, (funcp)execute_77, (funcp)execute_78, (funcp)execute_79, (funcp)execute_80, (funcp)execute_39, (funcp)execute_40, (funcp)execute_42, (funcp)execute_74, (funcp)execute_75, (funcp)execute_53, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_32, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_34, (funcp)transaction_35, (funcp)transaction_36, (funcp)transaction_37, (funcp)transaction_38, (funcp)transaction_39};
+const int NumRelocateId= 28;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/controller_tb_behav/xsim.reloc",  (void **)funcTab, 29);
-	iki_vhdl_file_variable_register(dp + 12720);
-	iki_vhdl_file_variable_register(dp + 12776);
+	iki_relocate(dp, "xsim.dir/serial_tb_behav/xsim.reloc",  (void **)funcTab, 28);
+	iki_vhdl_file_variable_register(dp + 19280);
+	iki_vhdl_file_variable_register(dp + 19336);
 
 
 	/*Populate the transaction function pointer field in the whole net structure */
@@ -88,12 +87,12 @@ void relocate(char *dp)
 
 void sensitize(char *dp)
 {
-	iki_sensitize(dp, "xsim.dir/controller_tb_behav/xsim.reloc");
+	iki_sensitize(dp, "xsim.dir/serial_tb_behav/xsim.reloc");
 }
 
 void simulate(char *dp)
 {
-		iki_schedule_processes_at_time_zero(dp, "xsim.dir/controller_tb_behav/xsim.reloc");
+		iki_schedule_processes_at_time_zero(dp, "xsim.dir/serial_tb_behav/xsim.reloc");
 	// Initialize Verilog nets in mixed simulation, for the cases when the value at time 0 should be propagated from the mixed language Vhdl net
 	iki_execute_processes();
 
@@ -117,9 +116,9 @@ extern SYSTEMCLIB_IMP_DLLSPEC char** xsim_argv_copy ;
 int main(int argc, char **argv)
 {
     iki_heap_initialize("ms", "isimmm", 0, 2147483648) ;
-    iki_set_sv_type_file_path_name("xsim.dir/controller_tb_behav/xsim.svtype");
-    iki_set_crvs_dump_file_path_name("xsim.dir/controller_tb_behav/xsim.crvsdump");
-    void* design_handle = iki_create_design("xsim.dir/controller_tb_behav/xsim.mem", (void *)relocate, (void *)sensitize, (void *)simulate, 0, isimBridge_getWdbWriter(), 0, argc, argv);
+    iki_set_sv_type_file_path_name("xsim.dir/serial_tb_behav/xsim.svtype");
+    iki_set_crvs_dump_file_path_name("xsim.dir/serial_tb_behav/xsim.crvsdump");
+    void* design_handle = iki_create_design("xsim.dir/serial_tb_behav/xsim.mem", (void *)relocate, (void *)sensitize, (void *)simulate, 0, isimBridge_getWdbWriter(), 0, argc, argv);
      iki_set_rc_trial_count(100);
     (void) design_handle;
     return iki_simulate_design();

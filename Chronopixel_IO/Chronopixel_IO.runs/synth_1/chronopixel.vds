@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Fri Mar  8 23:07:35 2019
-# Process ID: 26724
+# Start of session at: Tue Mar 12 23:49:44 2019
+# Process ID: 9460
 # Current directory: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1
 # Command line: vivado.exe -log chronopixel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source chronopixel.tcl
 # Log file: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.vds
@@ -15,27 +15,27 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1144 
+INFO: Helper process launched with PID 14412 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 396.957 ; gain = 102.570
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 395.336 ; gain = 101.691
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'chronopixel' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'chronopixel' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:91]
 	Parameter DIFF_TERM bound to: 0 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_0' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:151]
+INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_0' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:184]
 	Parameter DIFF_TERM bound to: 0 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_1' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:160]
+INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_1' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:193]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:169]
+INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: 0 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
@@ -43,95 +43,45 @@ INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFD
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-113] binding component instance 'sys_clk_IBUFDS' to cell 'IBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:177]
+INFO: [Synth 8-113] binding component instance 'sys_clk_IBUFDS' to cell 'IBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:210]
 	Parameter BUFR_DIVIDE bound to: 8 - type: string 
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
-INFO: [Synth 8-113] binding component instance 'BUFR_inst' to cell 'BUFR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:185]
+INFO: [Synth 8-113] binding component instance 'BUFR_inst' to cell 'BUFR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:218]
 	Parameter BUFR_DIVIDE bound to: 8 - type: string 
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
-INFO: [Synth 8-113] binding component instance 'BUFR_inst2' to cell 'BUFR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:198]
-INFO: [Synth 8-3491] module 'heartbeat' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:37' bound to instance 'heartbeat_inst' of component 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:210]
+INFO: [Synth 8-113] binding component instance 'BUFR_inst2' to cell 'BUFR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:231]
+INFO: [Synth 8-3491] module 'heartbeat' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:37' bound to instance 'heartbeat_inst' of component 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:243]
 INFO: [Synth 8-638] synthesizing module 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
 	Parameter counter_max bound to: 32'b00000000000101111101011110000100 
 INFO: [Synth 8-256] done synthesizing module 'heartbeat' (1#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
-INFO: [Synth 8-3491] module 'chrono_fifo' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-26724-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6' bound to instance 'fifo_inst' of component 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:217]
-INFO: [Synth 8-6157] synthesizing module 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-26724-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'chrono_fifo' (2#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-26724-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
-INFO: [Synth 8-3491] module 'chrono_controller' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:39' bound to instance 'controller_inst' of component 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:231]
-INFO: [Synth 8-638] synthesizing module 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
-INFO: [Synth 8-3491] module 'chrono_serial' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:51' bound to instance 'chrono_serial_inst' of component 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:120]
+INFO: [Synth 8-3491] module 'chrono_fifo' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-9460-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6' bound to instance 'fifo_inst' of component 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:250]
+INFO: [Synth 8-6157] synthesizing module 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-9460-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'chrono_fifo' (2#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-9460-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
+INFO: [Synth 8-3491] module 'chrono_serial' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54' bound to instance 'serial_inst' of component 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:263]
 INFO: [Synth 8-638] synthesizing module 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
-WARNING: [Synth 8-3848] Net o_chrono[Vth] in module/entity chrono_serial does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54]
-WARNING: [Synth 8-3848] Net o_chrono[Hit_imlar] in module/entity chrono_serial does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54]
-WARNING: [Synth 8-3848] Net o_chrono[inc_tstmp] in module/entity chrono_serial does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54]
-WARNING: [Synth 8-3848] Net o_chrono[reading_d] in module/entity chrono_serial does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54]
-WARNING: [Synth 8-3848] Net addr_chrono[TSCNT] in module/entity chrono_serial does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:55]
-WARNING: [Synth 8-3848] Net addr_chrono[RADR] in module/entity chrono_serial does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:55]
-WARNING: [Synth 8-3848] Net addr_chrono[ColAdr] in module/entity chrono_serial does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:55]
 INFO: [Synth 8-256] done synthesizing module 'chrono_serial' (3#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
-WARNING: [Synth 8-6014] Unused sequential element ctrl_error_reg was removed.  [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:272]
-WARNING: [Synth 8-3848] Net leds[err] in module/entity chrono_controller does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:49]
-WARNING: [Synth 8-3848] Net leds[idle4] in module/entity chrono_controller does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:49]
-WARNING: [Synth 8-3848] Net leds[calin4] in module/entity chrono_controller does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:49]
-WARNING: [Synth 8-3848] Net leds[calib4] in module/entity chrono_controller does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:49]
-WARNING: [Synth 8-3848] Net leds[mrst] in module/entity chrono_controller does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:49]
-WARNING: [Synth 8-3848] Net leds[wrtsig] in module/entity chrono_controller does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:49]
-WARNING: [Synth 8-3848] Net leds[drdtst] in module/entity chrono_controller does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:49]
+INFO: [Synth 8-3491] module 'chrono_controller' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:39' bound to instance 'controller_inst' of component 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
 INFO: [Synth 8-256] done synthesizing module 'chrono_controller' (4#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
-WARNING: [Synth 8-3848] Net hi_out in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:39]
-WARNING: [Synth 8-3848] Net hi_muxsel in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:42]
-WARNING: [Synth 8-3848] Net ddr3_addr in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:47]
-WARNING: [Synth 8-3848] Net ddr3_ba in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:48]
-WARNING: [Synth 8-3848] Net ddr3_odt in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:49]
-WARNING: [Synth 8-3848] Net ddr3_ras_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:55]
-WARNING: [Synth 8-3848] Net ddr3_cas_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:56]
-WARNING: [Synth 8-3848] Net ddr3_we_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:57]
-WARNING: [Synth 8-3848] Net ddr3_reset_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:58]
-WARNING: [Synth 8-3848] Net ddr3_cke in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:59]
-WARNING: [Synth 8-3848] Net spi_dout in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:65]
-WARNING: [Synth 8-3848] Net RMEM_SEL in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:76]
-WARNING: [Synth 8-3848] Net RdTstH in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:80]
-WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:90]
-WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_T in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:92]
-WARNING: [Synth 8-3848] Net ddr3_ck_OBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:93]
-WARNING: [Synth 8-3848] Net host_connected in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:105]
-WARNING: [Synth 8-3848] Net fifo_rd_en in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:102]
-INFO: [Synth 8-256] done synthesizing module 'chronopixel' (5#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:89]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port o_chrono[Vth]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port o_chrono[Hit_imlar]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port o_chrono[inc_tstmp]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port o_chrono[reading_d]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][11]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][10]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][9]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][8]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][7]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][6]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][5]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][4]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][3]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][2]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][1]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[TSCNT][0]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[RADR][5]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[RADR][4]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[RADR][3]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[RADR][2]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[RADR][1]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[RADR][0]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[ColAdr][5]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[ColAdr][4]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[ColAdr][3]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[ColAdr][2]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[ColAdr][1]
-WARNING: [Synth 8-3331] design chrono_serial has unconnected port addr_chrono[ColAdr][0]
-WARNING: [Synth 8-3331] design chrono_controller has unconnected port leds[err]
-WARNING: [Synth 8-3331] design chrono_controller has unconnected port leds[idle4]
-WARNING: [Synth 8-3331] design chrono_controller has unconnected port leds[calin4]
-WARNING: [Synth 8-3331] design chrono_controller has unconnected port leds[calib4]
-WARNING: [Synth 8-3331] design chrono_controller has unconnected port leds[mrst]
-WARNING: [Synth 8-3331] design chrono_controller has unconnected port leds[wrtsig]
-WARNING: [Synth 8-3331] design chrono_controller has unconnected port leds[drdtst]
+WARNING: [Synth 8-3848] Net hi_out in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:41]
+WARNING: [Synth 8-3848] Net hi_muxsel in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:44]
+WARNING: [Synth 8-3848] Net ddr3_addr in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:49]
+WARNING: [Synth 8-3848] Net ddr3_ba in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:50]
+WARNING: [Synth 8-3848] Net ddr3_odt in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:51]
+WARNING: [Synth 8-3848] Net ddr3_ras_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:57]
+WARNING: [Synth 8-3848] Net ddr3_cas_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:58]
+WARNING: [Synth 8-3848] Net ddr3_we_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:59]
+WARNING: [Synth 8-3848] Net ddr3_reset_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:60]
+WARNING: [Synth 8-3848] Net ddr3_cke in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:61]
+WARNING: [Synth 8-3848] Net spi_dout in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:67]
+WARNING: [Synth 8-3848] Net host_connected in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:107]
+WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:92]
+WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_T in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:94]
+WARNING: [Synth 8-3848] Net ddr3_ck_OBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:95]
+WARNING: [Synth 8-3848] Net fifo_rd_en in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:104]
+INFO: [Synth 8-256] done synthesizing module 'chronopixel' (5#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:91]
+WARNING: [Synth 8-3917] design chronopixel has port RMEM_SEL driven by constant 0
+WARNING: [Synth 8-3917] design chronopixel has port RdTstH driven by constant 0
 WARNING: [Synth 8-3331] design chrono_controller has unconnected port fifo_rd_rst_busy
 WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[1]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[0]
@@ -161,8 +111,6 @@ WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_we_n
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_reset_n
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cke
 WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_dout
-WARNING: [Synth 8-3331] design chronopixel has unconnected port RMEM_SEL
-WARNING: [Synth 8-3331] design chronopixel has unconnected port RdTstH
 WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[15]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[14]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[13]
@@ -197,9 +145,19 @@ WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[2]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[1]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[0]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[1]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_cs
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[7]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[6]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_clk
+WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_din
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.031 ; gain = 158.645
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 451.789 ; gain = 158.145
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -208,15 +166,15 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin controller_inst:host_connected to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:231]
+WARNING: [Synth 8-3295] tying undriven pin controller_inst:host_connected to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:285]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.031 ; gain = 158.645
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 451.789 ; gain = 158.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.031 ; gain = 158.645
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 451.789 ; gain = 158.145
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -242,50 +200,57 @@ Finished Parsing XDC File [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronop
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/chronopixel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/chronopixel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 796.098 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 788.824 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 796.098 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 788.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS, OBUFTDS): 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 796.098 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 796.098 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 788.824 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 788.824 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 796.098 ; gain = 501.711
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 788.824 ; gain = 495.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a50tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 796.098 ; gain = 501.711
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 788.824 ; gain = 495.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for fifo_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 796.098 ; gain = 501.711
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 788.824 ; gain = 495.180
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "led_reg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'trcv_state_reg' in module 'chrono_serial'
-INFO: [Synth 8-5544] ROM "ready" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "o_serial[ready]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "trcv_latch" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "o_chrono[Hit_imlar]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "RdParLd_buf" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "o_chrono[cka]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "o_serial[recv_data]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "send_bits_left" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "recv_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "recv_data0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "o_chrono[cka]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "o_chrono[Vth]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "o_serial_reg[recv_data]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "CKB_buf" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "CKB_buf0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "trcv_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "trcv_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'ctrl_state_reg' in module 'chrono_controller'
 INFO: [Synth 8-5546] ROM "ColAdr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "leds[drdtst]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "leds[wrtsig]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "leds[calib4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "leds[idle4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_error" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5587] ROM size for "ctrl_seq_ctr" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "driver_opcode" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "driver_start" is below threshold of ROM address width. It will be mapped to LUTs
@@ -338,7 +303,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'trcv_state_reg' using enco
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'ctrl_state_reg' using encoding 'one-hot' in module 'chrono_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 796.098 ; gain = 501.711
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 788.824 ; gain = 495.180
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -357,17 +322,17 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 2     
 +---Registers : 
-	              130 Bit    Registers := 14    
+	              130 Bit    Registers := 12    
 	               32 Bit    Registers := 1     
 	               13 Bit    Registers := 1     
 	               12 Bit    Registers := 3     
 	                8 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 19    
+	                1 Bit    Registers := 24    
 +---Muxes : 
 	   7 Input    130 Bit        Muxes := 11    
-	   5 Input    130 Bit        Muxes := 18    
+	   5 Input    130 Bit        Muxes := 16    
 	   7 Input    123 Bit        Muxes := 1     
 	   7 Input    120 Bit        Muxes := 1     
 	   7 Input    117 Bit        Muxes := 1     
@@ -378,19 +343,17 @@ Detailed RTL Component Info :
 	  17 Input     13 Bit        Muxes := 1     
 	   5 Input     12 Bit        Muxes := 1     
 	  17 Input     12 Bit        Muxes := 1     
-	   7 Input     11 Bit        Muxes := 1     
 	   7 Input      8 Bit        Muxes := 1     
 	   5 Input      8 Bit        Muxes := 1     
-	   7 Input      7 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	  17 Input      6 Bit        Muxes := 2     
 	   5 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	  17 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
-	   7 Input      1 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 6     
-	  17 Input      1 Bit        Muxes := 9     
+	   7 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 7     
+	  17 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -413,26 +376,24 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	              130 Bit    Registers := 14    
+	              130 Bit    Registers := 12    
 	               12 Bit    Registers := 2     
 	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 16    
 +---Muxes : 
 	   7 Input    130 Bit        Muxes := 11    
-	   5 Input    130 Bit        Muxes := 18    
+	   5 Input    130 Bit        Muxes := 16    
 	   7 Input    123 Bit        Muxes := 1     
 	   7 Input    120 Bit        Muxes := 1     
 	   7 Input    117 Bit        Muxes := 1     
 	   7 Input    106 Bit        Muxes := 1     
 	   5 Input     12 Bit        Muxes := 1     
-	   7 Input     11 Bit        Muxes := 1     
 	   7 Input      8 Bit        Muxes := 1     
 	   5 Input      8 Bit        Muxes := 1     
-	   7 Input      7 Bit        Muxes := 1     
 	   5 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
-	   7 Input      1 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 6     
+	   7 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 7     
 Module chrono_controller 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -444,7 +405,7 @@ Detailed RTL Component Info :
 	               12 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
 +---Muxes : 
 	  21 Input     21 Bit        Muxes := 1     
 	   2 Input     21 Bit        Muxes := 10    
@@ -454,7 +415,7 @@ Detailed RTL Component Info :
 	  17 Input      6 Bit        Muxes := 2     
 	  17 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
-	  17 Input      1 Bit        Muxes := 9     
+	  17 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -477,210 +438,240 @@ INFO: [Synth 8-5546] ROM "controller_inst/ctrl_state" won't be mapped to RAM bec
 INFO: [Synth 8-5546] ROM "controller_inst/ctrl_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "heartbeat_inst/counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "heartbeat_inst/led_reg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[129]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[129]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[129]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[129]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[129] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TIN_buf_reg[129]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[129]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[129] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[129] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKB_buf_reg[129] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[129] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[128]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[128]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[128]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[128]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[128] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TIN_buf_reg[128]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[128]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[128] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[128] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[128] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/o_chrono_reg[ckb] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[128]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[127]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[127]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[127]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[127]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[127]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[127] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[128]' (FDE) to 'controller_inst/chrono_serial_inst/TIN_buf_reg[127]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TIN_buf_reg[127]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[127]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[127] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[128]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[127]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[127] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[128]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[127]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[127] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[127]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[126]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[126]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[126]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[126]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[126]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[126] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[127]' (FDE) to 'controller_inst/chrono_serial_inst/TIN_buf_reg[126]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TIN_buf_reg[126]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[126]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[126] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[127]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[126]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[126] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[127]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[126]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[126] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[126]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[125]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[125]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[125]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[125]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[125]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[125] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[126]' (FDE) to 'controller_inst/chrono_serial_inst/TIN_buf_reg[125]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TIN_buf_reg[125]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[125]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[125] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[126]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[125]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[125] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[126]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[125]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[125] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[125]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[124]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[124]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[124]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[124]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[124]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[124] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[125]' (FDE) to 'controller_inst/chrono_serial_inst/TIN_buf_reg[124]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TIN_buf_reg[124]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[124]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[124] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[125]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[124]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[124] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[125]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[124]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[124] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[124]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[123]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[123]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[123]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[123]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[123]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[123] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[124]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[123]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[123] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[124]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[123]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[123] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[124]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[123]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[123] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[123]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[122]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[122]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[122]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[122]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[122]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[122] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[123]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[122]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[122] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[123]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[122]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[122] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[123]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[122]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[122] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[122]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[121]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[121]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[121]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[121]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[121]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[121] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[122]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[121]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[121] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[122]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[121]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[121] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[122]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[121]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[121] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[121]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[120]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[120]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[120]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[120]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[120]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[120] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[121]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[120]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[120] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[121]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[120]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[120] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[121]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[120]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[120] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[120]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[119]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[119]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[119]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[119]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[119]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[119] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[120]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[119]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[119] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[120]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[119]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[119] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[120]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[119]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[119] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[119]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[118]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[118]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[118]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[118]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[118]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[118] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[119]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[118]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[118] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[119]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[118]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[118] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[119]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[118]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[118] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[118]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[117]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[117]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[117]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[117]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[117]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[118]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[117]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[118]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[117]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[118]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[117]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[117]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[116]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[116]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[116]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[116]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[116]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/TNIN_buf_reg[117]' (FDE) to 'controller_inst/chrono_serial_inst/TNIN_buf_reg[116]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/TNIN_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[117]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[116]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[117]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[116]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[116]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[115]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[115]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[115]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[115]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[115]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[115] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[116]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[115]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[115] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[116]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[115]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[115] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[115]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[114]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[114]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[114]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[114]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[114]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[114] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[115]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[114]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[114] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[115]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[114]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[114] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[114]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[113]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[113]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[113]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdClk_buf_reg[113]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[113]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[113] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[114]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[113]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[113] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/CKA_buf_reg[114]' (FDE) to 'controller_inst/chrono_serial_inst/CKA_buf_reg[113]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[113] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[113]' (FDE) to 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[112]'
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/RdParLd_buf_reg[112]' (FDE) to 'controller_inst/chrono_serial_inst/RAdrValid_buf_reg[112]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[112] )
-INFO: [Synth 8-3886] merging instance 'controller_inst/chrono_serial_inst/SET_buf_reg[113]' (FDE) to 'controller_inst/chrono_serial_inst/SET_buf_reg[112]'
+WARNING: [Synth 8-3917] design chronopixel has port led[7] driven by constant 1
+WARNING: [Synth 8-3917] design chronopixel has port RMEM_SEL driven by constant 0
+WARNING: [Synth 8-3917] design chronopixel has port RdTstH driven by constant 0
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_muxsel
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[14]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[13]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[12]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[11]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[10]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[9]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[8]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[7]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[6]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_odt[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ras_n
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cas_n
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_we_n
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_reset_n
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[129] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[129]' (FDE) to 'serial_inst/TNIN_buf_reg[129]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[129] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[129] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKB_buf_reg[129] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[129] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/ctrl_error_reg )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[128]' (FDE) to 'serial_inst/RAdrValid_buf_reg[128]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[128]' (FDE) to 'serial_inst/RAdrValid_buf_reg[128]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[128] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[128]' (FDE) to 'serial_inst/TNIN_buf_reg[128]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[128] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[128] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[128] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[128]' (FDE) to 'serial_inst/RdParLd_buf_reg[127]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[127]' (FDE) to 'serial_inst/RAdrValid_buf_reg[127]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[127]' (FDE) to 'serial_inst/RAdrValid_buf_reg[127]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[127] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[128]' (FDE) to 'serial_inst/TIN_buf_reg[127]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[127]' (FDE) to 'serial_inst/TNIN_buf_reg[127]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[127] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[128]' (FDE) to 'serial_inst/SET_buf_reg[127]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[127] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[128]' (FDE) to 'serial_inst/CKA_buf_reg[127]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[127] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[127]' (FDE) to 'serial_inst/RdParLd_buf_reg[126]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[126]' (FDE) to 'serial_inst/RAdrValid_buf_reg[126]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[126]' (FDE) to 'serial_inst/RAdrValid_buf_reg[126]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[126] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[127]' (FDE) to 'serial_inst/TIN_buf_reg[126]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[126]' (FDE) to 'serial_inst/TNIN_buf_reg[126]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[126] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[127]' (FDE) to 'serial_inst/SET_buf_reg[126]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[126] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[127]' (FDE) to 'serial_inst/CKA_buf_reg[126]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[126] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[126]' (FDE) to 'serial_inst/RdParLd_buf_reg[125]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[125]' (FDE) to 'serial_inst/RAdrValid_buf_reg[125]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[125]' (FDE) to 'serial_inst/RAdrValid_buf_reg[125]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[125] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[126]' (FDE) to 'serial_inst/TIN_buf_reg[125]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[125]' (FDE) to 'serial_inst/TNIN_buf_reg[125]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[125] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[126]' (FDE) to 'serial_inst/SET_buf_reg[125]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[125] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[126]' (FDE) to 'serial_inst/CKA_buf_reg[125]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[125] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[125]' (FDE) to 'serial_inst/RdParLd_buf_reg[124]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[124]' (FDE) to 'serial_inst/RAdrValid_buf_reg[124]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[124]' (FDE) to 'serial_inst/RAdrValid_buf_reg[124]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[124] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[125]' (FDE) to 'serial_inst/TIN_buf_reg[124]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[124]' (FDE) to 'serial_inst/TNIN_buf_reg[124]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[124] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[125]' (FDE) to 'serial_inst/SET_buf_reg[124]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[124] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[125]' (FDE) to 'serial_inst/CKA_buf_reg[124]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[124] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[124]' (FDE) to 'serial_inst/RdParLd_buf_reg[123]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[123]' (FDE) to 'serial_inst/RAdrValid_buf_reg[123]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[123]' (FDE) to 'serial_inst/RAdrValid_buf_reg[123]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[123] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[124]' (FDE) to 'serial_inst/TNIN_buf_reg[123]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[123] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[124]' (FDE) to 'serial_inst/SET_buf_reg[123]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[123] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[124]' (FDE) to 'serial_inst/CKA_buf_reg[123]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[123] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[123]' (FDE) to 'serial_inst/RdParLd_buf_reg[122]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[122]' (FDE) to 'serial_inst/RAdrValid_buf_reg[122]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[122]' (FDE) to 'serial_inst/RAdrValid_buf_reg[122]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[122] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[123]' (FDE) to 'serial_inst/TNIN_buf_reg[122]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[122] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[123]' (FDE) to 'serial_inst/SET_buf_reg[122]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[122] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[123]' (FDE) to 'serial_inst/CKA_buf_reg[122]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[122] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[122]' (FDE) to 'serial_inst/RdParLd_buf_reg[121]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[121]' (FDE) to 'serial_inst/RAdrValid_buf_reg[121]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[121]' (FDE) to 'serial_inst/RAdrValid_buf_reg[121]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[121] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[122]' (FDE) to 'serial_inst/TNIN_buf_reg[121]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[121] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[122]' (FDE) to 'serial_inst/SET_buf_reg[121]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[121] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[122]' (FDE) to 'serial_inst/CKA_buf_reg[121]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[121] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[121]' (FDE) to 'serial_inst/RdParLd_buf_reg[120]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[120]' (FDE) to 'serial_inst/RAdrValid_buf_reg[120]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[120]' (FDE) to 'serial_inst/RAdrValid_buf_reg[120]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[120] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[121]' (FDE) to 'serial_inst/TNIN_buf_reg[120]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[120] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[121]' (FDE) to 'serial_inst/SET_buf_reg[120]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[120] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[121]' (FDE) to 'serial_inst/CKA_buf_reg[120]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[120] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[120]' (FDE) to 'serial_inst/RdParLd_buf_reg[119]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[119]' (FDE) to 'serial_inst/RAdrValid_buf_reg[119]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[119]' (FDE) to 'serial_inst/RAdrValid_buf_reg[119]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[119] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[120]' (FDE) to 'serial_inst/TNIN_buf_reg[119]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[119] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[120]' (FDE) to 'serial_inst/SET_buf_reg[119]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[119] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[120]' (FDE) to 'serial_inst/CKA_buf_reg[119]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[119] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[119]' (FDE) to 'serial_inst/RdParLd_buf_reg[118]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[118]' (FDE) to 'serial_inst/RAdrValid_buf_reg[118]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[118]' (FDE) to 'serial_inst/RAdrValid_buf_reg[118]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[118] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[119]' (FDE) to 'serial_inst/TNIN_buf_reg[118]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[118] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[119]' (FDE) to 'serial_inst/SET_buf_reg[118]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[118] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[119]' (FDE) to 'serial_inst/CKA_buf_reg[118]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[118] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[118]' (FDE) to 'serial_inst/RdParLd_buf_reg[117]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[117]' (FDE) to 'serial_inst/RAdrValid_buf_reg[117]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[117]' (FDE) to 'serial_inst/RAdrValid_buf_reg[117]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[117] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[118]' (FDE) to 'serial_inst/TNIN_buf_reg[117]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[117] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[118]' (FDE) to 'serial_inst/SET_buf_reg[117]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[117] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[118]' (FDE) to 'serial_inst/CKA_buf_reg[117]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[117] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[117]' (FDE) to 'serial_inst/RdParLd_buf_reg[116]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[116]' (FDE) to 'serial_inst/RAdrValid_buf_reg[116]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[116]' (FDE) to 'serial_inst/RAdrValid_buf_reg[116]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[116] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[117]' (FDE) to 'serial_inst/TNIN_buf_reg[116]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[116] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[117]' (FDE) to 'serial_inst/SET_buf_reg[116]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[116] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[117]' (FDE) to 'serial_inst/CKA_buf_reg[116]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[116] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[116]' (FDE) to 'serial_inst/RdParLd_buf_reg[115]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[115]' (FDE) to 'serial_inst/RAdrValid_buf_reg[115]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[115]' (FDE) to 'serial_inst/RAdrValid_buf_reg[115]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[115] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[116]' (FDE) to 'serial_inst/SET_buf_reg[115]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[115] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[116]' (FDE) to 'serial_inst/CKA_buf_reg[115]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[115] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[115]' (FDE) to 'serial_inst/RdParLd_buf_reg[114]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[114]' (FDE) to 'serial_inst/RAdrValid_buf_reg[114]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[114]' (FDE) to 'serial_inst/RAdrValid_buf_reg[114]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[114] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[115]' (FDE) to 'serial_inst/SET_buf_reg[114]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[114] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[115]' (FDE) to 'serial_inst/CKA_buf_reg[114]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[114] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[114]' (FDE) to 'serial_inst/RdParLd_buf_reg[113]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[113]' (FDE) to 'serial_inst/RAdrValid_buf_reg[113]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[113]' (FDE) to 'serial_inst/RAdrValid_buf_reg[113]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[113] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[114]' (FDE) to 'serial_inst/SET_buf_reg[113]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[113] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[114]' (FDE) to 'serial_inst/CKA_buf_reg[113]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[113] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[113]' (FDE) to 'serial_inst/RdParLd_buf_reg[112]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[112]' (FDE) to 'serial_inst/RAdrValid_buf_reg[112]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[112] )
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[113]' (FDE) to 'serial_inst/SET_buf_reg[112]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[112] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[112] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[111] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[111] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[111] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[110] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[110] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[110] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[109] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[109] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[109] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[108] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[108] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[108] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[107] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[107] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[107] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[106] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[106] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[106] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[105] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[105] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[105] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[104] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[104] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[104] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[103] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[103] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[103] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/RAdrValid_buf_reg[102] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/SET_buf_reg[102] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/chrono_serial_inst/CKA_buf_reg[102] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[112] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[112] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[111] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[111] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[111] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[110] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[110] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[110] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[109] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[109] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[109] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[108] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[108] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[108] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[107] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[107] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[107] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[106] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[106] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[106] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[105] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[105] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[105] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[104] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[104] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[104] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[103] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[103] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[103] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[102] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[102] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[102] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 796.098 ; gain = 501.711
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 788.824 ; gain = 495.180
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -692,13 +683,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 796.098 ; gain = 501.711
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 788.824 ; gain = 495.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -710,7 +701,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -735,7 +726,7 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 CRITICAL WARNING: [Synth 8-4442] BlackBox module fifo_inst has unconnected pin rd_en
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -748,7 +739,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -760,50 +751,50 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+------------+---------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                                                | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+---------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|chronopixel | controller_inst/chrono_serial_inst/latch_buf_reg[0]     | 24     | 1     | YES          | NO                 | YES               | 0      | 1       | 
-|chronopixel | controller_inst/chrono_serial_inst/latch_buf_reg[25]    | 7      | 11    | YES          | NO                 | YES               | 11     | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/latch_buf_reg[113]   | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/CKA_buf_reg[0]       | 20     | 1     | YES          | NO                 | YES               | 0      | 1       | 
-|chronopixel | controller_inst/chrono_serial_inst/TIN_buf_reg[0]       | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/TIN_buf_reg[12]      | 8      | 2     | YES          | NO                 | YES               | 2      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/TIN_buf_reg[23]      | 11     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/TNIN_buf_reg[4]      | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/TNIN_buf_reg[15]     | 8      | 2     | YES          | NO                 | YES               | 2      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/RdParLd_buf_reg[0]   | 10     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/RdClk_buf_reg[0]     | 13     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/RdClk_buf_reg[25]    | 4      | 11    | YES          | NO                 | YES               | 11     | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/RAdrValid_buf_reg[0] | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | controller_inst/chrono_serial_inst/TNIN_buf_reg[88]     | 24     | 2     | YES          | NO                 | YES               | 0      | 2       | 
-|chronopixel | controller_inst/chrono_serial_inst/TNIN_buf_reg[40]     | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-+------------+---------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|chronopixel | serial_inst/latch_buf_reg[0]     | 24     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|chronopixel | serial_inst/latch_buf_reg[25]    | 7      | 11    | YES          | NO                 | YES               | 11     | 0       | 
+|chronopixel | serial_inst/latch_buf_reg[113]   | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|chronopixel | serial_inst/CKA_buf_reg[0]       | 20     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|chronopixel | serial_inst/TIN_buf_reg[0]       | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|chronopixel | serial_inst/TIN_buf_reg[12]      | 8      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|chronopixel | serial_inst/TIN_buf_reg[23]      | 11     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|chronopixel | serial_inst/TNIN_buf_reg[4]      | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|chronopixel | serial_inst/TNIN_buf_reg[15]     | 8      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|chronopixel | serial_inst/RdParLd_buf_reg[0]   | 10     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|chronopixel | serial_inst/RdClk_buf_reg[0]     | 13     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|chronopixel | serial_inst/RdClk_buf_reg[25]    | 4      | 11    | YES          | NO                 | YES               | 11     | 0       | 
+|chronopixel | serial_inst/RAdrValid_buf_reg[0] | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|chronopixel | serial_inst/TNIN_buf_reg[88]     | 24     | 2     | YES          | NO                 | YES               | 0      | 2       | 
+|chronopixel | serial_inst/TNIN_buf_reg[40]     | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -826,58 +817,57 @@ Report Cell Usage:
 |1     |chrono_fifo |     1|
 |2     |BUFR        |     2|
 |3     |CARRY4      |    14|
-|4     |LUT1        |    14|
-|5     |LUT2        |   182|
-|6     |LUT3        |   185|
-|7     |LUT4        |    24|
-|8     |LUT5        |    44|
-|9     |LUT6        |   131|
+|4     |LUT1        |    19|
+|5     |LUT2        |   130|
+|6     |LUT3        |   235|
+|7     |LUT4        |    30|
+|8     |LUT5        |    47|
+|9     |LUT6        |   129|
 |10    |SRL16E      |    34|
 |11    |SRLC32E     |     4|
-|12    |FDRE        |   273|
+|12    |FDRE        |   278|
 |13    |FDSE        |   419|
 |14    |IBUF        |     2|
 |15    |IBUFDS      |     1|
 |16    |IOBUFDS     |     2|
-|17    |OBUF        |    43|
+|17    |OBUF        |    45|
 |18    |OBUFDS      |     1|
-|19    |OBUFT       |    30|
+|19    |OBUFT       |    28|
 +------+------------+------+
 
 Report Instance Areas: 
-+------+-----------------------+------------------+------+
-|      |Instance               |Module            |Cells |
-+------+-----------------------+------------------+------+
-|1     |top                    |                  |  1421|
-|2     |  controller_inst      |chrono_controller |  1271|
-|3     |    chrono_serial_inst |chrono_serial     |  1135|
-|4     |  heartbeat_inst       |heartbeat         |    53|
-+------+-----------------------+------------------+------+
++------+------------------+------------------+------+
+|      |Instance          |Module            |Cells |
++------+------------------+------------------+------+
+|1     |top               |                  |  1436|
+|2     |  controller_inst |chrono_controller |   171|
+|3     |  heartbeat_inst  |heartbeat         |    53|
+|4     |  serial_inst     |chrono_serial     |  1115|
++------+------------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 841.297 ; gain = 546.910
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 839.617 ; gain = 545.973
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 103 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 841.297 ; gain = 203.844
-Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 841.297 ; gain = 546.910
+Synthesis finished with 0 errors, 1 critical warnings and 76 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 839.617 ; gain = 208.938
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 839.617 ; gain = 545.973
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'chronopixel' is not ideal for floorplanning, since the cellview 'chrono_serial' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 841.297 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 839.617 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS, OBUFTDS): 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-277 Infos, 145 Warnings, 1 Critical Warnings and 0 Errors encountered.
+284 Infos, 132 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 841.297 ; gain = 558.375
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 841.297 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 839.617 ; gain = 557.441
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 839.617 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file chronopixel_utilization_synth.rpt -pb chronopixel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar  8 23:08:18 2019...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 23:50:28 2019...

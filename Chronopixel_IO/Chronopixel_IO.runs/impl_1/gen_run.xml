@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1552448982">
+<GenRun Id="impl_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1552449142">
+  <File Type="OPT-HWDEF" Name="chronopixel.hwdef"/>
+  <File Type="PA-DCP" Name="chronopixel.dcp"/>
+  <File Type="BITSTR-BMM" Name="chronopixel_bd.bmm"/>
   <File Type="PA-TCL" Name="chronopixel.tcl"/>
   <File Type="REPORTS-TCL" Name="chronopixel_reports.tcl"/>
-  <File Type="RDS-RDS" Name="chronopixel.vds"/>
-  <File Type="RDS-UTIL" Name="chronopixel_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="chronopixel_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="chronopixel.dcp"/>
+  <File Type="OPT-DCP" Name="chronopixel_opt.dcp"/>
+  <File Type="PWROPT-DCP" Name="chronopixel_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="chronopixel_placed.dcp"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="chronopixel_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="chronopixel_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="chronopixel.bin"/>
+  <File Type="PHYSOPT-DCP" Name="chronopixel_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="chronopixel.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="chronopixel_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="chronopixel_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="chronopixel_routed_bb.dcp"/>
+  <File Type="BITSTR-LTX" Name="chronopixel.ltx"/>
+  <File Type="BITSTR-MMI" Name="chronopixel.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="chronopixel.sysdef"/>
+  <File Type="ROUTE-TIMING-PB" Name="chronopixel_timing_summary_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="chronopixel_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="chronopixel_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="chronopixel.bit"/>
+  <File Type="BITSTR-RBT" Name="chronopixel.rbt"/>
+  <File Type="BITSTR-NKY" Name="chronopixel.nky"/>
+  <File Type="BG-BGN" Name="chronopixel.bgn"/>
+  <File Type="BG-DRC" Name="chronopixel.drc"/>
+  <File Type="RDI-RDI" Name="chronopixel.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/interfaces.vhd">
@@ -66,8 +89,16 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-    <Step Id="synth_design"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="chrono_fifo"/>
 </GenRun>
