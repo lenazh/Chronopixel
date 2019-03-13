@@ -135,6 +135,8 @@ begin
   o_chrono_addr.ColAdr <= std_logic_vector(ColAdr);
   fifo_wr_en <= wr_en;
   fifo_din <= recv_data;
+  leds.err_serial <= driver_error;
+  leds.err <= ctrl_error;
 
   -- controller state update logic
   process (clk) 
@@ -270,25 +272,29 @@ begin
         ctrl_seq_ctr <= (others => '0');
         wr_en <= '0';
         ctrl_error <= '0';
+        leds.idle4 <= '0';
+        leds.calib4 <= '0';
+        leds.wrtsig <= '0';
+        leds.drdtst <= '0';
       
       -- xxxx_setup states are pre-loop part of execution
       -- initialize variables here
       when s_idle4_setup =>
         ctrl_seq_ctr <= to_unsigned(idle4_rep-1, ctrl_seq_ctr_len);
-        TSCNT <= (others => '0');
+        TSCNT <= (others => '0');        
         
       when s_calib4_setup =>
-        ctrl_seq_ctr <= to_unsigned(calib4_rep-1, ctrl_seq_ctr_len); 
+        ctrl_seq_ctr <= to_unsigned(calib4_rep-1, ctrl_seq_ctr_len);        
         
       when s_wrtsig_setup =>
         ctrl_seq_ctr <= to_unsigned(wrtsig_rep-1, ctrl_seq_ctr_len);
-        TSCNT <= (0 => '1', others => '0');
+        TSCNT <= (0 => '1', others => '0');       
 
       when s_drdtst_setup =>
         ctrl_seq_ctr <= to_unsigned(drdtst_rep-1, ctrl_seq_ctr_len);         
         TSCNT <= (others => '0');
         RADR <= (others => '0');      -- row of the pixel being read
-        ColAdr <= (others => '0');    -- column of the pixel being read
+        ColAdr <= (others => '0');    -- column of the pixel being read        
       
       -- xxxx_start states are beginnings of each loop 
       -- update iteration counters here
@@ -297,6 +303,7 @@ begin
         ctrl_seq_ctr <= ctrl_seq_ctr - 1;
         driver_start <= '1';
         driver_opcode <= op_idle4;
+        leds.idle4 <= '1';
         
       when s_calin4_start =>         
         driver_opcode <= op_calin4;
@@ -306,6 +313,7 @@ begin
         ctrl_seq_ctr <= ctrl_seq_ctr - 1;
         driver_opcode <= op_calib4;
         driver_start <= '1';
+        leds.calib4 <= '1';
              
       when s_mrst_start =>
         driver_opcode <= op_mrst4;
@@ -315,15 +323,19 @@ begin
         ctrl_seq_ctr <= ctrl_seq_ctr - 1;
         driver_opcode <= op_wrtsig;
         driver_start <= '1';
+        leds.wrtsig <= '1';
 
       -- xxxx_done states are the ends of each loop iteration 
       -- update iteration counters here      
       when s_wrtsig_done =>
         TSCNT <= TSCNT + 1;
+        leds.wrtsig <= '0';
         
       when s_idle4_done =>
+        leds.idle4 <= '0';
         
       when s_calib4_done =>
+        leds.calib4 <= '0';
       
       when s_drdtst_wait =>
         driver_start <= '0';
@@ -339,11 +351,13 @@ begin
         else
           RADR <= RADR + 1;
         end if;
+        leds.drdtst <= '0';
         
       when s_drdtst_start =>
         ctrl_seq_ctr <= ctrl_seq_ctr - 1;
         driver_opcode <= op_drdtst;
-        driver_start <= '1';        
+        driver_start <= '1';
+        leds.drdtst <= '1';        
 
       -- xxxx_wait states are waiting for the chrono_serial to finish the sequence
       when s_idle4_wait|s_calin4_wait|s_calib4_wait|s_mrst_wait|s_wrtsig_wait => 

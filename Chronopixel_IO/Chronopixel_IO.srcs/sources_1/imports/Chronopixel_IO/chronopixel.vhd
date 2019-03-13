@@ -10,10 +10,12 @@
 -- Device      : xc7a50tfgg484-1
 -- Engineer    : Elena Zhivun <zhivun@gmail.com>
 --
--- TODO 
+-- TODOs indicate that either the implementation wasn't clear from the specs,
+--        or that the feature isn't implemented yet
+-- TODO:  
 -- - There are no timing constraints whatsoever on the chronopixel pins
---   (due to the lack of any doccs), this can result in unstable performance 
--- - Let the USB host issue rst?
+--   (due to the lack of any docs), this can result in unstable performance 
+-- - Nothing is driving rst. Let the USB host issue rst?
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -30,7 +32,7 @@ use work.interfaces.all;
 
 entity chronopixel is
   Port (
-  -- Oscillator 200 MHz 
+  -- On-board oscillator 200 MHz 
     sys_clk_p : in STD_LOGIC;
     sys_clk_n : in STD_LOGIC;
     
@@ -73,11 +75,11 @@ entity chronopixel is
     CKA : out STD_LOGIC;
     CKB : out STD_LOGIC;
     SET : out STD_LOGIC;
-    RMEM_SEL : out STD_LOGIC; -- no driver
+    RMEM_SEL : out STD_LOGIC; -- tied to GND
     TNIN : out STD_LOGIC;
     TIN : out STD_LOGIC;
     RAdrValid : out STD_LOGIC;
-    RdTstH : out STD_LOGIC; -- no driver
+    RdTstH : out STD_LOGIC; -- tied to GND
     RdClk : out STD_LOGIC;
     RdParLD : out STD_LOGIC;
     Rd_out : in STD_LOGIC;
@@ -103,6 +105,7 @@ architecture STRUCTURE of chronopixel is
   signal fifo_din, fifo_dout : STD_LOGIC_VECTOR(11 DOWNTO 0);
   signal fifo_wr_rst_busy, fifo_rd_rst_busy : STD_LOGIC;
   signal host_connected : STD_LOGIC; -- indicates whether the USB host is connected
+  signal led_heartbeat : std_logic;
   
   -- TODO remove these?
   signal Vth, Hit_imlar, inc_tstmp, reading_d, incCntr, wrchrdat : STD_LOGIC;
@@ -147,6 +150,20 @@ begin
   rst <= '0'; -- there are no buttons on board to do reset, tie to GND for now
   chrono_clock <= clk_div8;
   okHostClock <= hi_in(0);
+  
+  -- on-board LEDs
+  led_reg(0) <= led_heartbeat;
+  led_reg(1) <= controller_leds.err;
+  led_reg(2) <= controller_leds.err_serial;
+  led_reg(3) <= controller_leds.idle4;
+  led_reg(4) <= controller_leds.calib4;
+  led_reg(5) <= controller_leds.wrtsig;
+  led_reg(6) <= controller_leds.drdtst;
+  led_reg(7) <= '0';
+  
+  -- TODO control signals are not specified for these pins
+  RMEM_SEL <= '0';
+  RdTstH <= '0';
 
   ddr3_dqs_IOBUFDS_0: unisim.vcomponents.IOBUFDS
     port map (
@@ -211,7 +228,7 @@ begin
   port map (
     clk => clk_div64,
     rst => rst,
-    led => led_reg(0)
+    led => led_heartbeat
   );
 
   fifo_inst : chrono_fifo
@@ -245,11 +262,7 @@ begin
     o_chrono.RdClk => RdClk,
     o_chrono.RAdrValid => RAdrValid,
     o_chrono.Vth => Vth, -- no output wire with such name
-    o_chrono.Hit_imlar => Hit_imlar, -- not connected in the module, no output wire
-    o_chrono.inc_tstmp => inc_tstmp, -- no output wire with such name 
-    o_chrono.reading_d => reading_d,  -- no output wire with such name
-    o_chrono.incCntr => incCntr, -- no output wire with such name
-    o_chrono.wrchrdat => wrchrdat, -- no output wire with such name
+    o_chrono.Hit_imlar => Hit_imlar,
     
     o_chrono_addr.TSCNT => TSCNT,    -- TODO verify the bit ordering (defined in interfaces.vhd)
     o_chrono_addr.RADR => RADR,      -- TODO verify the bit ordering

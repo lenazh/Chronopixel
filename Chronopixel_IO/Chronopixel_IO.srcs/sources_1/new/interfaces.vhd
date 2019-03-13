@@ -64,7 +64,7 @@ package interfaces is
   
   -- controller LED indicators
   type t_ctrl_leds is record
-    err, idle4, calin4, calib4, mrst, wrtsig, drdtst  : std_logic;
+    err, err_serial, idle4, calib4, wrtsig, drdtst  : std_logic;
   end record t_ctrl_leds;
   
 end package interfaces;
