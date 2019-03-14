@@ -59,36 +59,40 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okWireIn.ngc">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okCoreHarness.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okWireIn.ngc"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okCoreHarness.v"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okWireOut.ngc">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okPipeOut.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okWireOut.ngc"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okPipeOut.v"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okPipeOut.ngc">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okWireIn.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okPipeOut.ngc"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okWireIn.v"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okCore.ngc">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okWireOut.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okCore.ngc"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okWireOut.v"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/interfaces.vhd">
@@ -109,9 +113,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okLibrary.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okLibrary.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okLibrary.vhd"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okLibrary.vhd"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -131,15 +135,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okBTPipeOut.ngc">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okBTPipeOut.ngc"/>
-          <Attr Name="ImportTime" Val="1525201188"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sim_serial/imports/new/LFSR.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -149,40 +144,54 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okTriggerIn.ngc">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okBTPipeOut.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okTriggerIn.ngc"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okBTPipeOut.v"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okBTPipeIn.ngc">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okBTPipeIn.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okBTPipeIn.ngc"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okBTPipeIn.v"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okTriggerOut.ngc">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okPipeIn.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okTriggerOut.ngc"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okPipeIn.v"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/XEM5010/okPipeIn.ngc">
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okTriggerIn.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM5010/okPipeIn.ngc"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okTriggerIn.v"/>
           <Attr Name="ImportTime" Val="1525201188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okTriggerOut.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okTriggerOut.v"/>
+          <Attr Name="ImportTime" Val="1525201188"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <Config>
