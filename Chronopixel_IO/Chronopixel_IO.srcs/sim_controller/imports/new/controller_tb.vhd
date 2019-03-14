@@ -74,6 +74,7 @@ architecture Behavioral of controller_tb is
   signal o_chrono_addr : t_chronopixel_addr;
   signal i_chrono : t_from_chronopixel;
   signal fifo_din : STD_LOGIC_VECTOR(15 DOWNTO 0);
+  signal o_LFSR_Data : STD_LOGIC_VECTOR((recv_buf_len-1) DOWNTO 0);
   signal fifo_wr_en, fifo_rd_rst_busy, chrono_read_enable : STD_LOGIC;
   signal leds : t_ctrl_leds;
   
@@ -81,10 +82,9 @@ architecture Behavioral of controller_tb is
   signal o_serial : t_from_serial;
   signal serial_init : std_logic := '1';
   
-  signal o_LFSR_Done : std_logic;
+  signal o_LFSR_Done, i_Seed_DV, lfsr_en, zero : std_logic;
 
-begin
-
+begin  
   controller_inst : chrono_controller
   port map(
     clk => clk,
@@ -102,12 +102,15 @@ begin
   lfsr_inst : LFSR
   port map (
     i_Clk => clk,
-    i_Enable => i_serial.start,
-    i_Seed_DV => '0',
-    i_Seed_Data => (others => '0'),     
-    o_LFSR_Data => o_serial.recv_data,
+    i_Enable => lfsr_en,
+    i_Seed_DV => i_Seed_DV,
+    i_Seed_Data => "001110111110",     
+    o_LFSR_Data => o_LFSR_Data,
     o_LFSR_Done => o_LFSR_Done
   );
+  
+  lfsr_en <= i_serial.start or i_Seed_DV;
+  o_serial.recv_data <= (others => '0') when (zero = '1') else o_LFSR_Data;
   
   process -- CLK
   begin
@@ -133,12 +136,20 @@ begin
   
   process
   begin
+    zero <= '0';
     i_chrono.Rd_out <= '0';
     o_serial.error <= '0';
     fifo_rd_rst_busy <= '0';
-    host_connected <= '1';
+    chrono_read_enable <= '1';
     rst <= '0';
+    i_Seed_DV <= '1';
+    wait for 10 ns;
+    i_Seed_DV <= '0';
     
+    wait for 250 us;
+    zero <= '1';
+    wait for 10 us;
+    zero <= '0';
     wait for 1 ms;
   end process;
 

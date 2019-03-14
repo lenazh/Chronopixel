@@ -62,6 +62,7 @@ architecture rtl of chrono_controller is
   signal driver_opcode : t_driver_op;
   signal driver_start, driver_ready, driver_error : std_logic;
   signal recv_data : std_logic_vector ((recv_buf_len-1) downto 0);
+  constant zero : std_logic_vector ((recv_buf_len-1) downto 0) := (others => '0');
 
  -- TODO: are there pulses on imlar ?
  -- trancseiver states
@@ -86,7 +87,9 @@ architecture rtl of chrono_controller is
    s_drdtst_setup,
    s_drdtst_start,
    s_drdtst_wait,
-   s_drdtst_done
+   s_drdtst_done,
+   s_fifo_write_addr,
+   s_fifo_write_data
  );
  signal ctrl_state : t_ctrl_state := s_init;
  
@@ -95,10 +98,10 @@ architecture rtl of chrono_controller is
  signal RADR, ColAdr : unsigned ( (chrono_addr_len-1) downto 0 );
  signal ctrl_error : std_logic := '0';
  signal wr_en : STD_LOGIC := '0';
-           
+ signal fifo_data : std_logic_vector (15 downto 0) := (others => '0');
 
  -- sequence repetitions left 
- constant ctrl_seq_ctr_len : integer := 13;
+ constant ctrl_seq_ctr_len : integer := 13; 
  
  signal ctrl_seq_ctr : unsigned ((ctrl_seq_ctr_len-1) downto 0) := (others => '0');
 begin
@@ -113,8 +116,7 @@ begin
   o_chrono_addr.RADR <= std_logic_vector(RADR);
   o_chrono_addr.ColAdr <= std_logic_vector(ColAdr);
   fifo_wr_en <= wr_en;
-  fifo_din((recv_buf_len-1) downto 0) <= recv_data;
-  fifo_din(15 downto recv_buf_len) <= (others => '0');
+  fifo_din <= fifo_data;
   leds.err_serial <= driver_error;
   leds.err <= ctrl_error;
 
@@ -217,7 +219,11 @@ begin
         
       when s_drdtst_wait =>
         if (driver_ready = '1') then
-          ctrl_state <= s_drdtst_done;
+          if (recv_data /= zero) and (chrono_read_enable = '1') then
+            ctrl_state <= s_fifo_write_addr;
+          else
+            ctrl_state <= s_drdtst_done;
+          end if;
         else
           ctrl_state <= s_drdtst_wait;
         end if;
@@ -228,6 +234,12 @@ begin
         else
           ctrl_state <= s_drdtst_start;
         end if;
+        
+      when s_fifo_write_addr =>
+        ctrl_state <= s_fifo_write_data;
+        
+      when s_fifo_write_data =>
+        ctrl_state <= s_drdtst_done;
         
       when others =>
         ctrl_state <= s_init;
@@ -256,6 +268,7 @@ begin
         leds.calib4 <= '0';
         leds.wrtsig <= '0';
         leds.drdtst <= '0';
+        fifo_data <= (others => '0');
       
       -- xxxx_setup states are pre-loop part of execution
       -- initialize variables here
@@ -263,7 +276,9 @@ begin
         ctrl_seq_ctr <= to_unsigned(idle4_rep-1, ctrl_seq_ctr_len);
         TSCNT <= (others => '0');
         RADR <= (others => '0');
-        ColAdr <= (others => '0');       
+        ColAdr <= (others => '0');
+        fifo_data <= (others => '0');
+        wr_en <= '0';
         
       when s_calib4_setup =>
         ctrl_seq_ctr <= to_unsigned(calib4_rep-1, ctrl_seq_ctr_len);        
@@ -276,7 +291,9 @@ begin
         ctrl_seq_ctr <= to_unsigned(drdtst_rep-1, ctrl_seq_ctr_len);         
         TSCNT <= (others => '0');
         RADR <= (others => '0');      -- row of the pixel being read
-        ColAdr <= (others => '0');    -- column of the pixel being read        
+        ColAdr <= (others => '0');    -- column of the pixel being read  
+        wr_en <= '1';
+        fifo_data <= (others => '1');      
       
       -- xxxx_start states are beginnings of each loop 
       -- update iteration counters here
@@ -317,16 +334,9 @@ begin
         leds.idle4 <= '0';
         
       when s_calib4_done =>
-        leds.calib4 <= '0';
-      
-      when s_drdtst_wait =>
-        driver_start <= '0';
-        if (chrono_read_enable = '1') and (driver_ready = '1') then
-          wr_en <= '1'; -- write data to FIFO on the next clock cycle
-        end if; 
+        leds.calib4 <= '0';      
         
       when s_drdtst_done =>
-        wr_en <= '0';
         if (RADR = max_row) then
           ColAdr <= ColAdr + 1;
           RADR <= (others => '0');
@@ -334,16 +344,29 @@ begin
           RADR <= RADR + 1;
         end if;
         leds.drdtst <= '0';
+        wr_en <= '0'; 
         
       when s_drdtst_start =>
         ctrl_seq_ctr <= ctrl_seq_ctr - 1;
         driver_opcode <= op_drdtst;
         driver_start <= '1';
-        leds.drdtst <= '1';        
+        leds.drdtst <= '1';
+        wr_en <= '0';   
 
       -- xxxx_wait states are waiting for the chrono_serial to finish the sequence
-      when s_idle4_wait|s_calin4_wait|s_calib4_wait|s_mrst_wait|s_wrtsig_wait => 
+      when s_idle4_wait|s_calin4_wait|s_calib4_wait|s_mrst_wait|s_wrtsig_wait|s_drdtst_wait => 
         driver_start <= '0';
+        
+      when s_fifo_write_addr =>
+        fifo_data(15 downto (8+chrono_addr_len)) <= (others => '0');
+        fifo_data(7 downto chrono_addr_len) <= (others => '0');
+        fifo_data((8+chrono_addr_len-1) downto 8) <= std_logic_vector(RADR);
+        fifo_data((chrono_addr_len-1) downto 0) <= std_logic_vector(ColAdr);
+        wr_en <= '1';
+      
+      when s_fifo_write_data =>
+        fifo_data(15 downto (recv_buf_len)) <= (others => '0');
+        fifo_data((recv_buf_len-1) downto 0) <= recv_data;
       
       -- unknown state, should never happen
       when others =>

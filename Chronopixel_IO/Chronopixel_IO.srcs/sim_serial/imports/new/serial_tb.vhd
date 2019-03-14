@@ -104,7 +104,7 @@ begin
   port map (
     i_Clk => clk,
     i_Enable => lfsr_en,
-    i_Seed_DV => i_seed_DV,
+    i_Seed_DV => i_Seed_DV,
     i_Seed_Data => i_Seed_Data,     
     o_LFSR_Data => o_LFSR_Data,
     o_LFSR_Done => o_LFSR_Done
@@ -131,9 +131,9 @@ begin
     i_Seed_DV <= '1';
     driver_start <= '0';    
     rnd_en <= '0';
-    i_Seed_DV <= '0';
     rnd <= (others => '0');    
     wait for 10 ns;
+    i_Seed_DV <= '0';
     
     -- initiate idle4 sequence      
     driver_opcode <= op_idle4;

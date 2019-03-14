@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Mar 13 20:48:24 2019
-# Process ID: 22164
+# Start of session at: Thu Mar 14 15:23:59 2019
+# Process ID: 3240
 # Current directory: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1
 # Command line: vivado.exe -log chronopixel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source chronopixel.tcl
 # Log file: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.vds
@@ -15,135 +15,415 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 20064 
+INFO: Helper process launched with PID 15304 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 397.523 ; gain = 102.469
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 399.727 ; gain = 105.660
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'chronopixel' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:93]
-INFO: [Synth 8-3491] module 'okHost' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:13' bound to instance 'okHost_inst' of component 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
-INFO: [Synth 8-638] synthesizing module 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:24]
-	Parameter CLKDV_DIVIDE bound to: 2.000000 - type: float 
-	Parameter CLKFX_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKFX_MULTIPLY bound to: 4 - type: integer 
-	Parameter CLKIN_DIVIDE_BY_2 bound to: 0 - type: bool 
-	Parameter CLKIN_PERIOD bound to: 10.000000 - type: float 
-	Parameter CLKOUT_PHASE_SHIFT bound to: NONE - type: string 
-	Parameter CLK_FEEDBACK bound to: 1X - type: string 
-	Parameter DCM_AUTOCALIBRATION bound to: 1 - type: bool 
-	Parameter DCM_PERFORMANCE_MODE bound to: MAX_SPEED - type: string 
-	Parameter DESKEW_ADJUST bound to: SYSTEM_SYNCHRONOUS - type: string 
-	Parameter DFS_FREQUENCY_MODE bound to: LOW - type: string 
-	Parameter DLL_FREQUENCY_MODE bound to: LOW - type: string 
-	Parameter DUTY_CYCLE_CORRECTION bound to: 1 - type: bool 
-	Parameter FACTORY_JF bound to: 16'b1111000011110000 
-	Parameter PHASE_SHIFT bound to: 0 - type: integer 
-	Parameter SIM_DEVICE bound to: VIRTEX4 - type: string 
+INFO: [Synth 8-3491] module 'okHost' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:16' bound to instance 'okHost_inst' of component 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+INFO: [Synth 8-638] synthesizing module 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:28]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'hi_in0_bufg' to cell 'IBUFG' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:76]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 20.000000 - type: float 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKIN1_PERIOD bound to: 20.833000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 20.000000 - type: float 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: 4.500000 - type: float 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT4_CASCADE bound to: 0 - type: bool 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.000000 - type: float 
 	Parameter STARTUP_WAIT bound to: 0 - type: bool 
-INFO: [Synth 8-113] binding component instance 'hi_dcm' to cell 'DCM_ADV' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:57]
-INFO: [Synth 8-113] binding component instance 'hi_clkbuf' to cell 'BUFG' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:61]
-	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'flop1' to cell 'FDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:62]
+INFO: [Synth 8-113] binding component instance 'mmcm0' to cell 'MMCME2_BASE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:78]
+INFO: [Synth 8-113] binding component instance 'mmcm0_bufg' to cell 'BUFG' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:98]
+INFO: [Synth 8-113] binding component instance 'mmcm0fb_bufg' to cell 'BUFG' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:99]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-6157] synthesizing module 'FDRE' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'flop2' to cell 'FD' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:63]
-	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'flop3' to cell 'FD' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:64]
-	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'flop4' to cell 'FD' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:65]
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDRE' (1#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:70]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf1' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:71]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf2' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:72]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf3' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:73]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf4' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:74]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf5' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:75]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf6' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:76]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf7' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:77]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf8' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:78]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf9' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:79]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf10' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:80]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf11' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:81]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf12' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:82]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf13' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:83]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf14' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:84]
-	Parameter DRIVE bound to: 12 - type: integer 
-	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
-	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'iobuf15' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:85]
+INFO: [Synth 8-113] binding component instance 'iobf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:106]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdrein0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:113]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout0' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:122]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971' bound to instance 'fdreout1' of component 'FDRE' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:130]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'obuf0' to cell 'OBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:87]
+INFO: [Synth 8-113] binding component instance 'obuf0' to cell 'OBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:141]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'obuf1' to cell 'OBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:88]
-INFO: [Synth 8-637] synthesizing blackbox instance 'hicore' of component 'okCore' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:91]
-INFO: [Synth 8-256] done synthesizing module 'okHost' (1#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:24]
-INFO: [Synth 8-637] synthesizing blackbox instance 'pipe_out' of component 'okPipeOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:212]
-INFO: [Synth 8-637] synthesizing blackbox instance 'pipe_count' of component 'okWireOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:221]
-INFO: [Synth 8-637] synthesizing blackbox instance 'chrono_ctrl' of component 'okWireIn' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:229]
+INFO: [Synth 8-113] binding component instance 'obuf1' to cell 'OBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:142]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'tbuf' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:143]
+INFO: [Synth 8-3491] module 'okCoreHarness' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:9962' bound to instance 'core0' of component 'okCoreHarness' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:145]
+INFO: [Synth 8-6157] synthesizing module 'GND' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:4950]
+INFO: [Synth 8-6155] done synthesizing module 'GND' (2#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:4950]
+INFO: [Synth 8-6157] synthesizing module 'LUT6' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6' (3#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized0' (3#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized1' (3#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26450]
+INFO: [Synth 8-6155] done synthesizing module 'LUT2' (4#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26450]
+INFO: [Synth 8-6157] synthesizing module 'LUT3' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26488]
+INFO: [Synth 8-6155] done synthesizing module 'LUT3' (5#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26488]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized2' (5#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT2__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26450]
+INFO: [Synth 8-6155] done synthesizing module 'LUT2__parameterized0' (5#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26450]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized3' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized3' (5#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT5' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5' (6#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized4' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized4' (6#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized5' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized5' (6#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized6' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized6' (6#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT4' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized0' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized7' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized7' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized8' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized8' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized1' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized2' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized3' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized3' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT4__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4__parameterized0' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6157] synthesizing module 'LUT4__parameterized1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4__parameterized1' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized4' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized4' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized9' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized9' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized10' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized10' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized11' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized11' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized12' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized12' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized5' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized5' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT4__parameterized2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4__parameterized2' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized13' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized13' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized14' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized14' (7#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'VCC' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:53064]
+INFO: [Synth 8-6155] done synthesizing module 'VCC' (8#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:53064]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized15' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized15' (8#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized16' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized16' (8#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized17' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized17' (8#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'CARRY4' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:968]
+INFO: [Synth 8-6155] done synthesizing module 'CARRY4' (9#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:968]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized6' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized6' (9#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_v13_1_2' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10434]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10945]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10946]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10947]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10948]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10951]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10952]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10953]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10954]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10955]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10956]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10957]
+INFO: [Synth 8-6157] synthesizing module 'LUT3__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26488]
+INFO: [Synth 8-6155] done synthesizing module 'LUT3__parameterized0' (9#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26488]
+INFO: [Synth 8-6157] synthesizing module 'LUT1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26416]
+INFO: [Synth 8-6155] done synthesizing module 'LUT1' (10#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26416]
+INFO: [Synth 8-6157] synthesizing module 'LUT2__parameterized1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26450]
+INFO: [Synth 8-6155] done synthesizing module 'LUT2__parameterized1' (10#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26450]
+INFO: [Synth 8-6157] synthesizing module 'LUT3__parameterized1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26488]
+INFO: [Synth 8-6155] done synthesizing module 'LUT3__parameterized1' (10#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26488]
+INFO: [Synth 8-6157] synthesizing module 'LUT4__parameterized3' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4__parameterized3' (10#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized7' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized7' (10#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized18' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized18' (10#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT1__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26416]
+INFO: [Synth 8-6155] done synthesizing module 'LUT1__parameterized0' (10#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26416]
+INFO: [Synth 8-6157] synthesizing module 'FDPE' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911]
+INFO: [Synth 8-6155] done synthesizing module 'FDPE' (11#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911]
+INFO: [Synth 8-6157] synthesizing module 'FDCE' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3755]
+INFO: [Synth 8-6155] done synthesizing module 'FDCE' (12#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3755]
+INFO: [Synth 8-6157] synthesizing module 'RAMB18E1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:49848]
+INFO: [Synth 8-6155] done synthesizing module 'RAMB18E1' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:49848]
+INFO: [Synth 8-6157] synthesizing module 'FDRE__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971]
+INFO: [Synth 8-6155] done synthesizing module 'FDRE__parameterized0' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971]
+INFO: [Synth 8-6157] synthesizing module 'FDPE__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911]
+INFO: [Synth 8-6155] done synthesizing module 'FDPE__parameterized0' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911]
+INFO: [Synth 8-6157] synthesizing module 'LUT5__parameterized8' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6155] done synthesizing module 'LUT5__parameterized8' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26576]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized19' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized19' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized20' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized20' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT4__parameterized4' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4__parameterized4' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6157] synthesizing module 'LUT4__parameterized5' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4__parameterized5' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized21' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized21' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized22' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized22' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized23' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized23' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized24' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized24' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT4__parameterized6' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6155] done synthesizing module 'LUT4__parameterized6' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26530]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized25' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized25' (13#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_v13_1_2' (14#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okCoreHarness.v:10434]
+INFO: [Synth 8-6157] synthesizing module 'DNA_PORT' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3039]
+INFO: [Synth 8-6155] done synthesizing module 'DNA_PORT' (16#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3039]
+INFO: [Synth 8-6157] synthesizing module 'FDCE__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3755]
+INFO: [Synth 8-6155] done synthesizing module 'FDCE__parameterized0' (16#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3755]
+INFO: [Synth 8-6157] synthesizing module 'FDPE__parameterized1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911]
+INFO: [Synth 8-6155] done synthesizing module 'FDPE__parameterized1' (16#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized26' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized26' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized0' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized0' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized27' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized27' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized28' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized28' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized1' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized1' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized2' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized3' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized3' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized29' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized29' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized4' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized4' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized30' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized30' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized5' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized5' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized31' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized31' (17#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'RAM128X1S' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:44873]
+INFO: [Synth 8-6155] done synthesizing module 'RAM128X1S' (18#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:44873]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized6' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized6' (18#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized32' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized32' (18#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized7' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized7' (18#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'RAM32M' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:45120]
+INFO: [Synth 8-6155] done synthesizing module 'RAM32M' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:45120]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized8' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized8' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized9' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized9' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized10' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized10' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized11' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized11' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized33' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized33' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized34' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized34' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized12' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized12' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized13' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized13' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized35' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized35' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized14' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized14' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized15' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized15' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized16' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized16' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized36' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized36' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26626]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized17' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized17' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized18' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized18' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Synth 8-6157] synthesizing module 'LUT6_2__parameterized19' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized19' (19#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26647]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-256] done synthesizing module 'okHost' (22#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:28]
+INFO: [Synth 8-3491] module 'okPipeOut' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okPipeOut.v:18' bound to instance 'pipe_out' of component 'okPipeOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:212]
+INFO: [Synth 8-3491] module 'okWireOut' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okWireOut.v:18' bound to instance 'pipe_count' of component 'okWireOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:221]
+INFO: [Synth 8-3491] module 'okWireIn' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okWireIn.v:18' bound to instance 'chrono_ctrl' of component 'okWireIn' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:229]
 	Parameter DIFF_TERM bound to: 0 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
@@ -177,16 +457,14 @@ INFO: [Synth 8-113] binding component instance 'BUFR_inst2' to cell 'BUFR' [D:/U
 INFO: [Synth 8-3491] module 'heartbeat' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:37' bound to instance 'heartbeat_inst' of component 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:295]
 INFO: [Synth 8-638] synthesizing module 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
 	Parameter counter_max bound to: 32'b00000000000101111101011110000100 
-INFO: [Synth 8-256] done synthesizing module 'heartbeat' (2#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
-INFO: [Synth 8-3491] module 'chrono_fifo' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-22164-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6' bound to instance 'fifo_inst' of component 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:302]
-INFO: [Synth 8-6157] synthesizing module 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-22164-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'chrono_fifo' (3#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-22164-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'heartbeat' (26#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
+INFO: [Synth 8-3491] module 'chrono_fifo' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-3240-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6' bound to instance 'fifo_inst' of component 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:302]
 INFO: [Synth 8-3491] module 'chrono_serial' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54' bound to instance 'serial_inst' of component 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:316]
 INFO: [Synth 8-638] synthesizing module 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
-INFO: [Synth 8-256] done synthesizing module 'chrono_serial' (4#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
+INFO: [Synth 8-256] done synthesizing module 'chrono_serial' (28#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
 INFO: [Synth 8-3491] module 'chrono_controller' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:39' bound to instance 'controller_inst' of component 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:338]
 INFO: [Synth 8-638] synthesizing module 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'chrono_controller' (5#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'chrono_controller' (29#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
 WARNING: [Synth 8-3848] Net hi_muxsel in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:45]
 WARNING: [Synth 8-3848] Net ddr3_addr in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:50]
 WARNING: [Synth 8-3848] Net ddr3_ba in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:51]
@@ -201,60 +479,112 @@ WARNING: [Synth 8-3848] Net ok2 in module/entity chronopixel does not have drive
 WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:94]
 WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_T in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:96]
 WARNING: [Synth 8-3848] Net ddr3_ck_OBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:97]
-INFO: [Synth 8-256] done synthesizing module 'chronopixel' (6#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:93]
+INFO: [Synth 8-256] done synthesizing module 'chronopixel' (30#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:93]
 WARNING: [Synth 8-3917] design chronopixel has port RMEM_SEL driven by constant 0
 WARNING: [Synth 8-3917] design chronopixel has port RdTstH driven by constant 0
 WARNING: [Synth 8-3331] design chrono_controller has unconnected port fifo_rd_rst_busy
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_muxsel
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[14]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[13]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[12]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[11]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[10]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[9]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[8]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[7]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[6]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[5]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[4]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[3]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[2]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[2]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_odt[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ras_n
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cas_n
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_we_n
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_reset_n
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cke
-WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_dout
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_aa
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[15]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[14]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[13]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[12]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[11]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[10]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[9]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[8]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[7]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[6]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[5]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[4]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[3]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[2]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_cs
-WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_clk
-WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_din
+WARNING: [Synth 8-3331] design okWireIn has unconnected port ok1[30]
+WARNING: [Synth 8-3331] design okWireIn has unconnected port ok1[29]
+WARNING: [Synth 8-3331] design okWireIn has unconnected port ok1[26]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[30]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[29]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[27]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[26]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[15]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[14]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[13]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[12]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[11]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[10]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[9]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[8]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[7]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[6]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[5]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[4]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[3]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[2]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[1]
+WARNING: [Synth 8-3331] design okWireOut has unconnected port ok1[0]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[30]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[29]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[28]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[27]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[25]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[24]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[15]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[14]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[13]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[12]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[11]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[10]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[9]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[8]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[7]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[6]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[5]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[4]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[3]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[2]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[1]
+WARNING: [Synth 8-3331] design okPipeOut has unconnected port ok1[0]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port backup
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port backup_marker
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port srst
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port wr_clk
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port wr_rst
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port rd_clk
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port rd_rst
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh[5]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh[4]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh[3]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh[2]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh[1]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh[0]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_assert[5]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_assert[4]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_assert[3]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_assert[2]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_assert[1]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_assert[0]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_negate[5]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_negate[4]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_negate[3]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_negate[2]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_negate[1]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_empty_thresh_negate[0]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh[5]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh[4]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh[3]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh[2]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh[1]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh[0]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_assert[5]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_assert[4]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_assert[3]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_assert[2]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_assert[1]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_assert[0]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_negate[5]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_negate[4]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_negate[3]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_negate[2]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_negate[1]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port prog_full_thresh_negate[0]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port int_clk
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port injectdbiterr
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port injectsbiterr
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port sleep
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port m_aclk
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port s_aclk
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port s_aresetn
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port m_aclk_en
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port s_aclk_en
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port s_axi_awid[0]
+WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port s_axi_awaddr[31]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.926 ; gain = 158.871
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 472.953 ; gain = 178.887
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -284,14 +614,12 @@ WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[0] to constant 0 [D:/
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.926 ; gain = 158.871
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 472.953 ; gain = 178.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.926 ; gain = 158.871
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 472.953 ; gain = 178.887
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 27 Unisim elements for replacement
-WARNING: [Netlist 29-365] DCM_ADV instance 'okHost_inst/hi_dcm' has been transformed into an MMCM. Please check the output clock waveforms for correctness. If the output clocks are incorrect, modify your design to use the MMCME<#>_ADV native to the target architecture.
-WARNING: [Netlist 29-365] DCM_ADV instance 'okHost_inst/hi_dcm' has been transformed into an MMCM. Please check the output clock waveforms for correctness. If the output clocks are incorrect, modify your design to use the MMCME<#>_ADV native to the target architecture.
+INFO: [Netlist 29-17] Analyzing 115 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7a50tfgg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -315,37 +643,39 @@ Finished Parsing XDC File [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronop
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/chronopixel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/chronopixel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 809.715 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 809.723 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 24 instances were transformed.
-  DCM_ADV => MMCME2_ADV (inverted pins: PSINCDEC): 1 instances
-  FD => FDRE: 3 instances
-  FDS => FDSE: 1 instances
-  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  A total of 84 instances were transformed.
+  IBUFG => IBUF: 1 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 17 instances
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS, OBUFTDS): 2 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 50 instances
+  MMCME2_BASE => MMCME2_ADV: 1 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM128X1S => RAM128X1S (MUXF7, RAMS64E, RAMS64E): 8 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.738 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 791.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 809.723 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 809.723 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 791.738 ; gain = 496.684
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 809.723 ; gain = 515.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a50tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 791.738 ; gain = 496.684
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 809.723 ; gain = 515.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for fifo_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 791.738 ; gain = 496.684
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 809.723 ; gain = 515.656
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "led_reg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -364,11 +694,13 @@ INFO: [Synth 8-5544] ROM "trcv_state" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5546] ROM "trcv_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'ctrl_state_reg' in module 'chrono_controller'
 INFO: [Synth 8-5546] ROM "ColAdr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "fifo_data" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5546] ROM "leds[drdtst]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "leds[wrtsig]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "leds[calib4]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "leds[idle4]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ctrl_error" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "wr_en" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "ctrl_seq_ctr" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "driver_opcode" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "driver_start" is below threshold of ROM address width. It will be mapped to LUTs
@@ -382,8 +714,8 @@ INFO: [Synth 8-5546] ROM "ctrl_state" won't be mapped to RAM because it is too s
 INFO: [Synth 8-5544] ROM "ctrl_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ctrl_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "ctrl_state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "ctrl_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "ctrl_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ctrl_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -397,31 +729,33 @@ INFO: [Synth 8-3354] encoded FSM with state register 'trcv_state_reg' using enco
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  s_init |            000000000000000000001 |                            00000
-           s_idle4_setup |            000000000000000000010 |                            00001
-           s_idle4_start |            000000000000000000100 |                            00010
-            s_idle4_wait |            000000000000000001000 |                            00011
-            s_idle4_done |            000000000000000010000 |                            00100
-          s_calin4_start |            000000000000000100000 |                            00101
-           s_calin4_wait |            000000000000001000000 |                            00110
-          s_calib4_setup |            000000000000010000000 |                            00111
-          s_calib4_start |            000000000000100000000 |                            01000
-           s_calib4_wait |            000000000001000000000 |                            01001
-           s_calib4_done |            000000000010000000000 |                            01010
-            s_mrst_start |            000000000100000000000 |                            01011
-             s_mrst_wait |            000000001000000000000 |                            01100
-          s_wrtsig_setup |            000000010000000000000 |                            01101
-          s_wrtsig_start |            000000100000000000000 |                            01110
-           s_wrtsig_wait |            000001000000000000000 |                            01111
-           s_wrtsig_done |            000010000000000000000 |                            10000
-          s_drdtst_setup |            000100000000000000000 |                            10001
-          s_drdtst_start |            001000000000000000000 |                            10010
-           s_drdtst_wait |            010000000000000000000 |                            10011
-           s_drdtst_done |            100000000000000000000 |                            10100
+                  s_init |                            00000 |                            00000
+           s_idle4_setup |                            00001 |                            00001
+           s_idle4_start |                            00010 |                            00010
+            s_idle4_wait |                            00011 |                            00011
+            s_idle4_done |                            00100 |                            00100
+          s_calin4_start |                            00101 |                            00101
+           s_calin4_wait |                            00110 |                            00110
+          s_calib4_setup |                            00111 |                            00111
+          s_calib4_start |                            01000 |                            01000
+           s_calib4_wait |                            01001 |                            01001
+           s_calib4_done |                            01010 |                            01010
+            s_mrst_start |                            01011 |                            01011
+             s_mrst_wait |                            01100 |                            01100
+          s_wrtsig_setup |                            01101 |                            01101
+          s_wrtsig_start |                            01110 |                            01110
+           s_wrtsig_wait |                            01111 |                            01111
+           s_wrtsig_done |                            10000 |                            10000
+          s_drdtst_setup |                            10001 |                            10001
+          s_drdtst_start |                            10010 |                            10010
+           s_drdtst_wait |                            10011 |                            10011
+       s_fifo_write_addr |                            10100 |                            10101
+       s_fifo_write_data |                            10101 |                            10110
+           s_drdtst_done |                            10110 |                            10100
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'ctrl_state_reg' using encoding 'one-hot' in module 'chrono_controller'
+INFO: [Synth 8-3354] encoded FSM with state register 'ctrl_state_reg' using encoding 'sequential' in module 'chrono_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 791.738 ; gain = 496.684
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 809.723 ; gain = 515.656
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -432,108 +766,12 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-	   2 Input     13 Bit       Adders := 1     
-	   2 Input     12 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 2     
-+---Registers : 
-	              130 Bit    Registers := 13    
-	               32 Bit    Registers := 1     
-	               13 Bit    Registers := 1     
-	               12 Bit    Registers := 3     
-	                8 Bit    Registers := 1     
-	                6 Bit    Registers := 2     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 24    
-+---Muxes : 
-	   7 Input    130 Bit        Muxes := 12    
-	   5 Input    130 Bit        Muxes := 17    
-	   7 Input    123 Bit        Muxes := 1     
-	   7 Input    120 Bit        Muxes := 1     
-	   7 Input    117 Bit        Muxes := 1     
-	   7 Input    106 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 1     
-	  21 Input     21 Bit        Muxes := 1     
-	   2 Input     21 Bit        Muxes := 10    
-	  17 Input     13 Bit        Muxes := 1     
-	   5 Input     12 Bit        Muxes := 1     
-	  17 Input     12 Bit        Muxes := 1     
-	   7 Input      8 Bit        Muxes := 1     
-	   5 Input      8 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 1     
-	  17 Input      6 Bit        Muxes := 2     
-	   5 Input      5 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 2     
-	  17 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-	   7 Input      1 Bit        Muxes := 2     
-	   5 Input      1 Bit        Muxes := 6     
-	  17 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
-Hierarchical RTL Component report 
-Module heartbeat 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module chrono_serial 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	              130 Bit    Registers := 13    
-	               12 Bit    Registers := 2     
-	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 16    
-+---Muxes : 
-	   7 Input    130 Bit        Muxes := 12    
-	   5 Input    130 Bit        Muxes := 17    
-	   7 Input    123 Bit        Muxes := 1     
-	   7 Input    120 Bit        Muxes := 1     
-	   7 Input    117 Bit        Muxes := 1     
-	   7 Input    106 Bit        Muxes := 1     
-	   5 Input     12 Bit        Muxes := 1     
-	   7 Input      8 Bit        Muxes := 1     
-	   5 Input      8 Bit        Muxes := 1     
-	   5 Input      5 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 2     
-	   7 Input      1 Bit        Muxes := 2     
-	   5 Input      1 Bit        Muxes := 6     
-Module chrono_controller 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     13 Bit       Adders := 1     
-	   2 Input     12 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 2     
-+---Registers : 
-	               13 Bit    Registers := 1     
-	               12 Bit    Registers := 1     
-	                6 Bit    Registers := 2     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
-+---Muxes : 
-	  21 Input     21 Bit        Muxes := 1     
-	   2 Input     21 Bit        Muxes := 10    
-	  17 Input     13 Bit        Muxes := 1     
-	  17 Input     12 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 1     
-	  17 Input      6 Bit        Muxes := 2     
-	  17 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	  17 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -550,63 +788,13 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5546] ROM "controller_inst/ctrl_state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "controller_inst/ctrl_state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "controller_inst/ctrl_state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "controller_inst/ctrl_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "controller_inst/ColAdr" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "heartbeat_inst/counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "heartbeat_inst/led_reg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-3917] design chronopixel has port led[7] driven by constant 1
 WARNING: [Synth 8-3917] design chronopixel has port RMEM_SEL driven by constant 0
 WARNING: [Synth 8-3917] design chronopixel has port RdTstH driven by constant 0
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_muxsel
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[14]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[13]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[12]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[11]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[10]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[9]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[8]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[7]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[6]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[5]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[4]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[3]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[2]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[2]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ba[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_odt[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ras_n
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cas_n
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_we_n
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_reset_n
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cke
-WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_dout
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_aa
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[15]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[14]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[13]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[12]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[11]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[10]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[9]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[8]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[7]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[6]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[5]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[4]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[3]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[2]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[0]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_cs
-WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_clk
-WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_din
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[129] )
@@ -616,6 +804,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_i
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKB_buf_reg[129] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[129] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/ctrl_error_reg )
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[128]' (FDE) to 'serial_inst/RAdrValid_buf_reg[128]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[128]' (FDE) to 'serial_inst/RAdrValid_buf_reg[128]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[128]' (FDE) to 'serial_inst/RAdrValid_buf_reg[128]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[128] )
@@ -623,7 +812,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[128]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[128] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[128] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[128] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[128]' (FDE) to 'serial_inst/RdParLd_buf_reg[127]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[128]' (FDE) to 'serial_inst/latch_buf_reg[127]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[127]' (FDE) to 'serial_inst/RAdrValid_buf_reg[127]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[127]' (FDE) to 'serial_inst/RAdrValid_buf_reg[127]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[127]' (FDE) to 'serial_inst/RAdrValid_buf_reg[127]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[127] )
@@ -634,7 +824,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[128]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[127] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[128]' (FDE) to 'serial_inst/CKA_buf_reg[127]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[127] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[127]' (FDE) to 'serial_inst/RdParLd_buf_reg[126]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[127]' (FDE) to 'serial_inst/latch_buf_reg[126]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[126]' (FDE) to 'serial_inst/RAdrValid_buf_reg[126]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[126]' (FDE) to 'serial_inst/RAdrValid_buf_reg[126]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[126]' (FDE) to 'serial_inst/RAdrValid_buf_reg[126]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[126] )
@@ -645,7 +836,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[127]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[126] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[127]' (FDE) to 'serial_inst/CKA_buf_reg[126]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[126] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[126]' (FDE) to 'serial_inst/RdParLd_buf_reg[125]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[126]' (FDE) to 'serial_inst/latch_buf_reg[125]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[125]' (FDE) to 'serial_inst/RAdrValid_buf_reg[125]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[125]' (FDE) to 'serial_inst/RAdrValid_buf_reg[125]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[125]' (FDE) to 'serial_inst/RAdrValid_buf_reg[125]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[125] )
@@ -656,7 +848,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[126]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[125] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[126]' (FDE) to 'serial_inst/CKA_buf_reg[125]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[125] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[125]' (FDE) to 'serial_inst/RdParLd_buf_reg[124]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[125]' (FDE) to 'serial_inst/latch_buf_reg[124]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[124]' (FDE) to 'serial_inst/RAdrValid_buf_reg[124]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[124]' (FDE) to 'serial_inst/RAdrValid_buf_reg[124]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[124]' (FDE) to 'serial_inst/RAdrValid_buf_reg[124]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[124] )
@@ -667,7 +860,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[125]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[124] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[125]' (FDE) to 'serial_inst/CKA_buf_reg[124]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[124] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[124]' (FDE) to 'serial_inst/RdParLd_buf_reg[123]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[124]' (FDE) to 'serial_inst/latch_buf_reg[123]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[123]' (FDE) to 'serial_inst/RAdrValid_buf_reg[123]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[123]' (FDE) to 'serial_inst/RAdrValid_buf_reg[123]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[123]' (FDE) to 'serial_inst/RAdrValid_buf_reg[123]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[123] )
@@ -677,7 +871,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[124]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[123] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[124]' (FDE) to 'serial_inst/CKA_buf_reg[123]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[123] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[123]' (FDE) to 'serial_inst/RdParLd_buf_reg[122]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[123]' (FDE) to 'serial_inst/latch_buf_reg[122]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[122]' (FDE) to 'serial_inst/RAdrValid_buf_reg[122]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[122]' (FDE) to 'serial_inst/RAdrValid_buf_reg[122]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[122]' (FDE) to 'serial_inst/RAdrValid_buf_reg[122]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[122] )
@@ -687,7 +882,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[123]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[122] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[123]' (FDE) to 'serial_inst/CKA_buf_reg[122]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[122] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[122]' (FDE) to 'serial_inst/RdParLd_buf_reg[121]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[122]' (FDE) to 'serial_inst/latch_buf_reg[121]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[121]' (FDE) to 'serial_inst/RAdrValid_buf_reg[121]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[121]' (FDE) to 'serial_inst/RAdrValid_buf_reg[121]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[121]' (FDE) to 'serial_inst/RAdrValid_buf_reg[121]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[121] )
@@ -697,7 +893,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[122]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[121] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[122]' (FDE) to 'serial_inst/CKA_buf_reg[121]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[121] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[121]' (FDE) to 'serial_inst/RdParLd_buf_reg[120]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[121]' (FDE) to 'serial_inst/latch_buf_reg[120]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[120]' (FDE) to 'serial_inst/RAdrValid_buf_reg[120]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[120]' (FDE) to 'serial_inst/RAdrValid_buf_reg[120]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[120]' (FDE) to 'serial_inst/RAdrValid_buf_reg[120]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[120] )
@@ -707,7 +904,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[121]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[120] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[121]' (FDE) to 'serial_inst/CKA_buf_reg[120]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[120] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[120]' (FDE) to 'serial_inst/RdParLd_buf_reg[119]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[120]' (FDE) to 'serial_inst/latch_buf_reg[119]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[119]' (FDE) to 'serial_inst/RAdrValid_buf_reg[119]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[119]' (FDE) to 'serial_inst/RAdrValid_buf_reg[119]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[119]' (FDE) to 'serial_inst/RAdrValid_buf_reg[119]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[119] )
@@ -717,7 +915,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[120]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[119] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[120]' (FDE) to 'serial_inst/CKA_buf_reg[119]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[119] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[119]' (FDE) to 'serial_inst/RdParLd_buf_reg[118]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[119]' (FDE) to 'serial_inst/latch_buf_reg[118]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[118]' (FDE) to 'serial_inst/RAdrValid_buf_reg[118]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[118]' (FDE) to 'serial_inst/RAdrValid_buf_reg[118]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[118]' (FDE) to 'serial_inst/RAdrValid_buf_reg[118]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[118] )
@@ -727,7 +926,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[119]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[118] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[119]' (FDE) to 'serial_inst/CKA_buf_reg[118]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[118] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[118]' (FDE) to 'serial_inst/RdParLd_buf_reg[117]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[118]' (FDE) to 'serial_inst/latch_buf_reg[117]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[117]' (FDE) to 'serial_inst/RAdrValid_buf_reg[117]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[117]' (FDE) to 'serial_inst/RAdrValid_buf_reg[117]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[117]' (FDE) to 'serial_inst/RAdrValid_buf_reg[117]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[117] )
@@ -737,7 +937,8 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[118]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[117] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[118]' (FDE) to 'serial_inst/CKA_buf_reg[117]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[117]' (FDE) to 'serial_inst/RdParLd_buf_reg[116]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[117]' (FDE) to 'serial_inst/latch_buf_reg[116]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[116]' (FDE) to 'serial_inst/RAdrValid_buf_reg[116]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[116]' (FDE) to 'serial_inst/RAdrValid_buf_reg[116]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[116]' (FDE) to 'serial_inst/RAdrValid_buf_reg[116]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[116] )
@@ -747,35 +948,21 @@ INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[117]' (FDE) to 's
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[116] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[117]' (FDE) to 'serial_inst/CKA_buf_reg[116]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[116]' (FDE) to 'serial_inst/RdParLd_buf_reg[115]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[116]' (FDE) to 'serial_inst/latch_buf_reg[115]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[115]' (FDE) to 'serial_inst/RAdrValid_buf_reg[115]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[115]' (FDE) to 'serial_inst/RAdrValid_buf_reg[115]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[115]' (FDE) to 'serial_inst/RAdrValid_buf_reg[115]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[115] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[116]' (FDE) to 'serial_inst/SET_buf_reg[115]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[115] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[116]' (FDE) to 'serial_inst/CKA_buf_reg[115]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[115] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[115]' (FDE) to 'serial_inst/RdParLd_buf_reg[114]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[114]' (FDE) to 'serial_inst/RAdrValid_buf_reg[114]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[114]' (FDE) to 'serial_inst/RAdrValid_buf_reg[114]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[114] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[115]' (FDE) to 'serial_inst/SET_buf_reg[114]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[114] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[115]' (FDE) to 'serial_inst/CKA_buf_reg[114]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[114] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[114]' (FDE) to 'serial_inst/RdParLd_buf_reg[113]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[113]' (FDE) to 'serial_inst/RAdrValid_buf_reg[113]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[113]' (FDE) to 'serial_inst/RAdrValid_buf_reg[113]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[113] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[114]' (FDE) to 'serial_inst/SET_buf_reg[113]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[113] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[114]' (FDE) to 'serial_inst/CKA_buf_reg[113]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[113] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[113]' (FDE) to 'serial_inst/RdParLd_buf_reg[112]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[112]' (FDE) to 'serial_inst/RAdrValid_buf_reg[112]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[112] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[113]' (FDE) to 'serial_inst/SET_buf_reg[112]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[115] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[115] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[115] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[114] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[114] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[114] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[113] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[113] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[113] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[112] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[112] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[112] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[111] )
@@ -809,8 +996,76 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_i
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[102] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[102] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (l008c72ad3b3ec61be52cde84a395c4fa_reg) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (la85eaf42c58af45585f858cdefb86492_reg) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[10]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[11]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[12]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[13]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[14]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[15]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[1]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[2]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[3]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[4]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[5]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[6]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[7]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[8]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (lab8c81cec3709c0416d0acf79f37f087_reg[9]) is unused and will be removed from module okCore.
+WARNING: [Synth 8-3332] Sequential element (okHost_inst/delays[11].fdrein0) is unused and will be removed from module chronopixel.
+WARNING: [Synth 8-3332] Sequential element (okHost_inst/delays[12].fdrein0) is unused and will be removed from module chronopixel.
+WARNING: [Synth 8-3332] Sequential element (okHost_inst/delays[13].fdrein0) is unused and will be removed from module chronopixel.
+WARNING: [Synth 8-3332] Sequential element (okHost_inst/delays[14].fdrein0) is unused and will be removed from module chronopixel.
+WARNING: [Synth 8-3332] Sequential element (okHost_inst/delays[15].fdrein0) is unused and will be removed from module chronopixel.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[0]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[10]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[11]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[12]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[13]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[14]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[15]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[1]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[2]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[3]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[4]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[5]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[6]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[7]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[8]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (wirehold_reg[9]) is unused and will be removed from module okWireOut.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[10]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[11]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[12]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[13]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[14]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[15]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[1]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[2]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[3]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[4]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[5]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[6]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[7]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[8]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_datahold_reg[9]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[10]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[11]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[12]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[13]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[14]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[15]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[1]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[2]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[3]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[4]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[5]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[6]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[7]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[8]) is unused and will be removed from module okWireIn.
+WARNING: [Synth 8-3332] Sequential element (ep_dataout_reg[9]) is unused and will be removed from module okWireIn.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 791.738 ; gain = 496.684
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 809.723 ; gain = 515.656
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -822,13 +1077,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 791.738 ; gain = 496.684
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 809.723 ; gain = 515.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 838.184 ; gain = 543.129
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 814.418 ; gain = 520.352
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -840,7 +1095,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 838.184 ; gain = 543.129
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 816.566 ; gain = 522.500
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -860,12 +1115,11 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4649] Removing BlackBox instance pipe_count of module okWireOut_bbox_2 having unconnected or no output ports
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 838.184 ; gain = 543.129
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 816.566 ; gain = 522.500
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -878,7 +1132,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 838.184 ; gain = 543.129
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 816.566 ; gain = 522.500
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -890,53 +1144,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 838.184 ; gain = 543.129
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 816.566 ; gain = 522.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 838.184 ; gain = 543.129
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 816.566 ; gain = 522.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 838.184 ; gain = 543.129
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 816.566 ; gain = 522.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 838.184 ; gain = 543.129
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-
-Static Shift Register Report:
-+------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|chronopixel | serial_inst/latch_buf_reg[0]     | 24     | 1     | YES          | NO                 | YES               | 0      | 1       | 
-|chronopixel | serial_inst/latch_buf_reg[25]    | 7      | 11    | YES          | NO                 | YES               | 11     | 0       | 
-|chronopixel | serial_inst/latch_buf_reg[113]   | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | serial_inst/CKA_buf_reg[0]       | 20     | 1     | YES          | NO                 | YES               | 0      | 1       | 
-|chronopixel | serial_inst/TIN_buf_reg[0]       | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | serial_inst/TIN_buf_reg[12]      | 8      | 2     | YES          | NO                 | YES               | 2      | 0       | 
-|chronopixel | serial_inst/TIN_buf_reg[23]      | 11     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | serial_inst/TNIN_buf_reg[4]      | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | serial_inst/TNIN_buf_reg[15]     | 8      | 2     | YES          | NO                 | YES               | 2      | 0       | 
-|chronopixel | serial_inst/RdParLd_buf_reg[0]   | 10     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | serial_inst/RdClk_buf_reg[0]     | 13     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | serial_inst/RdClk_buf_reg[25]    | 4      | 11    | YES          | NO                 | YES               | 11     | 0       | 
-|chronopixel | serial_inst/RAdrValid_buf_reg[0] | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|chronopixel | serial_inst/TNIN_buf_reg[88]     | 24     | 2     | YES          | NO                 | YES               | 0      | 2       | 
-|chronopixel | serial_inst/TNIN_buf_reg[40]     | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-+------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP and Shift Register Reporting
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 816.566 ; gain = 522.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -946,133 +1172,81 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |okPipeOut     |         1|
-|2     |okWireIn      |         1|
-|3     |chrono_fifo   |         1|
-|4     |okCore        |         1|
+|1     |chrono_fifo   |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
-+------+-----------------+------+
-|      |Cell             |Count |
-+------+-----------------+------+
-|1     |chrono_fifo      |     1|
-|2     |okCore_bbox_0    |     1|
-|3     |okPipeOut_bbox_1 |     1|
-|4     |okWireIn_bbox_3  |     1|
-|5     |BUFG             |     2|
-|6     |BUFR             |     2|
-|7     |CARRY4           |    14|
-|8     |DCM_ADV          |     1|
-|9     |LUT1             |    20|
-|10    |LUT2             |   131|
-|11    |LUT3             |   235|
-|12    |LUT4             |    30|
-|13    |LUT5             |    47|
-|14    |LUT6             |   130|
-|15    |SRL16E           |    34|
-|16    |SRLC32E          |     4|
-|17    |FD               |     3|
-|18    |FDRE             |   278|
-|19    |FDS              |     1|
-|20    |FDSE             |   419|
-|21    |IBUF             |     9|
-|22    |IBUFDS           |     1|
-|23    |IOBUF            |    16|
-|24    |IOBUFDS          |     2|
-|25    |OBUF             |    47|
-|26    |OBUFDS           |     1|
-|27    |OBUFT            |    26|
-+------+-----------------+------+
-
-Report Instance Areas: 
-+------+------------------+------------------+------+
-|      |Instance          |Module            |Cells |
-+------+------------------+------------------+------+
-|1     |top               |                  |  1571|
-|2     |  controller_inst |chrono_controller |   172|
-|3     |  heartbeat_inst  |heartbeat         |    53|
-|4     |  okHost_inst     |okHost            |    76|
-|5     |  serial_inst     |chrono_serial     |  1115|
-+------+------------------+------------------+------+
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |chrono_fifo |     1|
+|2     |BUFG        |     2|
+|3     |BUFR        |     2|
+|4     |CARRY4      |    40|
+|5     |DNA_PORT    |     1|
+|6     |LUT1        |    88|
+|7     |LUT2        |   162|
+|8     |LUT3        |   266|
+|9     |LUT4        |   110|
+|10    |LUT5        |   132|
+|11    |LUT6        |   413|
+|12    |LUT6_2      |    50|
+|13    |MMCME2_BASE |     1|
+|14    |RAM128X1S   |     8|
+|15    |RAM32M      |     4|
+|16    |RAMB18E1    |     1|
+|17    |RAMB18E1_1  |     1|
+|18    |SRL16E      |    33|
+|19    |SRLC32E     |     4|
+|20    |FDCE        |   128|
+|21    |FDPE        |    47|
+|22    |FDRE        |   616|
+|23    |FDSE        |   418|
+|24    |IBUF        |     8|
+|25    |IBUFDS      |     1|
+|26    |IBUFG       |     1|
+|27    |IOBUF       |    17|
+|28    |IOBUFDS     |     2|
+|29    |OBUF        |    47|
+|30    |OBUFDS      |     1|
+|31    |OBUFT       |    26|
++------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 838.184 ; gain = 543.129
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 816.566 ; gain = 522.500
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 51 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 838.184 ; gain = 205.316
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 838.184 ; gain = 543.129
+Synthesis finished with 0 errors, 0 critical warnings and 164 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 816.566 ; gain = 185.730
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 816.566 ; gain = 522.500
 INFO: [Project 1-571] Translating synthesized netlist
-Release 14.7 - ngc2edif P_INT.20180726 (nt64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
-Reading design okPipeOut.ngc ...
-WARNING:NetListWriters:298 - No output is written to okPipeOut.xncf, ignored.
-Processing design ...
-   Preping design's networks ...
-   Preping design's macros ...
-  finished :Prep
-Writing EDIF netlist file okPipeOut.edif ...
-ngc2edif: Total memory usage is 4321792 kilobytes
-
-Reading core file 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okPipeOut.ngc' for (cell view 'okPipeOut', library 'work')
-Parsing EDIF File [./.ngc2edfcache/okPipeOut_ngc_ad61e08a.edif]
-Finished Parsing EDIF File [./.ngc2edfcache/okPipeOut_ngc_ad61e08a.edif]
-Release 14.7 - ngc2edif P_INT.20180726 (nt64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
-Reading design okWireIn.ngc ...
-WARNING:NetListWriters:298 - No output is written to okWireIn.xncf, ignored.
-Processing design ...
-   Preping design's networks ...
-   Preping design's macros ...
-  finished :Prep
-Writing EDIF netlist file okWireIn.edif ...
-ngc2edif: Total memory usage is 4321236 kilobytes
-
-Reading core file 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okWireIn.ngc' for (cell view 'okWireIn', library 'work')
-Parsing EDIF File [./.ngc2edfcache/okWireIn_ngc_ad61e08a.edif]
-Finished Parsing EDIF File [./.ngc2edfcache/okWireIn_ngc_ad61e08a.edif]
-Release 14.7 - ngc2edif P_INT.20180726 (nt64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
-Reading design okCore.ngc ...
-WARNING:NetListWriters:298 - No output is written to okCore.xncf, ignored.
-Processing design ...
-   Preping design's networks ...
-   Preping design's macros ...
-  finished :Prep
-Writing EDIF netlist file okCore.edif ...
-ngc2edif: Total memory usage is 4321748 kilobytes
-
-Reading core file 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okCore.ngc' for (cell view 'okCore', library 'work')
-Parsing EDIF File [./.ngc2edfcache/okCore_ngc_ad61e08a.edif]
-Finished Parsing EDIF File [./.ngc2edfcache/okCore_ngc_ad61e08a.edif]
-INFO: [Netlist 29-17] Analyzing 166 Unisim elements for replacement
-WARNING: [Netlist 29-365] DCM_ADV instance 'okHost_inst/hi_dcm' has been transformed into an MMCM. Please check the output clock waveforms for correctness. If the output clocks are incorrect, modify your design to use the MMCME<#>_ADV native to the target architecture.
-WARNING: [Netlist 29-365] DCM_ADV instance 'okHost_inst/hi_dcm' has been transformed into an MMCM. Please check the output clock waveforms for correctness. If the output clocks are incorrect, modify your design to use the MMCME<#>_ADV native to the target architecture.
+INFO: [Netlist 29-17] Analyzing 129 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Xilinx ngc2edif P_INT.20180726
 INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-549] Could not create 'DRIVE' constraint because cell 'okHost_inst/tbuf' is not directly connected to top level port. 'DRIVE' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'IBUF_LOW_PWR' constraint because cell 'okHost_inst/tbuf' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'okHost_inst/tbuf' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 838.184 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 816.566 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 129 instances were transformed.
-  (MUXCY,XORCY) => CARRY4: 3 instances
-  DCM_ADV => MMCME2_ADV (inverted pins: PSINCDEC): 1 instances
-  FD => FDRE: 3 instances
-  FDE => FDRE: 67 instances
-  FDR => FDRE: 22 instances
-  FDRS => FDRS (FDRE, LUT2, VCC): 2 instances
-  FDS => FDSE: 1 instances
-  INV => LUT1: 11 instances
-  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  A total of 84 instances were transformed.
+  IBUFG => IBUF: 1 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 17 instances
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS, OBUFTDS): 2 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 50 instances
+  MMCME2_BASE => MMCME2_ADV: 1 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM128X1S => RAM128X1S (MUXF7, RAMS64E, RAMS64E): 8 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-315 Infos, 147 Warnings, 0 Critical Warnings and 0 Errors encountered.
+571 Infos, 217 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 838.184 ; gain = 554.594
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 838.184 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 816.566 ; gain = 533.965
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 816.566 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file chronopixel_utilization_synth.rpt -pb chronopixel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 13 20:49:10 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 14 15:24:49 2019...
