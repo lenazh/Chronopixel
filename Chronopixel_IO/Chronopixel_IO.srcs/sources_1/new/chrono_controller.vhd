@@ -42,10 +42,10 @@ entity chrono_controller is
            o_chrono_addr : out t_chronopixel_addr;
            i_serial : out t_to_serial;
            o_serial : in t_from_serial;
-           fifo_din : out STD_LOGIC_VECTOR(11 DOWNTO 0);
+           fifo_din : out STD_LOGIC_VECTOR(15 DOWNTO 0);
            fifo_wr_en : out STD_LOGIC;
            fifo_rd_rst_busy : in STD_LOGIC; -- TODO handle this pin correctly
-           host_connected : in STD_LOGIC; 
+           chrono_read_enable : in STD_LOGIC; 
            leds : out t_ctrl_leds); 
 end chrono_controller;
 
@@ -113,7 +113,8 @@ begin
   o_chrono_addr.RADR <= std_logic_vector(RADR);
   o_chrono_addr.ColAdr <= std_logic_vector(ColAdr);
   fifo_wr_en <= wr_en;
-  fifo_din <= recv_data;
+  fifo_din((recv_buf_len-1) downto 0) <= recv_data;
+  fifo_din(15 downto recv_buf_len) <= (others => '0');
   leds.err_serial <= driver_error;
   leds.err <= ctrl_error;
 
@@ -320,7 +321,7 @@ begin
       
       when s_drdtst_wait =>
         driver_start <= '0';
-        if (host_connected = '1') and (driver_ready = '1') then
+        if (chrono_read_enable = '1') and (driver_ready = '1') then
           wr_en <= '1'; -- write data to FIFO on the next clock cycle
         end if; 
         

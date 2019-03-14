@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Tue Mar 12 23:50:28 2019
+| Date         : Wed Mar 13 20:49:10 2019
 | Host         : DESKTOP-OV0R6TO running 64-bit major release  (build 9200)
 | Command      : report_utilization -file chronopixel_utilization_synth.rpt -pb chronopixel_utilization_synth.pb
 | Design       : chronopixel
@@ -30,15 +30,15 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  438 |     0 |     32600 |  1.34 |
-|   LUT as Logic             |  400 |     0 |     32600 |  1.23 |
+| Slice LUTs*                |  575 |     0 |     32600 |  1.76 |
+|   LUT as Logic             |  537 |     0 |     32600 |  1.65 |
 |   LUT as Memory            |   38 |     0 |      9600 |  0.40 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   38 |     0 |           |       |
-| Slice Registers            |  697 |     0 |     65200 |  1.07 |
-|   Register as Flip Flop    |  697 |     0 |     65200 |  1.07 |
+| Slice Registers            |  824 |     0 |     65200 |  1.26 |
+|   Register as Flip Flop    |  824 |     0 |     65200 |  1.26 |
 |   Register as Latch        |    0 |     0 |     65200 |  0.00 |
-| F7 Muxes                   |    0 |     0 |     16300 |  0.00 |
+| F7 Muxes                   |    2 |     0 |     16300 |  0.01 |
 | F8 Muxes                   |    0 |     0 |      8150 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -50,7 +50,7 @@ Table of Contents
 +-------+--------------+-------------+--------------+
 | Total | Clock Enable | Synchronous | Asynchronous |
 +-------+--------------+-------------+--------------+
-| 0     |            _ |           - |            - |
+| 2     |            _ |           - |            - |
 | 0     |            _ |           - |          Set |
 | 0     |            _ |           - |        Reset |
 | 0     |            _ |         Set |            - |
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 419   |          Yes |         Set |            - |
-| 278   |          Yes |       Reset |            - |
+| 420   |          Yes |         Set |            - |
+| 402   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -92,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   83 |     0 |       250 | 33.20 |
+| Bonded IOB                  |  106 |     0 |       250 | 42.40 |
 | Bonded IPADs                |    0 |     0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         5 |  0.00 |
@@ -117,9 +117,9 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    0 |     0 |        32 |  0.00 |
+| BUFGCTRL   |    2 |     0 |        32 |  6.25 |
 | BUFIO      |    0 |     0 |        20 |  0.00 |
-| MMCME2_ADV |    0 |     0 |         5 |  0.00 |
+| MMCME2_ADV |    1 |     0 |         5 | 20.00 |
 | PLLE2_ADV  |    0 |     0 |         5 |  0.00 |
 | BUFMRCE    |    0 |     0 |        10 |  0.00 |
 | BUFHCE     |    0 |     0 |        72 |  0.00 |
@@ -148,29 +148,32 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDSE     |  419 |        Flop & Latch |
-| FDRE     |  278 |        Flop & Latch |
-| LUT3     |  235 |                 LUT |
-| LUT2     |  130 |                 LUT |
-| LUT6     |  129 |                 LUT |
-| LUT5     |   47 |                 LUT |
-| OBUF     |   45 |                  IO |
-| SRL16E   |   34 |  Distributed Memory |
-| LUT4     |   30 |                 LUT |
-| OBUFT    |   28 |                  IO |
-| LUT1     |   19 |                 LUT |
-| CARRY4   |   14 |          CarryLogic |
-| SRLC32E  |    4 |  Distributed Memory |
-| OBUFTDS  |    4 |                  IO |
-| INV      |    3 |                 LUT |
-| IBUFDS   |    3 |                  IO |
-| OBUFDS   |    2 |                  IO |
-| IBUF     |    2 |                  IO |
-| BUFR     |    2 |               Clock |
-+----------+------+---------------------+
++------------+------+---------------------+
+|  Ref Name  | Used | Functional Category |
++------------+------+---------------------+
+| FDSE       |  420 |        Flop & Latch |
+| FDRE       |  404 |        Flop & Latch |
+| LUT3       |  238 |                 LUT |
+| LUT6       |  165 |                 LUT |
+| LUT2       |  150 |                 LUT |
+| LUT5       |   87 |                 LUT |
+| LUT4       |   55 |                 LUT |
+| OBUF       |   47 |                  IO |
+| OBUFT      |   42 |                  IO |
+| SRL16E     |   34 |  Distributed Memory |
+| LUT1       |   32 |                 LUT |
+| IBUF       |   25 |                  IO |
+| CARRY4     |   17 |          CarryLogic |
+| SRLC32E    |    4 |  Distributed Memory |
+| OBUFTDS    |    4 |                  IO |
+| INV        |    3 |                 LUT |
+| IBUFDS     |    3 |                  IO |
+| OBUFDS     |    2 |                  IO |
+| MUXF7      |    2 |               MuxFx |
+| BUFR       |    2 |               Clock |
+| BUFG       |    2 |               Clock |
+| MMCME2_ADV |    1 |               Clock |
++------------+------+---------------------+
 
 
 8. Black Boxes
@@ -186,8 +189,12 @@ Table of Contents
 9. Instantiated Netlists
 ------------------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++-----------+------+
+|  Ref Name | Used |
++-----------+------+
+| okWireIn  |    1 |
+| okPipeOut |    1 |
+| okCore    |    1 |
++-----------+------+
 
 

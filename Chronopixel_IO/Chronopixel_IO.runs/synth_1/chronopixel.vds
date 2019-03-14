@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Mar 12 23:49:44 2019
-# Process ID: 9460
+# Start of session at: Wed Mar 13 20:48:24 2019
+# Process ID: 22164
 # Current directory: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1
 # Command line: vivado.exe -log chronopixel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source chronopixel.tcl
 # Log file: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.vds
@@ -15,27 +15,151 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14412 
+INFO: Helper process launched with PID 20064 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 395.336 ; gain = 101.691
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 397.523 ; gain = 102.469
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'chronopixel' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'chronopixel' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:93]
+INFO: [Synth 8-3491] module 'okHost' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:13' bound to instance 'okHost_inst' of component 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+INFO: [Synth 8-638] synthesizing module 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:24]
+	Parameter CLKDV_DIVIDE bound to: 2.000000 - type: float 
+	Parameter CLKFX_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKFX_MULTIPLY bound to: 4 - type: integer 
+	Parameter CLKIN_DIVIDE_BY_2 bound to: 0 - type: bool 
+	Parameter CLKIN_PERIOD bound to: 10.000000 - type: float 
+	Parameter CLKOUT_PHASE_SHIFT bound to: NONE - type: string 
+	Parameter CLK_FEEDBACK bound to: 1X - type: string 
+	Parameter DCM_AUTOCALIBRATION bound to: 1 - type: bool 
+	Parameter DCM_PERFORMANCE_MODE bound to: MAX_SPEED - type: string 
+	Parameter DESKEW_ADJUST bound to: SYSTEM_SYNCHRONOUS - type: string 
+	Parameter DFS_FREQUENCY_MODE bound to: LOW - type: string 
+	Parameter DLL_FREQUENCY_MODE bound to: LOW - type: string 
+	Parameter DUTY_CYCLE_CORRECTION bound to: 1 - type: bool 
+	Parameter FACTORY_JF bound to: 16'b1111000011110000 
+	Parameter PHASE_SHIFT bound to: 0 - type: integer 
+	Parameter SIM_DEVICE bound to: VIRTEX4 - type: string 
+	Parameter STARTUP_WAIT bound to: 0 - type: bool 
+INFO: [Synth 8-113] binding component instance 'hi_dcm' to cell 'DCM_ADV' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:57]
+INFO: [Synth 8-113] binding component instance 'hi_clkbuf' to cell 'BUFG' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:61]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'flop1' to cell 'FDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:62]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'flop2' to cell 'FD' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:63]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'flop3' to cell 'FD' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:64]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'flop4' to cell 'FD' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:65]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf0' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:70]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf1' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:71]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf2' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:72]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf3' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:73]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf4' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:74]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf5' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:75]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf6' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:76]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf7' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:77]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf8' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:78]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf9' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:79]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf10' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:80]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf11' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:81]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf12' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:82]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf13' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:83]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf14' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:84]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'iobuf15' to cell 'IOBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:85]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'obuf0' to cell 'OBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:87]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'obuf1' to cell 'OBUF' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:88]
+INFO: [Synth 8-637] synthesizing blackbox instance 'hicore' of component 'okCore' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'okHost' (1#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okLibrary.vhd:24]
+INFO: [Synth 8-637] synthesizing blackbox instance 'pipe_out' of component 'okPipeOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:212]
+INFO: [Synth 8-637] synthesizing blackbox instance 'pipe_count' of component 'okWireOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:221]
+INFO: [Synth 8-637] synthesizing blackbox instance 'chrono_ctrl' of component 'okWireIn' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:229]
 	Parameter DIFF_TERM bound to: 0 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_0' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:184]
+INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_0' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:236]
 	Parameter DIFF_TERM bound to: 0 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_1' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:193]
+INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_1' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:245]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:254]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: 0 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
@@ -43,48 +167,44 @@ INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFD
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-113] binding component instance 'sys_clk_IBUFDS' to cell 'IBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:210]
+INFO: [Synth 8-113] binding component instance 'sys_clk_IBUFDS' to cell 'IBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:262]
 	Parameter BUFR_DIVIDE bound to: 8 - type: string 
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
-INFO: [Synth 8-113] binding component instance 'BUFR_inst' to cell 'BUFR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:218]
+INFO: [Synth 8-113] binding component instance 'BUFR_inst' to cell 'BUFR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:270]
 	Parameter BUFR_DIVIDE bound to: 8 - type: string 
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
-INFO: [Synth 8-113] binding component instance 'BUFR_inst2' to cell 'BUFR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:231]
-INFO: [Synth 8-3491] module 'heartbeat' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:37' bound to instance 'heartbeat_inst' of component 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:243]
+INFO: [Synth 8-113] binding component instance 'BUFR_inst2' to cell 'BUFR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:283]
+INFO: [Synth 8-3491] module 'heartbeat' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:37' bound to instance 'heartbeat_inst' of component 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:295]
 INFO: [Synth 8-638] synthesizing module 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
 	Parameter counter_max bound to: 32'b00000000000101111101011110000100 
-INFO: [Synth 8-256] done synthesizing module 'heartbeat' (1#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
-INFO: [Synth 8-3491] module 'chrono_fifo' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-9460-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6' bound to instance 'fifo_inst' of component 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:250]
-INFO: [Synth 8-6157] synthesizing module 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-9460-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'chrono_fifo' (2#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-9460-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
-INFO: [Synth 8-3491] module 'chrono_serial' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54' bound to instance 'serial_inst' of component 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:263]
+INFO: [Synth 8-256] done synthesizing module 'heartbeat' (2#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
+INFO: [Synth 8-3491] module 'chrono_fifo' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-22164-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6' bound to instance 'fifo_inst' of component 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:302]
+INFO: [Synth 8-6157] synthesizing module 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-22164-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'chrono_fifo' (3#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-22164-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6]
+INFO: [Synth 8-3491] module 'chrono_serial' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54' bound to instance 'serial_inst' of component 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:316]
 INFO: [Synth 8-638] synthesizing module 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
-INFO: [Synth 8-256] done synthesizing module 'chrono_serial' (3#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
-INFO: [Synth 8-3491] module 'chrono_controller' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:39' bound to instance 'controller_inst' of component 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:285]
+INFO: [Synth 8-256] done synthesizing module 'chrono_serial' (4#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
+INFO: [Synth 8-3491] module 'chrono_controller' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:39' bound to instance 'controller_inst' of component 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:338]
 INFO: [Synth 8-638] synthesizing module 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'chrono_controller' (4#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
-WARNING: [Synth 8-3848] Net hi_out in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:41]
-WARNING: [Synth 8-3848] Net hi_muxsel in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:44]
-WARNING: [Synth 8-3848] Net ddr3_addr in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:49]
-WARNING: [Synth 8-3848] Net ddr3_ba in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:50]
-WARNING: [Synth 8-3848] Net ddr3_odt in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:51]
-WARNING: [Synth 8-3848] Net ddr3_ras_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:57]
-WARNING: [Synth 8-3848] Net ddr3_cas_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:58]
-WARNING: [Synth 8-3848] Net ddr3_we_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:59]
-WARNING: [Synth 8-3848] Net ddr3_reset_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:60]
-WARNING: [Synth 8-3848] Net ddr3_cke in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:61]
-WARNING: [Synth 8-3848] Net spi_dout in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:67]
-WARNING: [Synth 8-3848] Net host_connected in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:107]
-WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:92]
-WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_T in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:94]
-WARNING: [Synth 8-3848] Net ddr3_ck_OBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:95]
-WARNING: [Synth 8-3848] Net fifo_rd_en in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:104]
-INFO: [Synth 8-256] done synthesizing module 'chronopixel' (5#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'chrono_controller' (5#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
+WARNING: [Synth 8-3848] Net hi_muxsel in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:45]
+WARNING: [Synth 8-3848] Net ddr3_addr in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:50]
+WARNING: [Synth 8-3848] Net ddr3_ba in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:51]
+WARNING: [Synth 8-3848] Net ddr3_odt in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:52]
+WARNING: [Synth 8-3848] Net ddr3_ras_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:58]
+WARNING: [Synth 8-3848] Net ddr3_cas_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:59]
+WARNING: [Synth 8-3848] Net ddr3_we_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:60]
+WARNING: [Synth 8-3848] Net ddr3_reset_n in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:61]
+WARNING: [Synth 8-3848] Net ddr3_cke in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:62]
+WARNING: [Synth 8-3848] Net spi_dout in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:68]
+WARNING: [Synth 8-3848] Net ok2 in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:123]
+WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:94]
+WARNING: [Synth 8-3848] Net ddr3_dqs_IOBUFDS_T in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:96]
+WARNING: [Synth 8-3848] Net ddr3_ck_OBUFDS_I in module/entity chronopixel does not have driver. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:97]
+INFO: [Synth 8-256] done synthesizing module 'chronopixel' (6#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:93]
 WARNING: [Synth 8-3917] design chronopixel has port RMEM_SEL driven by constant 0
 WARNING: [Synth 8-3917] design chronopixel has port RdTstH driven by constant 0
 WARNING: [Synth 8-3331] design chrono_controller has unconnected port fifo_rd_rst_busy
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[0]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_muxsel
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[14]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[13]
@@ -111,22 +231,6 @@ WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_we_n
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_reset_n
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cke
 WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_dout
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[15]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[14]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[13]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[12]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[11]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[10]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[9]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[8]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[7]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[6]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[5]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[4]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[3]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[2]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_inout[0]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_aa
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[15]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[14]
@@ -147,17 +251,10 @@ WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[0]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[1]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[0]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_cs
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[7]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[6]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[5]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[4]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[3]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[2]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_in[1]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_clk
 WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_din
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 451.789 ; gain = 158.145
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.926 ; gain = 158.871
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -166,17 +263,35 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin controller_inst:host_connected to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:285]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[16] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[15] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[14] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[13] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[12] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[11] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[10] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[9] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[8] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[7] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[6] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[5] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[4] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[3] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[2] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[1] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
+WARNING: [Synth 8-3295] tying undriven pin okHost_inst:ok2[0] to constant 0 [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:202]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 451.789 ; gain = 158.145
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.926 ; gain = 158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 451.789 ; gain = 158.145
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.926 ; gain = 158.871
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 27 Unisim elements for replacement
+WARNING: [Netlist 29-365] DCM_ADV instance 'okHost_inst/hi_dcm' has been transformed into an MMCM. Please check the output clock waveforms for correctness. If the output clocks are incorrect, modify your design to use the MMCME<#>_ADV native to the target architecture.
+WARNING: [Netlist 29-365] DCM_ADV instance 'okHost_inst/hi_dcm' has been transformed into an MMCM. Please check the output clock waveforms for correctness. If the output clocks are incorrect, modify your design to use the MMCME<#>_ADV native to the target architecture.
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7a50tfgg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -200,40 +315,43 @@ Finished Parsing XDC File [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronop
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/chronopixel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/chronopixel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 788.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.738 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 788.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.738 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 3 instances were transformed.
+  A total of 24 instances were transformed.
+  DCM_ADV => MMCME2_ADV (inverted pins: PSINCDEC): 1 instances
+  FD => FDRE: 3 instances
+  FDS => FDSE: 1 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS, OBUFTDS): 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 788.824 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 788.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.738 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 791.738 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 788.824 ; gain = 495.180
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 791.738 ; gain = 496.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a50tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 788.824 ; gain = 495.180
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 791.738 ; gain = 496.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for fifo_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 788.824 ; gain = 495.180
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 791.738 ; gain = 496.684
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "led_reg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'trcv_state_reg' in module 'chrono_serial'
 INFO: [Synth 8-5544] ROM "o_serial[ready]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "trcv_latch" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "o_chrono[Hit_imlar]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "RdParLd_buf" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "o_serial[recv_data]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "send_bits_left" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -303,7 +421,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'trcv_state_reg' using enco
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'ctrl_state_reg' using encoding 'one-hot' in module 'chrono_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 788.824 ; gain = 495.180
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 791.738 ; gain = 496.684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -322,7 +440,7 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 2     
 +---Registers : 
-	              130 Bit    Registers := 12    
+	              130 Bit    Registers := 13    
 	               32 Bit    Registers := 1     
 	               13 Bit    Registers := 1     
 	               12 Bit    Registers := 3     
@@ -331,8 +449,8 @@ Detailed RTL Component Info :
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 24    
 +---Muxes : 
-	   7 Input    130 Bit        Muxes := 11    
-	   5 Input    130 Bit        Muxes := 16    
+	   7 Input    130 Bit        Muxes := 12    
+	   5 Input    130 Bit        Muxes := 17    
 	   7 Input    123 Bit        Muxes := 1     
 	   7 Input    120 Bit        Muxes := 1     
 	   7 Input    117 Bit        Muxes := 1     
@@ -352,7 +470,7 @@ Detailed RTL Component Info :
 	  17 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
 	   7 Input      1 Bit        Muxes := 2     
-	   5 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 6     
 	  17 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -376,13 +494,13 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	              130 Bit    Registers := 12    
+	              130 Bit    Registers := 13    
 	               12 Bit    Registers := 2     
 	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 16    
 +---Muxes : 
-	   7 Input    130 Bit        Muxes := 11    
-	   5 Input    130 Bit        Muxes := 16    
+	   7 Input    130 Bit        Muxes := 12    
+	   5 Input    130 Bit        Muxes := 17    
 	   7 Input    123 Bit        Muxes := 1     
 	   7 Input    120 Bit        Muxes := 1     
 	   7 Input    117 Bit        Muxes := 1     
@@ -393,7 +511,7 @@ Detailed RTL Component Info :
 	   5 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	   7 Input      1 Bit        Muxes := 2     
-	   5 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 6     
 Module chrono_controller 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -441,8 +559,6 @@ INFO: [Synth 8-5545] ROM "heartbeat_inst/led_reg" won't be mapped to RAM because
 WARNING: [Synth 8-3917] design chronopixel has port led[7] driven by constant 1
 WARNING: [Synth 8-3917] design chronopixel has port RMEM_SEL driven by constant 0
 WARNING: [Synth 8-3917] design chronopixel has port RdTstH driven by constant 0
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[1]
-WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_out[0]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_muxsel
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[14]
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_addr[13]
@@ -467,7 +583,30 @@ WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_ras_n
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cas_n
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_we_n
 WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_reset_n
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_cke
+WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_dout
+WARNING: [Synth 8-3331] design chronopixel has unconnected port hi_aa
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[15]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[14]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[13]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[12]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[11]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[10]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[9]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[8]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[7]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[6]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[5]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[4]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[3]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[2]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dq[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[1]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port ddr3_dm[0]
+WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_cs
+WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_clk
+WARNING: [Synth 8-3331] design chronopixel has unconnected port spi_din
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[129] )
@@ -671,7 +810,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_i
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[102] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 788.824 ; gain = 495.180
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 791.738 ; gain = 496.684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -683,13 +822,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 788.824 ; gain = 495.180
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 791.738 ; gain = 496.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -701,7 +840,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -721,12 +860,12 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-4649] Removing BlackBox instance pipe_count of module okWireOut_bbox_2 having unconnected or no output ports
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-4442] BlackBox module fifo_inst has unconnected pin rd_en
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -739,7 +878,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -751,25 +890,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -807,67 +946,133 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |chrono_fifo   |         1|
+|1     |okPipeOut     |         1|
+|2     |okWireIn      |         1|
+|3     |chrono_fifo   |         1|
+|4     |okCore        |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
-+------+------------+------+
-|      |Cell        |Count |
-+------+------------+------+
-|1     |chrono_fifo |     1|
-|2     |BUFR        |     2|
-|3     |CARRY4      |    14|
-|4     |LUT1        |    19|
-|5     |LUT2        |   130|
-|6     |LUT3        |   235|
-|7     |LUT4        |    30|
-|8     |LUT5        |    47|
-|9     |LUT6        |   129|
-|10    |SRL16E      |    34|
-|11    |SRLC32E     |     4|
-|12    |FDRE        |   278|
-|13    |FDSE        |   419|
-|14    |IBUF        |     2|
-|15    |IBUFDS      |     1|
-|16    |IOBUFDS     |     2|
-|17    |OBUF        |    45|
-|18    |OBUFDS      |     1|
-|19    |OBUFT       |    28|
-+------+------------+------+
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |chrono_fifo      |     1|
+|2     |okCore_bbox_0    |     1|
+|3     |okPipeOut_bbox_1 |     1|
+|4     |okWireIn_bbox_3  |     1|
+|5     |BUFG             |     2|
+|6     |BUFR             |     2|
+|7     |CARRY4           |    14|
+|8     |DCM_ADV          |     1|
+|9     |LUT1             |    20|
+|10    |LUT2             |   131|
+|11    |LUT3             |   235|
+|12    |LUT4             |    30|
+|13    |LUT5             |    47|
+|14    |LUT6             |   130|
+|15    |SRL16E           |    34|
+|16    |SRLC32E          |     4|
+|17    |FD               |     3|
+|18    |FDRE             |   278|
+|19    |FDS              |     1|
+|20    |FDSE             |   419|
+|21    |IBUF             |     9|
+|22    |IBUFDS           |     1|
+|23    |IOBUF            |    16|
+|24    |IOBUFDS          |     2|
+|25    |OBUF             |    47|
+|26    |OBUFDS           |     1|
+|27    |OBUFT            |    26|
++------+-----------------+------+
 
 Report Instance Areas: 
 +------+------------------+------------------+------+
 |      |Instance          |Module            |Cells |
 +------+------------------+------------------+------+
-|1     |top               |                  |  1436|
-|2     |  controller_inst |chrono_controller |   171|
+|1     |top               |                  |  1571|
+|2     |  controller_inst |chrono_controller |   172|
 |3     |  heartbeat_inst  |heartbeat         |    53|
-|4     |  serial_inst     |chrono_serial     |  1115|
+|4     |  okHost_inst     |okHost            |    76|
+|5     |  serial_inst     |chrono_serial     |  1115|
 +------+------------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 839.617 ; gain = 545.973
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 838.184 ; gain = 543.129
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 76 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 839.617 ; gain = 208.938
-Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 839.617 ; gain = 545.973
+Synthesis finished with 0 errors, 0 critical warnings and 51 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 838.184 ; gain = 205.316
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 838.184 ; gain = 543.129
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+Release 14.7 - ngc2edif P_INT.20180726 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design okPipeOut.ngc ...
+WARNING:NetListWriters:298 - No output is written to okPipeOut.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file okPipeOut.edif ...
+ngc2edif: Total memory usage is 4321792 kilobytes
+
+Reading core file 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okPipeOut.ngc' for (cell view 'okPipeOut', library 'work')
+Parsing EDIF File [./.ngc2edfcache/okPipeOut_ngc_ad61e08a.edif]
+Finished Parsing EDIF File [./.ngc2edfcache/okPipeOut_ngc_ad61e08a.edif]
+Release 14.7 - ngc2edif P_INT.20180726 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design okWireIn.ngc ...
+WARNING:NetListWriters:298 - No output is written to okWireIn.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file okWireIn.edif ...
+ngc2edif: Total memory usage is 4321236 kilobytes
+
+Reading core file 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okWireIn.ngc' for (cell view 'okWireIn', library 'work')
+Parsing EDIF File [./.ngc2edfcache/okWireIn_ngc_ad61e08a.edif]
+Finished Parsing EDIF File [./.ngc2edfcache/okWireIn_ngc_ad61e08a.edif]
+Release 14.7 - ngc2edif P_INT.20180726 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design okCore.ngc ...
+WARNING:NetListWriters:298 - No output is written to okCore.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file okCore.edif ...
+ngc2edif: Total memory usage is 4321748 kilobytes
+
+Reading core file 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM5010/okCore.ngc' for (cell view 'okCore', library 'work')
+Parsing EDIF File [./.ngc2edfcache/okCore_ngc_ad61e08a.edif]
+Finished Parsing EDIF File [./.ngc2edfcache/okCore_ngc_ad61e08a.edif]
+INFO: [Netlist 29-17] Analyzing 166 Unisim elements for replacement
+WARNING: [Netlist 29-365] DCM_ADV instance 'okHost_inst/hi_dcm' has been transformed into an MMCM. Please check the output clock waveforms for correctness. If the output clocks are incorrect, modify your design to use the MMCME<#>_ADV native to the target architecture.
+WARNING: [Netlist 29-365] DCM_ADV instance 'okHost_inst/hi_dcm' has been transformed into an MMCM. Please check the output clock waveforms for correctness. If the output clocks are incorrect, modify your design to use the MMCME<#>_ADV native to the target architecture.
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Xilinx ngc2edif P_INT.20180726
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 839.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 838.184 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 3 instances were transformed.
+  A total of 129 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 3 instances
+  DCM_ADV => MMCME2_ADV (inverted pins: PSINCDEC): 1 instances
+  FD => FDRE: 3 instances
+  FDE => FDRE: 67 instances
+  FDR => FDRE: 22 instances
+  FDRS => FDRS (FDRE, LUT2, VCC): 2 instances
+  FDS => FDSE: 1 instances
+  INV => LUT1: 11 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS, OBUFTDS): 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-284 Infos, 132 Warnings, 1 Critical Warnings and 0 Errors encountered.
+315 Infos, 147 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 839.617 ; gain = 557.441
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 839.617 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 838.184 ; gain = 554.594
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 838.184 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file chronopixel_utilization_synth.rpt -pb chronopixel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 23:50:28 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 13 20:49:10 2019...

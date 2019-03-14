@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Mar 12 23:49:44 2019
-# Process ID: 9460
+# Start of session at: Wed Mar 13 20:48:24 2019
+# Process ID: 22164
 # Current directory: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1
 # Command line: vivado.exe -log chronopixel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source chronopixel.tcl
 # Log file: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.vds

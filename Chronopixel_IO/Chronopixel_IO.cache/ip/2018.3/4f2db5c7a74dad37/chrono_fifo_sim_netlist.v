@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Mar 13 20:30:39 2019
+// Date        : Wed Mar 13 20:06:33 2019
 // Host        : DESKTOP-OV0R6TO running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/chrono_fifo/chrono_fifo_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+//               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ chrono_fifo_sim_netlist.v
 // Design      : chrono_fifo
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@
 
 (* CHECK_LICENSE_TYPE = "chrono_fifo,fifo_generator_v13_2_3,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "fifo_generator_v13_2_3,Vivado 2018.3" *) 
 (* NotValidForBitStream *)
-module chrono_fifo
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (rst,
     wr_clk,
     rd_clk,
@@ -24,7 +24,6 @@ module chrono_fifo
     dout,
     full,
     empty,
-    rd_data_count,
     wr_rst_busy,
     rd_rst_busy);
   input rst;
@@ -36,7 +35,6 @@ module chrono_fifo
   (* x_interface_info = "xilinx.com:interface:fifo_read:1.0 FIFO_READ RD_DATA" *) output [15:0]dout;
   (* x_interface_info = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE FULL" *) output full;
   (* x_interface_info = "xilinx.com:interface:fifo_read:1.0 FIFO_READ EMPTY" *) output empty;
-  output [13:0]rd_data_count;
   output wr_rst_busy;
   output rd_rst_busy;
 
@@ -45,7 +43,6 @@ module chrono_fifo
   wire empty;
   wire full;
   wire rd_clk;
-  wire [13:0]rd_data_count;
   wire rd_en;
   wire rd_rst_busy;
   wire rst;
@@ -164,6 +161,7 @@ module chrono_fifo
   wire [0:0]NLW_U0_m_axis_tkeep_UNCONNECTED;
   wire [0:0]NLW_U0_m_axis_tstrb_UNCONNECTED;
   wire [3:0]NLW_U0_m_axis_tuser_UNCONNECTED;
+  wire [13:0]NLW_U0_rd_data_count_UNCONNECTED;
   wire [0:0]NLW_U0_s_axi_bid_UNCONNECTED;
   wire [1:0]NLW_U0_s_axi_bresp_UNCONNECTED;
   wire [0:0]NLW_U0_s_axi_buser_UNCONNECTED;
@@ -259,7 +257,7 @@ module chrono_fifo
   (* C_HAS_PROG_FLAGS_WACH = "0" *) 
   (* C_HAS_PROG_FLAGS_WDCH = "0" *) 
   (* C_HAS_PROG_FLAGS_WRCH = "0" *) 
-  (* C_HAS_RD_DATA_COUNT = "1" *) 
+  (* C_HAS_RD_DATA_COUNT = "0" *) 
   (* C_HAS_RD_RST = "0" *) 
   (* C_HAS_RST = "1" *) 
   (* C_HAS_SLAVE_CE = "0" *) 
@@ -375,7 +373,7 @@ module chrono_fifo
   (* C_WR_PNTR_WIDTH_WDCH = "10" *) 
   (* C_WR_PNTR_WIDTH_WRCH = "4" *) 
   (* C_WR_RESPONSE_LATENCY = "1" *) 
-  chrono_fifo_fifo_generator_v13_2_3 U0
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_fifo_generator_v13_2_3 U0
        (.almost_empty(NLW_U0_almost_empty_UNCONNECTED),
         .almost_full(NLW_U0_almost_full_UNCONNECTED),
         .axi_ar_data_count(NLW_U0_axi_ar_data_count_UNCONNECTED[4:0]),
@@ -534,7 +532,7 @@ module chrono_fifo
         .prog_full_thresh_assert({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .prog_full_thresh_negate({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .rd_clk(rd_clk),
-        .rd_data_count(rd_data_count),
+        .rd_data_count(NLW_U0_rd_data_count_UNCONNECTED[13:0]),
         .rd_en(rd_en),
         .rd_rst(1'b0),
         .rd_rst_busy(rd_rst_busy),
@@ -609,11 +607,10 @@ module chrono_fifo
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
-(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_gray" *) 
-(* REG_OUTPUT = "1" *) (* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
-(* VERSION = "0" *) (* WIDTH = "14" *) (* XPM_MODULE = "TRUE" *) 
-(* xpm_cdc = "GRAY" *) 
-module chrono_fifo_xpm_cdc_gray
+(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "0" *) (* REG_OUTPUT = "1" *) 
+(* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) (* VERSION = "0" *) 
+(* WIDTH = "14" *) (* XPM_MODULE = "TRUE" *) (* xpm_cdc = "GRAY" *) 
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_gray
    (src_clk,
     src_in_bin,
     dest_clk,
@@ -1250,7 +1247,7 @@ endmodule
 (* REG_OUTPUT = "1" *) (* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
 (* VERSION = "0" *) (* WIDTH = "14" *) (* XPM_MODULE = "TRUE" *) 
 (* xpm_cdc = "GRAY" *) 
-module chrono_fifo_xpm_cdc_gray__2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_gray__2
    (src_clk,
     src_in_bin,
     dest_clk,
@@ -1883,10 +1880,10 @@ module chrono_fifo_xpm_cdc_gray__2
         .R(1'b0));
 endmodule
 
-(* DEST_SYNC_FF = "5" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
-(* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SINGLE" *) 
-module chrono_fifo_xpm_cdc_single
+(* DEST_SYNC_FF = "5" *) (* INIT_SYNC_FF = "0" *) (* SIM_ASSERT_CHK = "0" *) 
+(* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) 
+(* xpm_cdc = "SINGLE" *) 
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_single
    (src_clk,
     src_in,
     dest_clk,
@@ -1951,7 +1948,7 @@ endmodule
 (* DEST_SYNC_FF = "5" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
 (* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
 (* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SINGLE" *) 
-module chrono_fifo_xpm_cdc_single__2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_single__2
    (src_clk,
     src_in,
     dest_clk,
@@ -2014,9 +2011,9 @@ module chrono_fifo_xpm_cdc_single__2
 endmodule
 
 (* DEF_VAL = "1'b1" *) (* DEST_SYNC_FF = "5" *) (* INIT = "1" *) 
-(* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_sync_rst" *) (* SIM_ASSERT_CHK = "0" *) 
-(* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SYNC_RST" *) 
-module chrono_fifo_xpm_cdc_sync_rst
+(* INIT_SYNC_FF = "0" *) (* SIM_ASSERT_CHK = "0" *) (* VERSION = "0" *) 
+(* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SYNC_RST" *) 
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_sync_rst
    (src_rst,
     dest_clk,
     dest_rst);
@@ -2089,7 +2086,7 @@ endmodule
 (* DEF_VAL = "1'b1" *) (* DEST_SYNC_FF = "5" *) (* INIT = "1" *) 
 (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_sync_rst" *) (* SIM_ASSERT_CHK = "0" *) 
 (* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SYNC_RST" *) 
-module chrono_fifo_xpm_cdc_sync_rst__2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_sync_rst__2
    (src_rst,
     dest_clk,
     dest_rst);
@@ -2159,8 +2156,7 @@ module chrono_fifo_xpm_cdc_sync_rst__2
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
-module chrono_fifo_blk_mem_gen_generic_cstr
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_generic_cstr
    (dout,
     ENA_dly_D,
     POR_B,
@@ -2180,11 +2176,11 @@ module chrono_fifo_blk_mem_gen_generic_cstr
     ENB_I_3,
     ENA_I_4,
     ENB_I_5,
-    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ,
-    out,
+    FULL_FB,
     wr_en,
+    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     rd_en,
-    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 );
+    out);
   output [15:0]dout;
   output ENA_dly_D;
   output POR_B;
@@ -2204,11 +2200,11 @@ module chrono_fifo_blk_mem_gen_generic_cstr
   input ENB_I_3;
   input ENA_I_4;
   input ENB_I_5;
-  input \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
-  input out;
+  input FULL_FB;
   input wr_en;
-  input rd_en;
   input \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
+  input rd_en;
+  input out;
 
   wire [13:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ;
   wire \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
@@ -2224,10 +2220,10 @@ module chrono_fifo_blk_mem_gen_generic_cstr
   wire ENB_I_3;
   wire ENB_I_5;
   wire ENB_dly_D;
+  wire FULL_FB;
   wire POR_A;
   wire POR_B;
   wire [13:0]Q;
-  wire \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
   wire [15:0]din;
   wire [15:0]dout;
   wire out;
@@ -2274,7 +2270,7 @@ module chrono_fifo_blk_mem_gen_generic_cstr
   wire wr_clk;
   wire wr_en;
 
-  chrono_fifo_blk_mem_gen_mux__parameterized0 \has_mux_b.B 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_mux__parameterized0 \has_mux_b.B 
        (.DOBDO({\ramloop[6].ram.r_n_0 ,\ramloop[6].ram.r_n_1 ,\ramloop[6].ram.r_n_2 ,\ramloop[6].ram.r_n_3 ,\ramloop[6].ram.r_n_4 ,\ramloop[6].ram.r_n_5 ,\ramloop[6].ram.r_n_6 ,\ramloop[6].ram.r_n_7 }),
         .DOPBDOP(\ramloop[6].ram.r_n_8 ),
         .dout(dout[15:7]),
@@ -2284,12 +2280,12 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .\dout[15] (\ramloop[7].ram.r_n_8 ),
         .\dout[15]_0 (\ramloop[4].ram.r_n_8 ),
         .\dout[15]_1 (\ramloop[5].ram.r_n_8 ),
-        .\no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
         .\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram [13:12]),
-        .\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_1 (\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ),
+        .\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_1 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
+        .out(out),
         .rd_clk(rd_clk),
         .rd_en(rd_en));
-  chrono_fifo_blk_mem_gen_prim_width \ramloop[0].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width \ramloop[0].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .ENA_I(ENA_I_1),
         .ENB_I(ENB_I_0),
@@ -2301,7 +2297,7 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .ram_rstram_b(ram_rstram_b),
         .rd_clk(rd_clk),
         .wr_clk(wr_clk));
-  chrono_fifo_blk_mem_gen_prim_width__parameterized0 \ramloop[1].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized0 \ramloop[1].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .ENA_I(ENA_I_1),
         .ENB_I(ENB_I_0),
@@ -2313,7 +2309,7 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .ram_rstram_b(ram_rstram_b),
         .rd_clk(rd_clk),
         .wr_clk(wr_clk));
-  chrono_fifo_blk_mem_gen_prim_width__parameterized1 \ramloop[2].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized1 \ramloop[2].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .ENA_I(ENA_I_1),
         .ENB_I(ENB_I_0),
@@ -2325,7 +2321,7 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .ram_rstram_b(ram_rstram_b),
         .rd_clk(rd_clk),
         .wr_clk(wr_clk));
-  chrono_fifo_blk_mem_gen_prim_width__parameterized2 \ramloop[3].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized2 \ramloop[3].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .ENA_I(ENA_I_1),
         .ENB_I(ENB_I_0),
@@ -2337,7 +2333,7 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .ram_rstram_b(ram_rstram_b),
         .rd_clk(rd_clk),
         .wr_clk(wr_clk));
-  chrono_fifo_blk_mem_gen_prim_width__parameterized3 \ramloop[4].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized3 \ramloop[4].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ({\ramloop[4].ram.r_n_0 ,\ramloop[4].ram.r_n_1 ,\ramloop[4].ram.r_n_2 ,\ramloop[4].ram.r_n_3 ,\ramloop[4].ram.r_n_4 ,\ramloop[4].ram.r_n_5 ,\ramloop[4].ram.r_n_6 ,\ramloop[4].ram.r_n_7 }),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\ramloop[4].ram.r_n_8 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram [11:0]),
@@ -2348,10 +2344,10 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .ENB_I(ENB_I),
         .ENB_I_1(ENB_I_0),
         .ENB_dly_D(ENB_dly_D),
+        .FULL_FB(FULL_FB),
         .POR_A(POR_A),
         .POR_B(POR_B),
         .Q(Q[11:0]),
-        .\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg_0 (\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ),
         .din(din[15:7]),
         .out(out),
         .p_20_out(p_20_out),
@@ -2360,7 +2356,7 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .rd_en(rd_en),
         .wr_clk(wr_clk),
         .wr_en(wr_en));
-  chrono_fifo_blk_mem_gen_prim_width__parameterized4 \ramloop[5].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized4 \ramloop[5].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ({\ramloop[5].ram.r_n_0 ,\ramloop[5].ram.r_n_1 ,\ramloop[5].ram.r_n_2 ,\ramloop[5].ram.r_n_3 ,\ramloop[5].ram.r_n_4 ,\ramloop[5].ram.r_n_5 ,\ramloop[5].ram.r_n_6 ,\ramloop[5].ram.r_n_7 }),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\ramloop[5].ram.r_n_8 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram [11:0]),
@@ -2373,7 +2369,7 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .ram_rstram_b(ram_rstram_b),
         .rd_clk(rd_clk),
         .wr_clk(wr_clk));
-  chrono_fifo_blk_mem_gen_prim_width__parameterized5 \ramloop[6].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized5 \ramloop[6].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram [11:0]),
         .DOBDO({\ramloop[6].ram.r_n_0 ,\ramloop[6].ram.r_n_1 ,\ramloop[6].ram.r_n_2 ,\ramloop[6].ram.r_n_3 ,\ramloop[6].ram.r_n_4 ,\ramloop[6].ram.r_n_5 ,\ramloop[6].ram.r_n_6 ,\ramloop[6].ram.r_n_7 }),
         .DOPBDOP(\ramloop[6].ram.r_n_8 ),
@@ -2386,7 +2382,7 @@ module chrono_fifo_blk_mem_gen_generic_cstr
         .ram_rstram_b(ram_rstram_b),
         .rd_clk(rd_clk),
         .wr_clk(wr_clk));
-  chrono_fifo_blk_mem_gen_prim_width__parameterized6 \ramloop[7].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized6 \ramloop[7].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ({\ramloop[7].ram.r_n_0 ,\ramloop[7].ram.r_n_1 ,\ramloop[7].ram.r_n_2 ,\ramloop[7].ram.r_n_3 ,\ramloop[7].ram.r_n_4 ,\ramloop[7].ram.r_n_5 ,\ramloop[7].ram.r_n_6 ,\ramloop[7].ram.r_n_7 }),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\ramloop[7].ram.r_n_8 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram [11:0]),
@@ -2402,10 +2398,10 @@ module chrono_fifo_blk_mem_gen_generic_cstr
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_mux" *) 
-module chrono_fifo_blk_mem_gen_mux__parameterized0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_mux__parameterized0
    (dout,
     \no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_0 ,
-    \no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_0 ,
+    out,
     rd_en,
     \no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_1 ,
     rd_clk,
@@ -2419,7 +2415,7 @@ module chrono_fifo_blk_mem_gen_mux__parameterized0
     \dout[14]_1 );
   output [8:0]dout;
   input [1:0]\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_0 ;
-  input \no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_0 ;
+  input out;
   input rd_en;
   input \no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_1 ;
   input rd_clk;
@@ -2443,9 +2439,9 @@ module chrono_fifo_blk_mem_gen_mux__parameterized0
   wire [0:0]\dout[15]_1 ;
   wire \no_softecc_sel_reg.ce_pri.sel_pipe[0]_i_1_n_0 ;
   wire \no_softecc_sel_reg.ce_pri.sel_pipe[1]_i_1_n_0 ;
-  wire \no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_0 ;
   wire [1:0]\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_0 ;
   wire \no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_1 ;
+  wire out;
   wire rd_clk;
   wire rd_en;
   wire [1:0]sel_pipe;
@@ -2544,7 +2540,7 @@ module chrono_fifo_blk_mem_gen_mux__parameterized0
     .INIT(32'hAAEFAA20)) 
     \no_softecc_sel_reg.ce_pri.sel_pipe[0]_i_1 
        (.I0(\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_0 [0]),
-        .I1(\no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_0 ),
+        .I1(out),
         .I2(rd_en),
         .I3(\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_1 ),
         .I4(sel_pipe[0]),
@@ -2553,7 +2549,7 @@ module chrono_fifo_blk_mem_gen_mux__parameterized0
     .INIT(32'hAAEFAA20)) 
     \no_softecc_sel_reg.ce_pri.sel_pipe[1]_i_1 
        (.I0(\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_0 [1]),
-        .I1(\no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_0 ),
+        .I1(out),
         .I2(rd_en),
         .I3(\no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_1 ),
         .I4(sel_pipe[1]),
@@ -2576,8 +2572,7 @@ module chrono_fifo_blk_mem_gen_mux__parameterized0
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module chrono_fifo_blk_mem_gen_prim_width
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width
    (dout,
     wr_clk,
     rd_clk,
@@ -2613,7 +2608,7 @@ module chrono_fifo_blk_mem_gen_prim_width
   wire rd_clk;
   wire wr_clk;
 
-  chrono_fifo_blk_mem_gen_prim_wrapper \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper \prim_noinit.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram ),
         .ENA_I(ENA_I),
         .ENB_I(ENB_I),
@@ -2628,7 +2623,7 @@ module chrono_fifo_blk_mem_gen_prim_width
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module chrono_fifo_blk_mem_gen_prim_width__parameterized0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized0
    (dout,
     wr_clk,
     rd_clk,
@@ -2664,7 +2659,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized0
   wire rd_clk;
   wire wr_clk;
 
-  chrono_fifo_blk_mem_gen_prim_wrapper__parameterized0 \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized0 \prim_noinit.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .ENA_I(ENA_I),
         .ENB_I(ENB_I),
@@ -2679,7 +2674,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized0
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module chrono_fifo_blk_mem_gen_prim_width__parameterized1
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized1
    (dout,
     wr_clk,
     rd_clk,
@@ -2715,7 +2710,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized1
   wire rd_clk;
   wire wr_clk;
 
-  chrono_fifo_blk_mem_gen_prim_wrapper__parameterized1 \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized1 \prim_noinit.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .ENA_I(ENA_I),
         .ENB_I(ENB_I),
@@ -2730,7 +2725,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized1
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module chrono_fifo_blk_mem_gen_prim_width__parameterized2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized2
    (dout,
     wr_clk,
     rd_clk,
@@ -2766,7 +2761,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized2
   wire rd_clk;
   wire wr_clk;
 
-  chrono_fifo_blk_mem_gen_prim_wrapper__parameterized2 \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized2 \prim_noinit.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .ENA_I(ENA_I),
         .ENB_I(ENB_I),
@@ -2781,7 +2776,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized2
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module chrono_fifo_blk_mem_gen_prim_width__parameterized3
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized3
    (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ,
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     POR_A,
@@ -2799,11 +2794,11 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized3
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ,
     din,
     p_20_out,
-    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg_0 ,
-    out,
+    FULL_FB,
     wr_en,
+    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 ,
     rd_en,
-    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 );
+    out);
   output [7:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ;
   output [0:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
   output POR_A;
@@ -2821,11 +2816,11 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized3
   input [11:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ;
   input [8:0]din;
   input p_20_out;
-  input \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg_0 ;
-  input out;
+  input FULL_FB;
   input wr_en;
-  input rd_en;
   input \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 ;
+  input rd_en;
+  input out;
 
   wire [7:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ;
   wire [0:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
@@ -2839,10 +2834,11 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized3
   wire ENB_I_1;
   wire ENB_dly;
   wire ENB_dly_D;
+  wire FULL_FB;
   wire POR_A;
   wire POR_B;
   wire [11:0]Q;
-  wire \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg_0 ;
+  wire \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_i_1_n_0 ;
   wire \SAFETY_CKT_GEN.POR_A_i_1_n_0 ;
   wire \SAFETY_CKT_GEN.POR_B_i_1_n_0 ;
   wire \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[3]_srl3_n_0 ;
@@ -2884,14 +2880,20 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized3
         .D(ENB_dly),
         .Q(ENB_dly_D),
         .R(1'b0));
-  FDSE #(
+  LUT2 #(
+    .INIT(4'hE)) 
+    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_i_1 
+       (.I0(POR_B),
+        .I1(\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 ),
+        .O(\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_i_1_n_0 ));
+  FDRE #(
     .INIT(1'b0)) 
     \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg 
        (.C(rd_clk),
         .CE(1'b1),
-        .D(POR_B),
+        .D(\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_i_1_n_0 ),
         .Q(ENB_dly),
-        .S(\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg_0 ));
+        .R(1'b0));
   LUT2 #(
     .INIT(4'h6)) 
     \SAFETY_CKT_GEN.POR_A_i_1 
@@ -2978,18 +2980,18 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized3
         .D(\SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3_n_0 ),
         .Q(\SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[4] ),
         .R(1'b0));
-  chrono_fifo_blk_mem_gen_prim_wrapper__parameterized3 \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized3 \prim_noinit.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ),
-        .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_3 (\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg_0 ),
-        .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_4 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 ),
+        .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_3 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 ),
         .ENA_I(ENA_I),
         .ENA_I_0(ENA_I_0),
         .ENA_dly_D(ENA_dly_D),
         .ENB_I(ENB_I),
         .ENB_I_1(ENB_I_1),
         .ENB_dly_D(ENB_dly_D),
+        .FULL_FB(FULL_FB),
         .POR_A(POR_A),
         .Q(Q),
         .din(din),
@@ -3003,7 +3005,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized3
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module chrono_fifo_blk_mem_gen_prim_width__parameterized4
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized4
    (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ,
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     wr_clk,
@@ -3042,7 +3044,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized4
   wire rd_clk;
   wire wr_clk;
 
-  chrono_fifo_blk_mem_gen_prim_wrapper__parameterized4 \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized4 \prim_noinit.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ),
@@ -3058,7 +3060,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized4
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module chrono_fifo_blk_mem_gen_prim_width__parameterized5
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized5
    (DOBDO,
     DOPBDOP,
     wr_clk,
@@ -3097,7 +3099,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized5
   wire rd_clk;
   wire wr_clk;
 
-  chrono_fifo_blk_mem_gen_prim_wrapper__parameterized5 \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized5 \prim_noinit.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .DOBDO(DOBDO),
         .DOPBDOP(DOPBDOP),
@@ -3113,7 +3115,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized5
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module chrono_fifo_blk_mem_gen_prim_width__parameterized6
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized6
    (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ,
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     wr_clk,
@@ -3152,7 +3154,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized6
   wire rd_clk;
   wire wr_clk;
 
-  chrono_fifo_blk_mem_gen_prim_wrapper__parameterized6 \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized6 \prim_noinit.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ),
@@ -3167,8 +3169,7 @@ module chrono_fifo_blk_mem_gen_prim_width__parameterized6
         .wr_clk(wr_clk));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module chrono_fifo_blk_mem_gen_prim_wrapper
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper
    (dout,
     wr_clk,
     rd_clk,
@@ -3335,7 +3336,7 @@ module chrono_fifo_blk_mem_gen_prim_wrapper
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized0
    (dout,
     wr_clk,
     rd_clk,
@@ -3594,7 +3595,7 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized0
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized1
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized1
    (dout,
     wr_clk,
     rd_clk,
@@ -3853,7 +3854,7 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized1
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized2
    (dout,
     wr_clk,
     rd_clk,
@@ -4112,7 +4113,7 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized2
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized3
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized3
    (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ,
     ENA_I_0,
@@ -4128,12 +4129,12 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized3
     din,
     p_20_out,
     ENA_dly_D,
-    out,
+    FULL_FB,
     wr_en,
     ENB_dly_D,
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_3 ,
     rd_en,
-    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_4 );
+    out);
   output [7:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
   output [0:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ;
   output ENA_I_0;
@@ -4149,24 +4150,24 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized3
   input [8:0]din;
   input p_20_out;
   input ENA_dly_D;
-  input out;
+  input FULL_FB;
   input wr_en;
   input ENB_dly_D;
   input \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_3 ;
   input rd_en;
-  input \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_4 ;
+  input out;
 
   wire [7:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
   wire [0:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ;
   wire [11:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_2 ;
   wire \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_3 ;
-  wire \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_4 ;
   wire ENA_I;
   wire ENA_I_0;
   wire ENA_dly_D;
   wire ENB_I;
   wire ENB_I_1;
   wire ENB_dly_D;
+  wire FULL_FB;
   wire POR_A;
   wire [11:0]Q;
   wire [8:0]din;
@@ -4402,7 +4403,7 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized3
     .INIT(8'hBA)) 
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_i_1__3 
        (.I0(ENA_dly_D),
-        .I1(out),
+        .I1(FULL_FB),
         .I2(wr_en),
         .O(ENA_I_0));
   LUT4 #(
@@ -4411,12 +4412,12 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized3
        (.I0(ENB_dly_D),
         .I1(\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_3 ),
         .I2(rd_en),
-        .I3(\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_4 ),
+        .I3(out),
         .O(ENB_I_1));
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized4
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized4
    (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ,
     wr_clk,
@@ -4678,7 +4679,7 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized4
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized5
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized5
    (DOBDO,
     DOPBDOP,
     wr_clk,
@@ -4940,7 +4941,7 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized5
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized6
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper__parameterized6
    (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_1 ,
     wr_clk,
@@ -5201,8 +5202,7 @@ module chrono_fifo_blk_mem_gen_prim_wrapper__parameterized6
         .WEBWE({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
-module chrono_fifo_blk_mem_gen_top
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_top
    (dout,
     ENA_dly_D,
     POR_B,
@@ -5222,11 +5222,11 @@ module chrono_fifo_blk_mem_gen_top
     ENB_I_3,
     ENA_I_4,
     ENB_I_5,
-    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ,
-    out,
+    FULL_FB,
     wr_en,
+    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     rd_en,
-    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 );
+    out);
   output [15:0]dout;
   output ENA_dly_D;
   output POR_B;
@@ -5246,11 +5246,11 @@ module chrono_fifo_blk_mem_gen_top
   input ENB_I_3;
   input ENA_I_4;
   input ENB_I_5;
-  input \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
-  input out;
+  input FULL_FB;
   input wr_en;
-  input rd_en;
   input \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
+  input rd_en;
+  input out;
 
   wire [13:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ;
   wire \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
@@ -5264,9 +5264,9 @@ module chrono_fifo_blk_mem_gen_top
   wire ENB_I_3;
   wire ENB_I_5;
   wire ENB_dly_D;
+  wire FULL_FB;
   wire POR_B;
   wire [13:0]Q;
-  wire \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
   wire [15:0]din;
   wire [15:0]dout;
   wire out;
@@ -5277,7 +5277,7 @@ module chrono_fifo_blk_mem_gen_top
   wire wr_clk;
   wire wr_en;
 
-  chrono_fifo_blk_mem_gen_generic_cstr \valid.cstr 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_generic_cstr \valid.cstr 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
         .ENA_I(ENA_I),
@@ -5290,9 +5290,9 @@ module chrono_fifo_blk_mem_gen_top
         .ENB_I_3(ENB_I_3),
         .ENB_I_5(ENB_I_5),
         .ENB_dly_D(ENB_dly_D),
+        .FULL_FB(FULL_FB),
         .POR_B(POR_B),
         .Q(Q),
-        .\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg (\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ),
         .din(din),
         .dout(dout),
         .out(out),
@@ -5304,8 +5304,7 @@ module chrono_fifo_blk_mem_gen_top
         .wr_en(wr_en));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2" *) 
-module chrono_fifo_blk_mem_gen_v8_4_2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_2
    (dout,
     ENA_dly_D,
     POR_B,
@@ -5325,11 +5324,11 @@ module chrono_fifo_blk_mem_gen_v8_4_2
     ENB_I_3,
     ENA_I_4,
     ENB_I_5,
-    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ,
-    out,
+    FULL_FB,
     wr_en,
+    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     rd_en,
-    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 );
+    out);
   output [15:0]dout;
   output ENA_dly_D;
   output POR_B;
@@ -5349,11 +5348,11 @@ module chrono_fifo_blk_mem_gen_v8_4_2
   input ENB_I_3;
   input ENA_I_4;
   input ENB_I_5;
-  input \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
-  input out;
+  input FULL_FB;
   input wr_en;
-  input rd_en;
   input \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
+  input rd_en;
+  input out;
 
   wire [13:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ;
   wire \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
@@ -5367,9 +5366,9 @@ module chrono_fifo_blk_mem_gen_v8_4_2
   wire ENB_I_3;
   wire ENB_I_5;
   wire ENB_dly_D;
+  wire FULL_FB;
   wire POR_B;
   wire [13:0]Q;
-  wire \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
   wire [15:0]din;
   wire [15:0]dout;
   wire out;
@@ -5380,7 +5379,7 @@ module chrono_fifo_blk_mem_gen_v8_4_2
   wire wr_clk;
   wire wr_en;
 
-  chrono_fifo_blk_mem_gen_v8_4_2_synth inst_blk_mem_gen
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_2_synth inst_blk_mem_gen
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
         .ENA_I(ENA_I),
@@ -5393,9 +5392,9 @@ module chrono_fifo_blk_mem_gen_v8_4_2
         .ENB_I_3(ENB_I_3),
         .ENB_I_5(ENB_I_5),
         .ENB_dly_D(ENB_dly_D),
+        .FULL_FB(FULL_FB),
         .POR_B(POR_B),
         .Q(Q),
-        .\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg (\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ),
         .din(din),
         .dout(dout),
         .out(out),
@@ -5407,8 +5406,7 @@ module chrono_fifo_blk_mem_gen_v8_4_2
         .wr_en(wr_en));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2_synth" *) 
-module chrono_fifo_blk_mem_gen_v8_4_2_synth
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_2_synth
    (dout,
     ENA_dly_D,
     POR_B,
@@ -5428,11 +5426,11 @@ module chrono_fifo_blk_mem_gen_v8_4_2_synth
     ENB_I_3,
     ENA_I_4,
     ENB_I_5,
-    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ,
-    out,
+    FULL_FB,
     wr_en,
+    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     rd_en,
-    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 );
+    out);
   output [15:0]dout;
   output ENA_dly_D;
   output POR_B;
@@ -5452,11 +5450,11 @@ module chrono_fifo_blk_mem_gen_v8_4_2_synth
   input ENB_I_3;
   input ENA_I_4;
   input ENB_I_5;
-  input \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
-  input out;
+  input FULL_FB;
   input wr_en;
-  input rd_en;
   input \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
+  input rd_en;
+  input out;
 
   wire [13:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ;
   wire \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
@@ -5470,9 +5468,9 @@ module chrono_fifo_blk_mem_gen_v8_4_2_synth
   wire ENB_I_3;
   wire ENB_I_5;
   wire ENB_dly_D;
+  wire FULL_FB;
   wire POR_B;
   wire [13:0]Q;
-  wire \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
   wire [15:0]din;
   wire [15:0]dout;
   wire out;
@@ -5483,7 +5481,7 @@ module chrono_fifo_blk_mem_gen_v8_4_2_synth
   wire wr_clk;
   wire wr_en;
 
-  chrono_fifo_blk_mem_gen_top \gnbram.gnativebmg.native_blk_mem_gen 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_top \gnbram.gnativebmg.native_blk_mem_gen 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
         .ENA_I(ENA_I),
@@ -5496,9 +5494,9 @@ module chrono_fifo_blk_mem_gen_v8_4_2_synth
         .ENB_I_3(ENB_I_3),
         .ENB_I_5(ENB_I_5),
         .ENB_dly_D(ENB_dly_D),
+        .FULL_FB(FULL_FB),
         .POR_B(POR_B),
         .Q(Q),
-        .\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg (\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ),
         .din(din),
         .dout(dout),
         .out(out),
@@ -5510,124 +5508,27 @@ module chrono_fifo_blk_mem_gen_v8_4_2_synth
         .wr_en(wr_en));
 endmodule
 
-(* ORIG_REF_NAME = "clk_x_pntrs" *) 
-module chrono_fifo_clk_x_pntrs
-   (S,
-    WR_PNTR_RD,
-    \dest_out_bin_ff_reg[7] ,
-    \dest_out_bin_ff_reg[11] ,
-    \dest_out_bin_ff_reg[13] ,
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_clk_x_pntrs
+   (WR_PNTR_RD,
     RD_PNTR_WR,
-    Q,
     wr_clk,
-    \src_gray_ff_reg[13] ,
-    rd_clk);
-  output [3:0]S;
+    Q,
+    rd_clk,
+    \src_gray_ff_reg[13] );
   output [13:0]WR_PNTR_RD;
-  output [3:0]\dest_out_bin_ff_reg[7] ;
-  output [3:0]\dest_out_bin_ff_reg[11] ;
-  output [1:0]\dest_out_bin_ff_reg[13] ;
   output [13:0]RD_PNTR_WR;
-  input [13:0]Q;
   input wr_clk;
-  input [13:0]\src_gray_ff_reg[13] ;
+  input [13:0]Q;
   input rd_clk;
+  input [13:0]\src_gray_ff_reg[13] ;
 
   wire [13:0]Q;
   wire [13:0]RD_PNTR_WR;
-  wire [3:0]S;
   wire [13:0]WR_PNTR_RD;
-  wire [3:0]\dest_out_bin_ff_reg[11] ;
-  wire [1:0]\dest_out_bin_ff_reg[13] ;
-  wire [3:0]\dest_out_bin_ff_reg[7] ;
   wire rd_clk;
   wire [13:0]\src_gray_ff_reg[13] ;
   wire wr_clk;
 
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__0_i_1
-       (.I0(WR_PNTR_RD[7]),
-        .I1(Q[7]),
-        .O(\dest_out_bin_ff_reg[7] [3]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__0_i_2
-       (.I0(WR_PNTR_RD[6]),
-        .I1(Q[6]),
-        .O(\dest_out_bin_ff_reg[7] [2]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__0_i_3
-       (.I0(WR_PNTR_RD[5]),
-        .I1(Q[5]),
-        .O(\dest_out_bin_ff_reg[7] [1]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__0_i_4
-       (.I0(WR_PNTR_RD[4]),
-        .I1(Q[4]),
-        .O(\dest_out_bin_ff_reg[7] [0]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__1_i_1
-       (.I0(WR_PNTR_RD[11]),
-        .I1(Q[11]),
-        .O(\dest_out_bin_ff_reg[11] [3]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__1_i_2
-       (.I0(WR_PNTR_RD[10]),
-        .I1(Q[10]),
-        .O(\dest_out_bin_ff_reg[11] [2]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__1_i_3
-       (.I0(WR_PNTR_RD[9]),
-        .I1(Q[9]),
-        .O(\dest_out_bin_ff_reg[11] [1]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__1_i_4
-       (.I0(WR_PNTR_RD[8]),
-        .I1(Q[8]),
-        .O(\dest_out_bin_ff_reg[11] [0]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__2_i_1
-       (.I0(WR_PNTR_RD[13]),
-        .I1(Q[13]),
-        .O(\dest_out_bin_ff_reg[13] [1]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry__2_i_2
-       (.I0(WR_PNTR_RD[12]),
-        .I1(Q[12]),
-        .O(\dest_out_bin_ff_reg[13] [0]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry_i_1
-       (.I0(WR_PNTR_RD[3]),
-        .I1(Q[3]),
-        .O(S[3]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry_i_2
-       (.I0(WR_PNTR_RD[2]),
-        .I1(Q[2]),
-        .O(S[2]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry_i_3
-       (.I0(WR_PNTR_RD[1]),
-        .I1(Q[1]),
-        .O(S[1]));
-  LUT2 #(
-    .INIT(4'h9)) 
-    minusOp_carry_i_4
-       (.I0(WR_PNTR_RD[0]),
-        .I1(Q[0]),
-        .O(S[0]));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "0" *) 
   (* REG_OUTPUT = "1" *) 
@@ -5637,11 +5538,11 @@ module chrono_fifo_clk_x_pntrs
   (* WIDTH = "14" *) 
   (* XPM_CDC = "GRAY" *) 
   (* XPM_MODULE = "TRUE" *) 
-  chrono_fifo_xpm_cdc_gray rd_pntr_cdc_inst
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_gray rd_pntr_cdc_inst
        (.dest_clk(wr_clk),
         .dest_out_bin(RD_PNTR_WR),
         .src_clk(rd_clk),
-        .src_in_bin(Q));
+        .src_in_bin(\src_gray_ff_reg[13] ));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "0" *) 
   (* REG_OUTPUT = "1" *) 
@@ -5651,15 +5552,14 @@ module chrono_fifo_clk_x_pntrs
   (* WIDTH = "14" *) 
   (* XPM_CDC = "GRAY" *) 
   (* XPM_MODULE = "TRUE" *) 
-  chrono_fifo_xpm_cdc_gray__2 wr_pntr_cdc_inst
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_gray__2 wr_pntr_cdc_inst
        (.dest_clk(rd_clk),
         .dest_out_bin(WR_PNTR_RD),
         .src_clk(wr_clk),
-        .src_in_bin(\src_gray_ff_reg[13] ));
+        .src_in_bin(Q));
 endmodule
 
-(* ORIG_REF_NAME = "compare" *) 
-module chrono_fifo_compare
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_compare
    (comp1,
     RD_PNTR_WR,
     Q);
@@ -5762,7 +5662,7 @@ module chrono_fifo_compare
 endmodule
 
 (* ORIG_REF_NAME = "compare" *) 
-module chrono_fifo_compare_0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_compare_0
    (comp2,
     RD_PNTR_WR,
     D);
@@ -5865,13 +5765,13 @@ module chrono_fifo_compare_0
 endmodule
 
 (* ORIG_REF_NAME = "compare" *) 
-module chrono_fifo_compare_1
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_compare_1
    (comp0,
-    WR_PNTR_RD,
-    Q);
+    Q,
+    WR_PNTR_RD);
   output comp0;
-  input [13:0]WR_PNTR_RD;
   input [13:0]Q;
+  input [13:0]WR_PNTR_RD;
 
   wire [13:0]Q;
   wire [13:0]WR_PNTR_RD;
@@ -5902,34 +5802,34 @@ module chrono_fifo_compare_1
   LUT4 #(
     .INIT(16'h9009)) 
     \gmux.gm[0].gm1.m1_i_1 
-       (.I0(WR_PNTR_RD[0]),
-        .I1(Q[0]),
-        .I2(WR_PNTR_RD[1]),
-        .I3(Q[1]),
+       (.I0(Q[0]),
+        .I1(WR_PNTR_RD[0]),
+        .I2(Q[1]),
+        .I3(WR_PNTR_RD[1]),
         .O(v1_reg[0]));
   LUT4 #(
     .INIT(16'h9009)) 
     \gmux.gm[1].gms.ms_i_1 
-       (.I0(WR_PNTR_RD[2]),
-        .I1(Q[2]),
-        .I2(WR_PNTR_RD[3]),
-        .I3(Q[3]),
+       (.I0(Q[2]),
+        .I1(WR_PNTR_RD[2]),
+        .I2(Q[3]),
+        .I3(WR_PNTR_RD[3]),
         .O(v1_reg[1]));
   LUT4 #(
     .INIT(16'h9009)) 
     \gmux.gm[2].gms.ms_i_1 
-       (.I0(WR_PNTR_RD[4]),
-        .I1(Q[4]),
-        .I2(WR_PNTR_RD[5]),
-        .I3(Q[5]),
+       (.I0(Q[4]),
+        .I1(WR_PNTR_RD[4]),
+        .I2(Q[5]),
+        .I3(WR_PNTR_RD[5]),
         .O(v1_reg[2]));
   LUT4 #(
     .INIT(16'h9009)) 
     \gmux.gm[3].gms.ms_i_1 
-       (.I0(WR_PNTR_RD[6]),
-        .I1(Q[6]),
-        .I2(WR_PNTR_RD[7]),
-        .I3(Q[7]),
+       (.I0(Q[6]),
+        .I1(WR_PNTR_RD[6]),
+        .I2(Q[7]),
+        .I3(WR_PNTR_RD[7]),
         .O(v1_reg[3]));
   (* OPT_MODIFIED = "MLO " *) 
   (* XILINX_LEGACY_PRIM = "(MUXCY,XORCY)" *) 
@@ -5944,31 +5844,31 @@ module chrono_fifo_compare_1
   LUT4 #(
     .INIT(16'h9009)) 
     \gmux.gm[4].gms.ms_i_1 
-       (.I0(WR_PNTR_RD[8]),
-        .I1(Q[8]),
-        .I2(WR_PNTR_RD[9]),
-        .I3(Q[9]),
+       (.I0(Q[8]),
+        .I1(WR_PNTR_RD[8]),
+        .I2(Q[9]),
+        .I3(WR_PNTR_RD[9]),
         .O(v1_reg[4]));
   LUT4 #(
     .INIT(16'h9009)) 
     \gmux.gm[5].gms.ms_i_1 
-       (.I0(WR_PNTR_RD[10]),
-        .I1(Q[10]),
-        .I2(WR_PNTR_RD[11]),
-        .I3(Q[11]),
+       (.I0(Q[10]),
+        .I1(WR_PNTR_RD[10]),
+        .I2(Q[11]),
+        .I3(WR_PNTR_RD[11]),
         .O(v1_reg[5]));
   LUT4 #(
     .INIT(16'h9009)) 
     \gmux.gm[6].gms.ms_i_1 
-       (.I0(WR_PNTR_RD[12]),
-        .I1(Q[12]),
-        .I2(WR_PNTR_RD[13]),
-        .I3(Q[13]),
+       (.I0(Q[12]),
+        .I1(WR_PNTR_RD[12]),
+        .I2(Q[13]),
+        .I3(WR_PNTR_RD[13]),
         .O(v1_reg[6]));
 endmodule
 
 (* ORIG_REF_NAME = "compare" *) 
-module chrono_fifo_compare_2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_compare_2
    (comp1,
     D,
     WR_PNTR_RD);
@@ -6070,14 +5970,12 @@ module chrono_fifo_compare_2
         .O(v1_reg[6]));
 endmodule
 
-(* ORIG_REF_NAME = "fifo_generator_ramfifo" *) 
-module chrono_fifo_fifo_generator_ramfifo
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_fifo_generator_ramfifo
    (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ,
     wr_rst_busy,
     dout,
     empty,
     full,
-    rd_data_count,
     rd_clk,
     wr_clk,
     rst,
@@ -6089,7 +5987,6 @@ module chrono_fifo_fifo_generator_ramfifo
   output [15:0]dout;
   output empty;
   output full;
-  output [13:0]rd_data_count;
   input rd_clk;
   input wr_clk;
   input rst;
@@ -6113,20 +6010,6 @@ module chrono_fifo_fifo_generator_ramfifo
   wire \gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/ENB_I ;
   wire \gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/ENA_I ;
   wire \gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/ENB_I ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_0 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_1 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_18 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_19 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_2 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_20 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_21 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_22 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_23 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_24 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_25 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_26 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_27 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_3 ;
   wire \gntv_or_sync_fifo.gl0.wr_n_1 ;
   wire \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   wire [13:0]p_0_out;
@@ -6136,7 +6019,6 @@ module chrono_fifo_fifo_generator_ramfifo
   wire [13:0]p_25_out;
   wire p_2_out;
   wire rd_clk;
-  wire [13:0]rd_data_count;
   wire rd_en;
   wire rst;
   wire rst_full_gen_i;
@@ -6145,53 +6027,44 @@ module chrono_fifo_fifo_generator_ramfifo
   wire wr_en;
   wire wr_rst_busy;
 
-  chrono_fifo_clk_x_pntrs \gntv_or_sync_fifo.gcx.clkx 
-       (.Q(p_0_out),
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_clk_x_pntrs \gntv_or_sync_fifo.gcx.clkx 
+       (.Q(p_13_out),
         .RD_PNTR_WR(p_25_out),
-        .S({\gntv_or_sync_fifo.gcx.clkx_n_0 ,\gntv_or_sync_fifo.gcx.clkx_n_1 ,\gntv_or_sync_fifo.gcx.clkx_n_2 ,\gntv_or_sync_fifo.gcx.clkx_n_3 }),
         .WR_PNTR_RD(p_24_out),
-        .\dest_out_bin_ff_reg[11] ({\gntv_or_sync_fifo.gcx.clkx_n_22 ,\gntv_or_sync_fifo.gcx.clkx_n_23 ,\gntv_or_sync_fifo.gcx.clkx_n_24 ,\gntv_or_sync_fifo.gcx.clkx_n_25 }),
-        .\dest_out_bin_ff_reg[13] ({\gntv_or_sync_fifo.gcx.clkx_n_26 ,\gntv_or_sync_fifo.gcx.clkx_n_27 }),
-        .\dest_out_bin_ff_reg[7] ({\gntv_or_sync_fifo.gcx.clkx_n_18 ,\gntv_or_sync_fifo.gcx.clkx_n_19 ,\gntv_or_sync_fifo.gcx.clkx_n_20 ,\gntv_or_sync_fifo.gcx.clkx_n_21 }),
         .rd_clk(rd_clk),
-        .\src_gray_ff_reg[13] (p_13_out),
+        .\src_gray_ff_reg[13] (p_0_out),
         .wr_clk(wr_clk));
-  chrono_fifo_rd_logic \gntv_or_sync_fifo.gl0.rd 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rd_logic \gntv_or_sync_fifo.gl0.rd 
        (.ENB_I(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/ENB_I ),
         .ENB_I_0(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/ENB_I ),
         .ENB_I_1(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/ENB_I ),
         .ENB_I_2(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/ENB_I ),
         .ENB_dly_D(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/ENB_dly_D ),
         .Q(p_0_out),
-        .S({\gntv_or_sync_fifo.gcx.clkx_n_0 ,\gntv_or_sync_fifo.gcx.clkx_n_1 ,\gntv_or_sync_fifo.gcx.clkx_n_2 ,\gntv_or_sync_fifo.gcx.clkx_n_3 }),
         .WR_PNTR_RD(p_24_out),
         .empty(empty),
         .\gc0.count_reg[0] (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .out(p_2_out),
         .rd_clk(rd_clk),
-        .rd_data_count(rd_data_count),
-        .\rd_dc_i_reg[11] ({\gntv_or_sync_fifo.gcx.clkx_n_22 ,\gntv_or_sync_fifo.gcx.clkx_n_23 ,\gntv_or_sync_fifo.gcx.clkx_n_24 ,\gntv_or_sync_fifo.gcx.clkx_n_25 }),
-        .\rd_dc_i_reg[13] ({\gntv_or_sync_fifo.gcx.clkx_n_26 ,\gntv_or_sync_fifo.gcx.clkx_n_27 }),
-        .\rd_dc_i_reg[7] ({\gntv_or_sync_fifo.gcx.clkx_n_18 ,\gntv_or_sync_fifo.gcx.clkx_n_19 ,\gntv_or_sync_fifo.gcx.clkx_n_20 ,\gntv_or_sync_fifo.gcx.clkx_n_21 }),
         .rd_en(rd_en));
-  chrono_fifo_wr_logic \gntv_or_sync_fifo.gl0.wr 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_wr_logic \gntv_or_sync_fifo.gl0.wr 
        (.ENA_I(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/ENA_I ),
         .ENA_I_0(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/ENA_I ),
         .ENA_I_1(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/ENA_I ),
         .ENA_I_2(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/ENA_I ),
         .ENA_dly_D(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/ENA_dly_D ),
+        .FULL_FB(\gntv_or_sync_fifo.gl0.wr_n_1 ),
         .Q(p_13_out),
         .RD_PNTR_WR(p_25_out),
         .full(full),
         .\gic0.gc0.count_d2_reg[0] (rstblk_n_0),
-        .out(\gntv_or_sync_fifo.gl0.wr_n_1 ),
+        .out(rst_full_gen_i),
         .p_20_out(p_20_out),
-        .ram_full_fb_i_reg(rst_full_gen_i),
         .wr_clk(wr_clk),
         .wr_en(wr_en));
-  chrono_fifo_memory \gntv_or_sync_fifo.mem 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_memory \gntv_or_sync_fifo.mem 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (p_0_out),
-        .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (p_2_out),
+        .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .ENA_I(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/ENA_I ),
         .ENA_I_0(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/ENA_I ),
         .ENA_I_2(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/ENA_I ),
@@ -6202,19 +6075,19 @@ module chrono_fifo_fifo_generator_ramfifo
         .ENB_I_3(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/ENB_I ),
         .ENB_I_5(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/ENB_I ),
         .ENB_dly_D(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/ENB_dly_D ),
+        .FULL_FB(\gntv_or_sync_fifo.gl0.wr_n_1 ),
         .POR_B(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/POR_B ),
         .Q(p_13_out),
-        .\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .din(din),
         .dout(dout),
-        .out(\gntv_or_sync_fifo.gl0.wr_n_1 ),
+        .out(p_2_out),
         .p_20_out(p_20_out),
         .ram_rstram_b(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/ram_rstram_b ),
         .rd_clk(rd_clk),
         .rd_en(rd_en),
         .wr_clk(wr_clk),
         .wr_en(wr_en));
-  chrono_fifo_reset_blk_ramfifo rstblk
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_reset_blk_ramfifo rstblk
        (.POR_B(\gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/POR_B ),
         .\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_wr_rst_ic_reg_0 (rstblk_n_0),
@@ -6226,14 +6099,12 @@ module chrono_fifo_fifo_generator_ramfifo
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
-(* ORIG_REF_NAME = "fifo_generator_top" *) 
-module chrono_fifo_fifo_generator_top
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_fifo_generator_top
    (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ,
     wr_rst_busy,
     dout,
     empty,
     full,
-    rd_data_count,
     rd_clk,
     wr_clk,
     rst,
@@ -6245,7 +6116,6 @@ module chrono_fifo_fifo_generator_top
   output [15:0]dout;
   output empty;
   output full;
-  output [13:0]rd_data_count;
   input rd_clk;
   input wr_clk;
   input rst;
@@ -6259,21 +6129,19 @@ module chrono_fifo_fifo_generator_top
   wire full;
   wire \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   wire rd_clk;
-  wire [13:0]rd_data_count;
   wire rd_en;
   wire rst;
   wire wr_clk;
   wire wr_en;
   wire wr_rst_busy;
 
-  chrono_fifo_fifo_generator_ramfifo \grf.rf 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_fifo_generator_ramfifo \grf.rf 
        (.din(din),
         .dout(dout),
         .empty(empty),
         .full(full),
         .\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .rd_clk(rd_clk),
-        .rd_data_count(rd_data_count),
         .rd_en(rd_en),
         .rst(rst),
         .wr_clk(wr_clk),
@@ -6309,7 +6177,7 @@ endmodule
 (* C_HAS_DATA_COUNTS_WRCH = "0" *) (* C_HAS_INT_CLK = "0" *) (* C_HAS_MASTER_CE = "0" *) 
 (* C_HAS_MEMINIT_FILE = "0" *) (* C_HAS_OVERFLOW = "0" *) (* C_HAS_PROG_FLAGS_AXIS = "0" *) 
 (* C_HAS_PROG_FLAGS_RACH = "0" *) (* C_HAS_PROG_FLAGS_RDCH = "0" *) (* C_HAS_PROG_FLAGS_WACH = "0" *) 
-(* C_HAS_PROG_FLAGS_WDCH = "0" *) (* C_HAS_PROG_FLAGS_WRCH = "0" *) (* C_HAS_RD_DATA_COUNT = "1" *) 
+(* C_HAS_PROG_FLAGS_WDCH = "0" *) (* C_HAS_PROG_FLAGS_WRCH = "0" *) (* C_HAS_RD_DATA_COUNT = "0" *) 
 (* C_HAS_RD_RST = "0" *) (* C_HAS_RST = "1" *) (* C_HAS_SLAVE_CE = "0" *) 
 (* C_HAS_SRST = "0" *) (* C_HAS_UNDERFLOW = "0" *) (* C_HAS_VALID = "0" *) 
 (* C_HAS_WR_ACK = "0" *) (* C_HAS_WR_DATA_COUNT = "0" *) (* C_HAS_WR_RST = "0" *) 
@@ -6348,8 +6216,8 @@ endmodule
 (* C_WR_DEPTH_WRCH = "16" *) (* C_WR_FREQ = "1" *) (* C_WR_PNTR_WIDTH = "14" *) 
 (* C_WR_PNTR_WIDTH_AXIS = "10" *) (* C_WR_PNTR_WIDTH_RACH = "4" *) (* C_WR_PNTR_WIDTH_RDCH = "10" *) 
 (* C_WR_PNTR_WIDTH_WACH = "4" *) (* C_WR_PNTR_WIDTH_WDCH = "10" *) (* C_WR_PNTR_WIDTH_WRCH = "4" *) 
-(* C_WR_RESPONSE_LATENCY = "1" *) (* ORIG_REF_NAME = "fifo_generator_v13_2_3" *) 
-module chrono_fifo_fifo_generator_v13_2_3
+(* C_WR_RESPONSE_LATENCY = "1" *) 
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_fifo_generator_v13_2_3
    (backup,
     backup_marker,
     clk,
@@ -6820,7 +6688,6 @@ module chrono_fifo_fifo_generator_v13_2_3
   wire empty;
   wire full;
   wire rd_clk;
-  wire [13:0]rd_data_count;
   wire rd_en;
   wire rd_rst_busy;
   wire rst;
@@ -7252,6 +7119,20 @@ module chrono_fifo_fifo_generator_v13_2_3
   assign overflow = \<const0> ;
   assign prog_empty = \<const0> ;
   assign prog_full = \<const0> ;
+  assign rd_data_count[13] = \<const0> ;
+  assign rd_data_count[12] = \<const0> ;
+  assign rd_data_count[11] = \<const0> ;
+  assign rd_data_count[10] = \<const0> ;
+  assign rd_data_count[9] = \<const0> ;
+  assign rd_data_count[8] = \<const0> ;
+  assign rd_data_count[7] = \<const0> ;
+  assign rd_data_count[6] = \<const0> ;
+  assign rd_data_count[5] = \<const0> ;
+  assign rd_data_count[4] = \<const0> ;
+  assign rd_data_count[3] = \<const0> ;
+  assign rd_data_count[2] = \<const0> ;
+  assign rd_data_count[1] = \<const0> ;
+  assign rd_data_count[0] = \<const0> ;
   assign s_axi_arready = \<const0> ;
   assign s_axi_awready = \<const0> ;
   assign s_axi_bid[0] = \<const0> ;
@@ -7353,14 +7234,13 @@ module chrono_fifo_fifo_generator_v13_2_3
        (.G(\<const0> ));
   VCC VCC
        (.P(\<const1> ));
-  chrono_fifo_fifo_generator_v13_2_3_synth inst_fifo_gen
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_fifo_generator_v13_2_3_synth inst_fifo_gen
        (.din(din),
         .dout(dout),
         .empty(empty),
         .full(full),
         .\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (rd_rst_busy),
         .rd_clk(rd_clk),
-        .rd_data_count(rd_data_count),
         .rd_en(rd_en),
         .rst(rst),
         .wr_clk(wr_clk),
@@ -7368,14 +7248,12 @@ module chrono_fifo_fifo_generator_v13_2_3
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
-(* ORIG_REF_NAME = "fifo_generator_v13_2_3_synth" *) 
-module chrono_fifo_fifo_generator_v13_2_3_synth
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_fifo_generator_v13_2_3_synth
    (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ,
     wr_rst_busy,
     dout,
     empty,
     full,
-    rd_data_count,
     rd_clk,
     wr_clk,
     rst,
@@ -7387,7 +7265,6 @@ module chrono_fifo_fifo_generator_v13_2_3_synth
   output [15:0]dout;
   output empty;
   output full;
-  output [13:0]rd_data_count;
   input rd_clk;
   input wr_clk;
   input rst;
@@ -7401,21 +7278,19 @@ module chrono_fifo_fifo_generator_v13_2_3_synth
   wire full;
   wire \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   wire rd_clk;
-  wire [13:0]rd_data_count;
   wire rd_en;
   wire rst;
   wire wr_clk;
   wire wr_en;
   wire wr_rst_busy;
 
-  chrono_fifo_fifo_generator_top \gconvfifo.rf 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_fifo_generator_top \gconvfifo.rf 
        (.din(din),
         .dout(dout),
         .empty(empty),
         .full(full),
         .\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .rd_clk(rd_clk),
-        .rd_data_count(rd_data_count),
         .rd_en(rd_en),
         .rst(rst),
         .wr_clk(wr_clk),
@@ -7423,8 +7298,7 @@ module chrono_fifo_fifo_generator_v13_2_3_synth
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
-(* ORIG_REF_NAME = "memory" *) 
-module chrono_fifo_memory
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_memory
    (dout,
     ENA_dly_D,
     POR_B,
@@ -7444,11 +7318,11 @@ module chrono_fifo_memory
     ENB_I_3,
     ENA_I_4,
     ENB_I_5,
-    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ,
-    out,
+    FULL_FB,
     wr_en,
+    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ,
     rd_en,
-    \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 );
+    out);
   output [15:0]dout;
   output ENA_dly_D;
   output POR_B;
@@ -7468,11 +7342,11 @@ module chrono_fifo_memory
   input ENB_I_3;
   input ENA_I_4;
   input ENB_I_5;
-  input \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
-  input out;
+  input FULL_FB;
   input wr_en;
-  input rd_en;
   input \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
+  input rd_en;
+  input out;
 
   wire [13:0]\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ;
   wire \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ;
@@ -7486,9 +7360,9 @@ module chrono_fifo_memory
   wire ENB_I_3;
   wire ENB_I_5;
   wire ENB_dly_D;
+  wire FULL_FB;
   wire POR_B;
   wire [13:0]Q;
-  wire \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ;
   wire [15:0]din;
   wire [15:0]dout;
   wire out;
@@ -7499,7 +7373,7 @@ module chrono_fifo_memory
   wire wr_clk;
   wire wr_en;
 
-  chrono_fifo_blk_mem_gen_v8_4_2 \gbm.gbmg.gbmga.ngecc.bmg 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_2 \gbm.gbmg.gbmga.ngecc.bmg 
        (.\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram_0 ),
         .ENA_I(ENA_I),
@@ -7512,9 +7386,9 @@ module chrono_fifo_memory
         .ENB_I_3(ENB_I_3),
         .ENB_I_5(ENB_I_5),
         .ENB_dly_D(ENB_dly_D),
+        .FULL_FB(FULL_FB),
         .POR_B(POR_B),
         .Q(Q),
-        .\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg (\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg ),
         .din(din),
         .dout(dout),
         .out(out),
@@ -7526,8 +7400,7 @@ module chrono_fifo_memory
         .wr_en(wr_en));
 endmodule
 
-(* ORIG_REF_NAME = "rd_bin_cntr" *) 
-module chrono_fifo_rd_bin_cntr
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rd_bin_cntr
    (D,
     ENB_I,
     Q,
@@ -7895,194 +7768,7 @@ module chrono_fifo_rd_bin_cntr
         .R(\gc0.count_reg[0]_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "rd_dc_as" *) 
-module chrono_fifo_rd_dc_as
-   (rd_data_count,
-    WR_PNTR_RD,
-    S,
-    \rd_dc_i_reg[7]_0 ,
-    \rd_dc_i_reg[11]_0 ,
-    \rd_dc_i_reg[13]_0 ,
-    \rd_dc_i_reg[13]_1 ,
-    rd_clk);
-  output [13:0]rd_data_count;
-  input [12:0]WR_PNTR_RD;
-  input [3:0]S;
-  input [3:0]\rd_dc_i_reg[7]_0 ;
-  input [3:0]\rd_dc_i_reg[11]_0 ;
-  input [1:0]\rd_dc_i_reg[13]_0 ;
-  input \rd_dc_i_reg[13]_1 ;
-  input rd_clk;
-
-  wire [3:0]S;
-  wire [12:0]WR_PNTR_RD;
-  wire [13:0]minusOp;
-  wire minusOp_carry__0_n_0;
-  wire minusOp_carry__0_n_1;
-  wire minusOp_carry__0_n_2;
-  wire minusOp_carry__0_n_3;
-  wire minusOp_carry__1_n_0;
-  wire minusOp_carry__1_n_1;
-  wire minusOp_carry__1_n_2;
-  wire minusOp_carry__1_n_3;
-  wire minusOp_carry__2_n_3;
-  wire minusOp_carry_n_0;
-  wire minusOp_carry_n_1;
-  wire minusOp_carry_n_2;
-  wire minusOp_carry_n_3;
-  wire rd_clk;
-  wire [13:0]rd_data_count;
-  wire [3:0]\rd_dc_i_reg[11]_0 ;
-  wire [1:0]\rd_dc_i_reg[13]_0 ;
-  wire \rd_dc_i_reg[13]_1 ;
-  wire [3:0]\rd_dc_i_reg[7]_0 ;
-  wire [3:1]NLW_minusOp_carry__2_CO_UNCONNECTED;
-  wire [3:2]NLW_minusOp_carry__2_O_UNCONNECTED;
-
-  CARRY4 minusOp_carry
-       (.CI(1'b0),
-        .CO({minusOp_carry_n_0,minusOp_carry_n_1,minusOp_carry_n_2,minusOp_carry_n_3}),
-        .CYINIT(1'b1),
-        .DI(WR_PNTR_RD[3:0]),
-        .O(minusOp[3:0]),
-        .S(S));
-  CARRY4 minusOp_carry__0
-       (.CI(minusOp_carry_n_0),
-        .CO({minusOp_carry__0_n_0,minusOp_carry__0_n_1,minusOp_carry__0_n_2,minusOp_carry__0_n_3}),
-        .CYINIT(1'b0),
-        .DI(WR_PNTR_RD[7:4]),
-        .O(minusOp[7:4]),
-        .S(\rd_dc_i_reg[7]_0 ));
-  CARRY4 minusOp_carry__1
-       (.CI(minusOp_carry__0_n_0),
-        .CO({minusOp_carry__1_n_0,minusOp_carry__1_n_1,minusOp_carry__1_n_2,minusOp_carry__1_n_3}),
-        .CYINIT(1'b0),
-        .DI(WR_PNTR_RD[11:8]),
-        .O(minusOp[11:8]),
-        .S(\rd_dc_i_reg[11]_0 ));
-  CARRY4 minusOp_carry__2
-       (.CI(minusOp_carry__1_n_0),
-        .CO({NLW_minusOp_carry__2_CO_UNCONNECTED[3:1],minusOp_carry__2_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,WR_PNTR_RD[12]}),
-        .O({NLW_minusOp_carry__2_O_UNCONNECTED[3:2],minusOp[13:12]}),
-        .S({1'b0,1'b0,\rd_dc_i_reg[13]_0 }));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[0] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[0]),
-        .Q(rd_data_count[0]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[10] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[10]),
-        .Q(rd_data_count[10]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[11] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[11]),
-        .Q(rd_data_count[11]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[12] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[12]),
-        .Q(rd_data_count[12]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[13] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[13]),
-        .Q(rd_data_count[13]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[1] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[1]),
-        .Q(rd_data_count[1]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[2] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[2]),
-        .Q(rd_data_count[2]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[3] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[3]),
-        .Q(rd_data_count[3]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[4] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[4]),
-        .Q(rd_data_count[4]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[5] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[5]),
-        .Q(rd_data_count[5]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[6] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[6]),
-        .Q(rd_data_count[6]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[7] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[7]),
-        .Q(rd_data_count[7]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[8] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[8]),
-        .Q(rd_data_count[8]),
-        .R(\rd_dc_i_reg[13]_1 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \rd_dc_i_reg[9] 
-       (.C(rd_clk),
-        .CE(1'b1),
-        .D(minusOp[9]),
-        .Q(rd_data_count[9]),
-        .R(\rd_dc_i_reg[13]_1 ));
-endmodule
-
-(* ORIG_REF_NAME = "rd_logic" *) 
-module chrono_fifo_rd_logic
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rd_logic
    (empty,
     out,
     ENB_I,
@@ -8090,16 +7776,11 @@ module chrono_fifo_rd_logic
     ENB_I_0,
     ENB_I_1,
     ENB_I_2,
-    rd_data_count,
     \gc0.count_reg[0] ,
     rd_clk,
-    WR_PNTR_RD,
-    S,
-    \rd_dc_i_reg[7] ,
-    \rd_dc_i_reg[11] ,
-    \rd_dc_i_reg[13] ,
     rd_en,
-    ENB_dly_D);
+    ENB_dly_D,
+    WR_PNTR_RD);
   output empty;
   output out;
   output ENB_I;
@@ -8107,16 +7788,11 @@ module chrono_fifo_rd_logic
   output ENB_I_0;
   output ENB_I_1;
   output ENB_I_2;
-  output [13:0]rd_data_count;
   input \gc0.count_reg[0] ;
   input rd_clk;
-  input [13:0]WR_PNTR_RD;
-  input [3:0]S;
-  input [3:0]\rd_dc_i_reg[7] ;
-  input [3:0]\rd_dc_i_reg[11] ;
-  input [1:0]\rd_dc_i_reg[13] ;
   input rd_en;
   input ENB_dly_D;
+  input [13:0]WR_PNTR_RD;
 
   wire ENB_I;
   wire ENB_I_0;
@@ -8124,30 +7800,16 @@ module chrono_fifo_rd_logic
   wire ENB_I_2;
   wire ENB_dly_D;
   wire [13:0]Q;
-  wire [3:0]S;
   wire [13:0]WR_PNTR_RD;
   wire empty;
   wire \gc0.count_reg[0] ;
   wire out;
   wire p_8_out;
   wire rd_clk;
-  wire [13:0]rd_data_count;
-  wire [3:0]\rd_dc_i_reg[11] ;
-  wire [1:0]\rd_dc_i_reg[13] ;
-  wire [3:0]\rd_dc_i_reg[7] ;
   wire rd_en;
   wire [13:0]rd_pntr_plus1;
 
-  chrono_fifo_rd_dc_as \gras.grdc1.rdc 
-       (.S(S),
-        .WR_PNTR_RD(WR_PNTR_RD[12:0]),
-        .rd_clk(rd_clk),
-        .rd_data_count(rd_data_count),
-        .\rd_dc_i_reg[11]_0 (\rd_dc_i_reg[11] ),
-        .\rd_dc_i_reg[13]_0 (\rd_dc_i_reg[13] ),
-        .\rd_dc_i_reg[13]_1 (\gc0.count_reg[0] ),
-        .\rd_dc_i_reg[7]_0 (\rd_dc_i_reg[7] ));
-  chrono_fifo_rd_status_flags_as \gras.rsts 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rd_status_flags_as \gras.rsts 
        (.D(rd_pntr_plus1),
         .Q(Q),
         .WR_PNTR_RD(WR_PNTR_RD),
@@ -8157,7 +7819,7 @@ module chrono_fifo_rd_logic
         .ram_empty_i_reg_0(\gc0.count_reg[0] ),
         .rd_clk(rd_clk),
         .rd_en(rd_en));
-  chrono_fifo_rd_bin_cntr rpntr
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rd_bin_cntr rpntr
        (.D(rd_pntr_plus1),
         .ENB_I(ENB_I),
         .ENB_I_0(ENB_I_0),
@@ -8172,16 +7834,15 @@ module chrono_fifo_rd_logic
         .rd_en(rd_en));
 endmodule
 
-(* ORIG_REF_NAME = "rd_status_flags_as" *) 
-module chrono_fifo_rd_status_flags_as
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rd_status_flags_as
    (empty,
     out,
     p_8_out,
     rd_en,
     ram_empty_i_reg_0,
     rd_clk,
-    WR_PNTR_RD,
     Q,
+    WR_PNTR_RD,
     D);
   output empty;
   output out;
@@ -8189,8 +7850,8 @@ module chrono_fifo_rd_status_flags_as
   input rd_en;
   input ram_empty_i_reg_0;
   input rd_clk;
-  input [13:0]WR_PNTR_RD;
   input [13:0]Q;
+  input [13:0]WR_PNTR_RD;
   input [13:0]D;
 
   wire [13:0]D;
@@ -8208,11 +7869,11 @@ module chrono_fifo_rd_status_flags_as
 
   assign empty = ram_empty_i;
   assign out = ram_empty_fb_i;
-  chrono_fifo_compare_1 c0
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_compare_1 c0
        (.Q(Q),
         .WR_PNTR_RD(WR_PNTR_RD),
         .comp0(comp0));
-  chrono_fifo_compare_2 c1
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_compare_2 c1
        (.D(D),
         .WR_PNTR_RD(WR_PNTR_RD),
         .comp1(comp1));
@@ -8254,8 +7915,7 @@ module chrono_fifo_rd_status_flags_as
         .S(ram_empty_i_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "reset_blk_ramfifo" *) 
-module chrono_fifo_reset_blk_ramfifo
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_reset_blk_ramfifo
    (\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_wr_rst_ic_reg_0 ,
     \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 ,
     wr_rst_busy,
@@ -8441,7 +8101,7 @@ module chrono_fifo_reset_blk_ramfifo
   (* VERSION = "0" *) 
   (* XPM_CDC = "SINGLE" *) 
   (* XPM_MODULE = "TRUE" *) 
-  chrono_fifo_xpm_cdc_single \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_single \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr 
        (.dest_clk(wr_clk),
         .dest_out(sckt_rd_rst_wr),
         .src_clk(rd_clk),
@@ -8453,7 +8113,7 @@ module chrono_fifo_reset_blk_ramfifo
   (* VERSION = "0" *) 
   (* XPM_CDC = "SINGLE" *) 
   (* XPM_MODULE = "TRUE" *) 
-  chrono_fifo_xpm_cdc_single__2 \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_single__2 \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd 
        (.dest_clk(rd_clk),
         .dest_out(dest_out),
         .src_clk(wr_clk),
@@ -8466,7 +8126,7 @@ module chrono_fifo_reset_blk_ramfifo
   (* VERSION = "0" *) 
   (* XPM_CDC = "SYNC_RST" *) 
   (* XPM_MODULE = "TRUE" *) 
-  chrono_fifo_xpm_cdc_sync_rst \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_sync_rst \ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst 
        (.dest_clk(rd_clk),
         .dest_rst(arst_sync_rd_rst),
         .src_rst(rst));
@@ -8478,14 +8138,13 @@ module chrono_fifo_reset_blk_ramfifo
   (* VERSION = "0" *) 
   (* XPM_CDC = "SYNC_RST" *) 
   (* XPM_MODULE = "TRUE" *) 
-  chrono_fifo_xpm_cdc_sync_rst__2 \ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_xpm_cdc_sync_rst__2 \ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst 
        (.dest_clk(wr_clk),
         .dest_rst(dest_rst),
         .src_rst(rst));
 endmodule
 
-(* ORIG_REF_NAME = "wr_bin_cntr" *) 
-module chrono_fifo_wr_bin_cntr
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_wr_bin_cntr
    (D,
     ENA_I,
     Q,
@@ -8964,10 +8623,9 @@ module chrono_fifo_wr_bin_cntr
         .R(\gic0.gc0.count_d2_reg[0]_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "wr_logic" *) 
-module chrono_fifo_wr_logic
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_wr_logic
    (full,
-    out,
+    FULL_FB,
     p_20_out,
     ENA_I,
     Q,
@@ -8977,11 +8635,11 @@ module chrono_fifo_wr_logic
     \gic0.gc0.count_d2_reg[0] ,
     wr_clk,
     wr_en,
-    ram_full_fb_i_reg,
+    out,
     ENA_dly_D,
     RD_PNTR_WR);
   output full;
-  output out;
+  output FULL_FB;
   output p_20_out;
   output ENA_I;
   output [13:0]Q;
@@ -8991,7 +8649,7 @@ module chrono_fifo_wr_logic
   input \gic0.gc0.count_d2_reg[0] ;
   input wr_clk;
   input wr_en;
-  input ram_full_fb_i_reg;
+  input out;
   input ENA_dly_D;
   input [13:0]RD_PNTR_WR;
 
@@ -9000,6 +8658,7 @@ module chrono_fifo_wr_logic
   wire ENA_I_1;
   wire ENA_I_2;
   wire ENA_dly_D;
+  wire FULL_FB;
   wire [13:0]Q;
   wire [13:0]RD_PNTR_WR;
   wire full;
@@ -9007,23 +8666,22 @@ module chrono_fifo_wr_logic
   wire out;
   wire [13:0]p_14_out;
   wire p_20_out;
-  wire ram_full_fb_i_reg;
   wire wr_clk;
   wire wr_en;
   wire [13:0]wr_pntr_plus2;
 
-  chrono_fifo_wr_status_flags_as \gwas.wsts 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_wr_status_flags_as \gwas.wsts 
        (.D(wr_pntr_plus2),
         .E(p_20_out),
         .Q(p_14_out),
         .RD_PNTR_WR(RD_PNTR_WR),
         .full(full),
-        .out(out),
-        .ram_full_fb_i_reg_0(ram_full_fb_i_reg),
+        .out(FULL_FB),
+        .ram_full_fb_i_reg_0(out),
         .ram_full_fb_i_reg_1(\gic0.gc0.count_d2_reg[0] ),
         .wr_clk(wr_clk),
         .wr_en(wr_en));
-  chrono_fifo_wr_bin_cntr wpntr
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_wr_bin_cntr wpntr
        (.D(wr_pntr_plus2),
         .E(p_20_out),
         .ENA_I(ENA_I),
@@ -9034,13 +8692,12 @@ module chrono_fifo_wr_logic
         .Q(Q),
         .\gic0.gc0.count_d1_reg[13]_0 (p_14_out),
         .\gic0.gc0.count_d2_reg[0]_0 (\gic0.gc0.count_d2_reg[0] ),
-        .out(out),
+        .out(FULL_FB),
         .wr_clk(wr_clk),
         .wr_en(wr_en));
 endmodule
 
-(* ORIG_REF_NAME = "wr_status_flags_as" *) 
-module chrono_fifo_wr_status_flags_as
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_wr_status_flags_as
    (full,
     out,
     E,
@@ -9093,11 +8750,11 @@ module chrono_fifo_wr_status_flags_as
        (.I0(wr_en),
         .I1(ram_full_fb_i),
         .O(E));
-  chrono_fifo_compare c1
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_compare c1
        (.Q(Q),
         .RD_PNTR_WR(RD_PNTR_WR),
         .comp1(comp1));
-  chrono_fifo_compare_0 c2
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_compare_0 c2
        (.D(D),
         .RD_PNTR_WR(RD_PNTR_WR),
         .comp2(comp2));

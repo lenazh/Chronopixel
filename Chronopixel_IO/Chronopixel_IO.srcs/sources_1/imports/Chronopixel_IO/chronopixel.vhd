@@ -29,6 +29,7 @@ use UNISIM.VComponents.all;
 
 library work;
 use work.interfaces.all;
+use work.FRONTPANEL.all;
 
 entity chronopixel is
   Port (
@@ -84,6 +85,7 @@ entity chronopixel is
     RdParLD : out STD_LOGIC;
     Rd_out : in STD_LOGIC;
     PDRST : out STD_LOGIC
+    -- TODO Vth, Hit_imlar are not wired to anything
   );
 
 end chronopixel;
@@ -98,20 +100,28 @@ architecture STRUCTURE of chronopixel is
   signal led_reg : std_logic_vector (7 downto 0);
   signal rst : std_logic := '0'; -- global reset 
   signal chrono_clock : std_logic; -- chronopixel logic clock
-  signal okHostClock : std_logic;  -- Opal Kelly host clock
   signal controller_leds : t_ctrl_leds;
 
   signal fifo_wr_en, fifo_rd_en, fifo_full, fifo_empty : STD_LOGIC;
-  signal fifo_din, fifo_dout : STD_LOGIC_VECTOR(11 DOWNTO 0);
+  signal fifo_din, fifo_dout, fifo_rd_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
+  signal fifo_rd_data_count : STD_LOGIC_VECTOR(13 DOWNTO 0);
   signal fifo_wr_rst_busy, fifo_rd_rst_busy : STD_LOGIC;
-  signal host_connected : STD_LOGIC; -- indicates whether the USB host is connected
+  signal chrono_read_enable : STD_LOGIC; -- indicates whether the chrono data goes into the FIFO
   signal led_heartbeat : std_logic;
+  signal chrono_ctrl_reg : STD_LOGIC_VECTOR(15 DOWNTO 0) := (others => '0'); -- control bits
   
   signal i_serial : t_to_serial;
   signal o_serial : t_from_serial;
   
   -- TODO remove these?
-  signal Vth, Hit_imlar, inc_tstmp, reading_d, incCntr, wrchrdat : STD_LOGIC;
+  signal Vth, Hit_imlar : STD_LOGIC;
+  
+  -- Opal Kelly target interface bus:
+	signal clk1      : STD_LOGIC;
+	signal ti_clk    : STD_LOGIC;
+	signal ok1       : STD_LOGIC_VECTOR(30 downto 0);
+	signal ok2       : STD_LOGIC_VECTOR(16 downto 0);
+	signal ok2s      : STD_LOGIC_VECTOR(17*3-1 downto 0);		
   
   component heartbeat is
     port ( clk : in STD_LOGIC;
@@ -126,10 +136,10 @@ architecture STRUCTURE of chronopixel is
       o_chrono_addr : out t_chronopixel_addr;
       i_serial : out t_to_serial;
       o_serial : in t_from_serial;
-      fifo_din : out STD_LOGIC_VECTOR(11 DOWNTO 0);
+      fifo_din : out STD_LOGIC_VECTOR(15 DOWNTO 0);
       fifo_wr_en : out STD_LOGIC;
       fifo_rd_rst_busy : in STD_LOGIC; -- TODO handle this pin correctly
-      host_connected : in STD_LOGIC; 
+      chrono_read_enable : in STD_LOGIC; 
       leds : out t_ctrl_leds
     ); 
   end component;
@@ -145,27 +155,28 @@ architecture STRUCTURE of chronopixel is
     ); 
   end component;
   
-  component chrono_fifo IS
+component chrono_fifo IS
   PORT (
     rst : IN STD_LOGIC;
     wr_clk : IN STD_LOGIC;
     rd_clk : IN STD_LOGIC;
-    din : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+    din : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     wr_en : IN STD_LOGIC;
     rd_en : IN STD_LOGIC;
-    dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+    dout : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     full : OUT STD_LOGIC;
     empty : OUT STD_LOGIC;
+    rd_data_count : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
     wr_rst_busy : OUT STD_LOGIC;
     rd_rst_busy : OUT STD_LOGIC
   );
-END component;
+END component; 
 
 begin
   led <= not(led_reg);
   rst <= '0'; -- there are no buttons on board to do reset, tie to GND for now
+  clk1 <= sys_clk_IBUFDS_O;
   chrono_clock <= clk_div8;
-  okHostClock <= hi_in(0);
   
   -- on-board LEDs
   led_reg(0) <= led_heartbeat;
@@ -180,6 +191,47 @@ begin
   -- TODO control signals are not specified for these pins
   RMEM_SEL <= '0';
   RdTstH <= '0';
+  
+  -- FIFO words available to read
+  fifo_rd_count(15 downto 14) <= (others => '0');
+  fifo_rd_count(13 downto 0) <= fifo_rd_data_count;
+  
+  -- 
+  chrono_read_enable <= chrono_ctrl_reg(0); -- set high to start reading chronopixel data
+
+  okHost_inst : okHost
+  port map (
+    hi_in => hi_in,
+		hi_out => hi_out,
+		hi_inout => hi_inout,
+		ti_clk => ti_clk,
+		ok1 => ok1,
+		ok2 => ok2
+  );
+  
+  pipe_out : okPipeOut
+  port map (
+    ok1 => ok1,
+    ok2 => ok2s(3*17-1 downto 2*17 ),
+    ep_addr => x"A0", 
+    ep_read => fifo_rd_en,
+    ep_datain => fifo_dout
+  );
+  
+  pipe_count : okWireOut
+  port map(
+     ok1 => ok1,
+     ok2 => ok2s( 1*17-1 downto 0*17 ),
+     ep_addr => x"20",
+     ep_datain => fifo_rd_count
+  );
+  
+  chrono_ctrl : okWireIn 
+  port map(
+     ok1 => ok1,
+     ep_addr => x"03",
+     ep_dataout => chrono_ctrl_reg
+  );
 
   ddr3_dqs_IOBUFDS_0: unisim.vcomponents.IOBUFDS
     port map (
@@ -251,11 +303,12 @@ begin
   PORT MAP (
     rst => rst,
     wr_clk => chrono_clock,
-    rd_clk => okHostClock,
+    rd_clk => ti_clk,
     din => fifo_din,
     wr_en => fifo_wr_en,
     rd_en => fifo_rd_en,
     dout => fifo_dout,
+    rd_data_count => fifo_rd_data_count,
     wr_rst_busy => fifo_wr_rst_busy,
     rd_rst_busy => fifo_rd_rst_busy
   );
@@ -294,7 +347,7 @@ begin
     fifo_din => fifo_din,
     fifo_wr_en => fifo_wr_en,
     fifo_rd_rst_busy => fifo_rd_rst_busy, 
-    host_connected => host_connected, 
+    chrono_read_enable => chrono_read_enable, 
     leds => controller_leds
   ); 
 

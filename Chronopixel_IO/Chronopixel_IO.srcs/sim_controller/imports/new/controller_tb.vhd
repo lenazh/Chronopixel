@@ -47,10 +47,10 @@ architecture Behavioral of controller_tb is
            o_chrono_addr : out t_chronopixel_addr;
            i_serial : out t_to_serial;
            o_serial : in t_from_serial; 
-           fifo_din : out STD_LOGIC_VECTOR(11 DOWNTO 0);
+           fifo_din : out STD_LOGIC_VECTOR(15 DOWNTO 0);
            fifo_wr_en : out STD_LOGIC;
            fifo_rd_rst_busy : in STD_LOGIC;
-           host_connected : in STD_LOGIC; 
+           chrono_read_enable : in STD_LOGIC; 
            leds : out t_ctrl_leds); 
   end component;
   
@@ -73,8 +73,8 @@ architecture Behavioral of controller_tb is
 
   signal o_chrono_addr : t_chronopixel_addr;
   signal i_chrono : t_from_chronopixel;
-  signal fifo_din : STD_LOGIC_VECTOR(11 DOWNTO 0);
-  signal fifo_wr_en, fifo_rd_rst_busy, host_connected : STD_LOGIC;
+  signal fifo_din : STD_LOGIC_VECTOR(15 DOWNTO 0);
+  signal fifo_wr_en, fifo_rd_rst_busy, chrono_read_enable : STD_LOGIC;
   signal leds : t_ctrl_leds;
   
   signal i_serial : t_to_serial;
@@ -95,7 +95,7 @@ begin
     fifo_din => fifo_din,
     fifo_wr_en => fifo_wr_en,
     fifo_rd_rst_busy => fifo_rd_rst_busy,  
-    host_connected => host_connected,
+    chrono_read_enable => chrono_read_enable,
     leds => leds
   );
   
