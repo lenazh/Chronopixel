@@ -1,0 +1,18 @@
+Design Route Status
+                                               :      # nets :
+   ------------------------------------------- : ----------- :
+   # of logical nets.......................... :        3638 :
+       # of nets not needing routing.......... :        1422 :
+           # of internally routed nets........ :        1408 :
+           # of nets with no loads............ :          14 :
+       # of routable nets..................... :        2216 :
+           # of fully routed nets............. :        2215 :
+       # of nets with routing errors.......... :           1 :
+           # of nets with some unrouted pins.. :           1 :
+   ------------------------------------------- : ----------- :
+
+
+Nets with Routing Errors:
+  clk_div8
+    Unrouted Pin: BUFR_inst2/I
+

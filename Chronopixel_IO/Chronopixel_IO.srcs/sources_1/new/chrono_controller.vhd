@@ -127,124 +127,124 @@ begin
       if (rst = '1') then
         ctrl_state <= s_init;
       else
-      case (ctrl_state) is
-      when s_init =>
-        ctrl_state <= s_idle4_setup;
-        
-      when s_idle4_setup =>
-        ctrl_state <= s_idle4_start;
-        
-      when s_idle4_start =>
-        ctrl_state <= s_idle4_wait; 
-                
-      when s_idle4_wait => 
-        if (driver_ready = '1') then
-          ctrl_state <= s_idle4_done;
-        else
-          ctrl_state <= s_idle4_wait;
-        end if;
-        
-      when s_idle4_done => 
-        if (ctrl_seq_ctr = 0) then
-          ctrl_state <= s_calin4_start;
-        else
-          ctrl_state <= s_idle4_start;
-        end if;
-        
-      when s_calin4_start =>
-        ctrl_state <= s_calin4_wait;
-        
-      when s_calin4_wait =>
-        if (driver_ready = '1') then
-          ctrl_state <= s_calib4_setup;
-        else
-          ctrl_state <= s_calin4_wait;
-        end if;
-        
-      when s_calib4_setup =>
-        ctrl_state <= s_calib4_start;
-        
-      when s_calib4_start =>
-        ctrl_state <= s_calib4_wait;
-        
-      when s_calib4_wait =>
-        if (driver_ready = '1') then
-          ctrl_state <= s_calib4_done;
-        else
-          ctrl_state <= s_calib4_wait;
-        end if;
-        
-      when s_calib4_done =>
-        if (ctrl_seq_ctr = 0) then
-          ctrl_state <= s_mrst_start;
-        else
-          ctrl_state <= s_calib4_start;
-        end if;       
-        
-      when s_mrst_start =>
-        ctrl_state <= s_mrst_wait;
-        
-      when s_mrst_wait =>
-        if (driver_ready = '1') then
-          ctrl_state <= s_wrtsig_setup;
-        else
-          ctrl_state <= s_mrst_wait;
-        end if;
-        
-      when s_wrtsig_setup =>
-        ctrl_state <= s_wrtsig_start;
-        
-      when s_wrtsig_start =>
-        ctrl_state <= s_wrtsig_wait;
-        
-      when s_wrtsig_wait =>
-        if (driver_ready = '1') then
-          ctrl_state <= s_wrtsig_done;
-        else
-          ctrl_state <= s_wrtsig_wait;
-        end if;
-        
-      when s_wrtsig_done =>
-        if (ctrl_seq_ctr = 0) then
-          ctrl_state <= s_drdtst_setup;
-        else
-          ctrl_state <= s_wrtsig_start;
-        end if;
-      
-      when s_drdtst_setup =>
-        ctrl_state <= s_drdtst_start;
-        
-      when s_drdtst_start =>
-        ctrl_state <= s_drdtst_wait;
-        
-      when s_drdtst_wait =>
-        if (driver_ready = '1') then
-          if (recv_data /= zero) and (chrono_read_enable = '1') then
-            ctrl_state <= s_fifo_write_addr;
-          else
-            ctrl_state <= s_drdtst_done;
-          end if;
-        else
-          ctrl_state <= s_drdtst_wait;
-        end if;
-        
-      when s_drdtst_done =>
-        if (ctrl_seq_ctr = 0) then
+        case (ctrl_state) is
+        when s_init =>
           ctrl_state <= s_idle4_setup;
-        else
+          
+        when s_idle4_setup =>
+          ctrl_state <= s_idle4_start;
+          
+        when s_idle4_start =>
+          ctrl_state <= s_idle4_wait; 
+                  
+        when s_idle4_wait => 
+          if (driver_ready = '1') then
+            ctrl_state <= s_idle4_done;
+          else
+            ctrl_state <= s_idle4_wait;
+          end if;
+          
+        when s_idle4_done => 
+          if (ctrl_seq_ctr = 0) then
+            ctrl_state <= s_calin4_start;
+          else
+            ctrl_state <= s_idle4_start;
+          end if;
+          
+        when s_calin4_start =>
+          ctrl_state <= s_calin4_wait;
+          
+        when s_calin4_wait =>
+          if (driver_ready = '1') then
+            ctrl_state <= s_calib4_setup;
+          else
+            ctrl_state <= s_calin4_wait;
+          end if;
+          
+        when s_calib4_setup =>
+          ctrl_state <= s_calib4_start;
+          
+        when s_calib4_start =>
+          ctrl_state <= s_calib4_wait;
+          
+        when s_calib4_wait =>
+          if (driver_ready = '1') then
+            ctrl_state <= s_calib4_done;
+          else
+            ctrl_state <= s_calib4_wait;
+          end if;
+          
+        when s_calib4_done =>
+          if (ctrl_seq_ctr = 0) then
+            ctrl_state <= s_mrst_start;
+          else
+            ctrl_state <= s_calib4_start;
+          end if;       
+          
+        when s_mrst_start =>
+          ctrl_state <= s_mrst_wait;
+          
+        when s_mrst_wait =>
+          if (driver_ready = '1') then
+            ctrl_state <= s_wrtsig_setup;
+          else
+            ctrl_state <= s_mrst_wait;
+          end if;
+          
+        when s_wrtsig_setup =>
+          ctrl_state <= s_wrtsig_start;
+          
+        when s_wrtsig_start =>
+          ctrl_state <= s_wrtsig_wait;
+          
+        when s_wrtsig_wait =>
+          if (driver_ready = '1') then
+            ctrl_state <= s_wrtsig_done;
+          else
+            ctrl_state <= s_wrtsig_wait;
+          end if;
+          
+        when s_wrtsig_done =>
+          if (ctrl_seq_ctr = 0) then
+            ctrl_state <= s_drdtst_setup;
+          else
+            ctrl_state <= s_wrtsig_start;
+          end if;
+        
+        when s_drdtst_setup =>
           ctrl_state <= s_drdtst_start;
-        end if;
-        
-      when s_fifo_write_addr =>
-        ctrl_state <= s_fifo_write_data;
-        
-      when s_fifo_write_data =>
-        ctrl_state <= s_drdtst_done;
-        
-      when others =>
-        ctrl_state <= s_init;
-        -- should never happen
-      end case;
+          
+        when s_drdtst_start =>
+          ctrl_state <= s_drdtst_wait;
+          
+        when s_drdtst_wait =>
+          if (driver_ready = '1') then
+            if (recv_data /= zero) and (chrono_read_enable = '1') then
+              ctrl_state <= s_fifo_write_addr;
+            else
+              ctrl_state <= s_drdtst_done;
+            end if;
+          else
+            ctrl_state <= s_drdtst_wait;
+          end if;
+          
+        when s_drdtst_done =>
+          if (ctrl_seq_ctr = 0) then
+            ctrl_state <= s_idle4_setup;
+          else
+            ctrl_state <= s_drdtst_start;
+          end if;
+          
+        when s_fifo_write_addr =>
+          ctrl_state <= s_fifo_write_data;
+          
+        when s_fifo_write_data =>
+          ctrl_state <= s_drdtst_done;
+          
+        when others =>
+          ctrl_state <= s_init;
+          -- should never happen
+        end case;
       end if;
     end if;
   end process;

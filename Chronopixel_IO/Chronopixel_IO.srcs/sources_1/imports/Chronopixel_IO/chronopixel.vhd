@@ -27,6 +27,9 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 library UNISIM;
 use UNISIM.VComponents.all;
 
+Library xpm;
+use xpm.vcomponents.all;
+
 library work;
 use work.interfaces.all;
 use work.FRONTPANEL.all;
@@ -41,9 +44,10 @@ entity chronopixel is
     hi_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
     hi_out : out STD_LOGIC_VECTOR ( 1 downto 0 );
     hi_inout : inout STD_LOGIC_VECTOR ( 15 downto 0 );
-    led : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    hi_muxsel : out STD_LOGIC;
     hi_aa : inout STD_LOGIC;
+    
+    hi_muxsel : out STD_LOGIC;
+    led : out STD_LOGIC_VECTOR ( 7 downto 0 );
     
     -- DRAM
     ddr3_dq : inout STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -108,7 +112,9 @@ architecture STRUCTURE of chronopixel is
   signal fifo_wr_rst_busy, fifo_rd_rst_busy : STD_LOGIC;
   signal chrono_read_enable : STD_LOGIC; -- indicates whether the chrono data goes into the FIFO
   signal led_heartbeat : std_logic;
-  signal chrono_ctrl_reg : STD_LOGIC_VECTOR(15 DOWNTO 0) := (others => '0'); -- control bits
+  
+  -- chronopixel control bits (chronopixel and Opal Kelly)
+  signal chrono_ctrl_reg, chrono_ctrl_ok : STD_LOGIC_VECTOR(15 DOWNTO 0) := (others => '0');
   
   signal i_serial : t_to_serial;
   signal o_serial : t_from_serial;
@@ -121,7 +127,7 @@ architecture STRUCTURE of chronopixel is
 	signal ti_clk    : STD_LOGIC;
 	signal ok1       : STD_LOGIC_VECTOR(30 downto 0);
 	signal ok2       : STD_LOGIC_VECTOR(16 downto 0);
-	signal ok2s      : STD_LOGIC_VECTOR(17*3-1 downto 0);		
+	signal ok2s      : STD_LOGIC_VECTOR(17*2-1 downto 0);			
   
   component heartbeat is
     port ( clk : in STD_LOGIC;
@@ -176,7 +182,6 @@ begin
   led <= not(led_reg);
   rst <= '0'; -- there are no buttons on board to do reset, tie to GND for now
   clk1 <= sys_clk_IBUFDS_O;
-  chrono_clock <= clk_div8;
   
   -- on-board LEDs
   led_reg(0) <= led_heartbeat;
@@ -196,8 +201,29 @@ begin
   fifo_rd_count(15 downto 14) <= (others => '0');
   fifo_rd_count(13 downto 0) <= fifo_rd_data_count;
   
-  -- 
+  -- Allows chronopixel chip to write data to fifo
   chrono_read_enable <= chrono_ctrl_reg(0); -- set high to start reading chronopixel data
+  
+  -- DRAM (unused)  
+  ddr3_dq <= (others => 'Z');  
+  ddr3_addr <= (others => '0');
+  ddr3_ba <= (others => '0');
+  ddr3_odt <= (others => '0');
+  ddr3_dm <= (others => 'Z');
+  ddr3_dqs_IOBUFDS_I <= (others => '0');
+  ddr3_dqs_IOBUFDS_T <= (others => '1');
+  ddr3_ck_OBUFDS_I <= (others => '0');  
+  ddr3_ras_n <= '0';
+  ddr3_cas_n <= '0'; 
+  ddr3_we_n <= '1';
+  ddr3_reset_n <= '1';
+  ddr3_cke <= '0';
+  
+  -- SPI slave (unused)
+  spi_cs <= 'Z';
+  spi_dout <= '0';
+  
+  hi_muxsel <= '0';	
 
   okHost_inst : okHost
   port map (
@@ -205,14 +231,17 @@ begin
 		hi_out => hi_out,
 		hi_inout => hi_inout,
 		ti_clk => ti_clk,
+		hi_aa => hi_aa,
 		ok1 => ok1,
 		ok2 => ok2
   );
   
+  okWO : okWireOR generic map (N=>2) port map (ok2=>ok2, ok2s=>ok2s);
+  
   pipe_out : okPipeOut
   port map (
     ok1 => ok1,
-    ok2 => ok2s(3*17-1 downto 2*17 ),
+    ok2 => ok2s(2*17-1 downto 1*17),
     ep_addr => x"A0", 
     ep_read => fifo_rd_en,
     ep_datain => fifo_dout
@@ -221,7 +250,7 @@ begin
   pipe_count : okWireOut
   port map(
      ok1 => ok1,
-     ok2 => ok2s( 1*17-1 downto 0*17 ),
+     ok2 => ok2s(1*17-1 downto 0*17),
      ep_addr => x"20",
      ep_datain => fifo_rd_count
   );
@@ -230,7 +259,23 @@ begin
   port map(
      ok1 => ok1,
      ep_addr => x"03",
-     ep_dataout => chrono_ctrl_reg
+     ep_dataout => chrono_ctrl_ok
+  );
+  
+  -- crossing clock domains
+  xpm_cdc_array_single_inst: xpm_cdc_array_single
+  generic map (
+    -- Common module generics
+    DEST_SYNC_FF => 2, -- integer; range: 2-10
+    SIM_ASSERT_CHK => 0, -- integer; 0=disable simulation messages, 1=enable simulation messages
+    SRC_INPUT_REG => 1, -- integer; 0=do not register input, 1=register input
+    WIDTH => 16 -- integer; range: 2-1024
+    )
+  port map (
+    src_clk => ti_clk, -- optional; required when SRC_INPUT_REG = 1
+    src_in => chrono_ctrl_ok,
+    dest_clk => chrono_clock,
+    dest_out => chrono_ctrl_reg
   );
 
   ddr3_dqs_IOBUFDS_0: unisim.vcomponents.IOBUFDS
@@ -290,7 +335,14 @@ begin
       CE => '1',
       CLR => '0', 
       I => clk_div8
-    );   
+    );
+  
+  -- global clock buffer for the chronopixel logic   
+  BUFG_inst : unisim.vcomponents.BUFG
+  port map (
+    O => chrono_clock,
+    I => clk_div8
+  ); 
     
   heartbeat_inst : heartbeat
   port map (

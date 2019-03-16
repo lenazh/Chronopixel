@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1552703546">
+  <File Type="BITSTR-BMM" Name="chronopixel_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="chronopixel_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="chronopixel_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="chronopixel_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="chronopixel.tcl"/>
+  <File Type="OPT-TIMING" Name="chronopixel_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="chronopixel_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="chronopixel_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="chronopixel_reports.tcl"/>
+  <File Type="OPT-DRC" Name="chronopixel_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="chronopixel.hwdef"/>
+  <File Type="PWROPT-DCP" Name="chronopixel_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="chronopixel_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="chronopixel_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="chronopixel_placed.dcp"/>
+  <File Type="PLACE-IO" Name="chronopixel_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="chronopixel_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="chronopixel_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="chronopixel_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="chronopixel_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="chronopixel_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="chronopixel_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="chronopixel.bgn"/>
+  <File Type="PLACE-TIMING" Name="chronopixel_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="chronopixel_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="chronopixel.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="chronopixel_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="chronopixel_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="chronopixel_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="chronopixel.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="chronopixel_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="chronopixel_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="chronopixel_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="chronopixel_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="chronopixel_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="chronopixel_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="chronopixel.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="chronopixel_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="chronopixel.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="chronopixel_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="chronopixel_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="chronopixel.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="chronopixel_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="chronopixel_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="chronopixel_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="chronopixel_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="chronopixel_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="chronopixel_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="chronopixel_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="chronopixel_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="chronopixel_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="chronopixel_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="chronopixel_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="chronopixel_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="chronopixel_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="chronopixel_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="chronopixel_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="chronopixel_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="chronopixel_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="chronopixel_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="chronopixel_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="chronopixel.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="chronopixel_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="chronopixel.rbt"/>
+  <File Type="BITSTR-NKY" Name="chronopixel.nky"/>
+  <File Type="BG-DRC" Name="chronopixel.drc"/>
+  <File Type="RDI-RDI" Name="chronopixel.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okCoreHarness.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okCoreHarness.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okPipeOut.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okPipeOut.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okWireIn.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okWireIn.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okWireOut.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okWireOut.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/interfaces.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/chrono_controller.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/chrono_serial.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okLibrary.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okLibrary.vhd"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/heartbeat.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Chronopixel_IO/chronopixel.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/chronopixel.vhd"/>
+        <Attr Name="ImportTime" Val="1551482295"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sim_serial/imports/new/LFSR.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/LFSR.vhd"/>
+        <Attr Name="ImportTime" Val="1552506751"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okBTPipeOut.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okBTPipeOut.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okBTPipeIn.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okBTPipeIn.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okPipeIn.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okPipeIn.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okTriggerIn.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okTriggerIn.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okTriggerOut.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okTriggerOut.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="chronopixel"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/chronopixel.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/chronopixel.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="chrono_fifo"/>
+</GenRun>
