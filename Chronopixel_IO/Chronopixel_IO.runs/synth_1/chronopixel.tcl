@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Synth 8-3333} -limit 1000
 create_project -in_memory -part xc7a50tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -49,6 +48,12 @@ read_ip -quiet D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chro
 set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/chrono_fifo/chrono_fifo.xdc]
 set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/chrono_fifo/chrono_fifo_clocks.xdc]
 set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/chrono_fifo/chrono_fifo_ooc.xdc]
+
+read_ip -quiet d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm.xci
+set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm.xdc]
+set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm_late.xdc]
+set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

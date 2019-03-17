@@ -32,10 +32,10 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
--- When clock is at 3.1 MHz, 1562500 is 0.5 second
+-- When clock is at 5 MHz, 5000000 is 1 second
 
 entity heartbeat is
-    generic (counter_max : unsigned(31 downto 0) := to_unsigned(1562500, 32));
+    generic (counter_max : unsigned(31 downto 0) := to_unsigned(2500000, 32));
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
            led : out STD_LOGIC);

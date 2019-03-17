@@ -99,8 +99,8 @@ architecture STRUCTURE of chronopixel is
   signal ddr3_dqs_IOBUFDS_O : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal ddr3_dqs_IOBUFDS_T : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal ddr3_ck_OBUFDS_I : STD_LOGIC_VECTOR ( 0 downto 0 );
-  signal sys_clk_IBUFDS_O : STD_LOGIC;
-  signal clk_div8, clk_div64 : STD_LOGIC;
+
+  signal clk_20MHz, clk_5MHz : STD_LOGIC;
   signal led_reg : std_logic_vector (7 downto 0);
   signal rst : std_logic := '0'; -- global reset 
   signal chrono_clock : std_logic; -- chronopixel logic clock
@@ -178,10 +178,21 @@ component chrono_fifo IS
   );
 END component; 
 
+component clk_mmcm is 
+ port (
+  -- Clock out ports
+  clk_20MHz : OUT STD_LOGIC;
+  clk_5MHz : OUT STD_LOGIC;
+ -- Clock in ports
+  clk_in1_p : IN STD_LOGIC;
+  clk_in1_n : IN STD_LOGIC
+ );
+ end component;
+
 begin
   led <= not(led_reg);
   rst <= '0'; -- there are no buttons on board to do reset, tie to GND for now
-  clk1 <= sys_clk_IBUFDS_O;
+  chrono_clock <= clk_20MHz;
   
   -- on-board LEDs
   led_reg(0) <= led_heartbeat;
@@ -303,50 +314,19 @@ begin
       I => ddr3_ck_OBUFDS_I(0)
     );
 
--- convert board clock from differential to single-ended
-  sys_clk_IBUFDS: unisim.vcomponents.IBUFDS
-    port map (
-      I => sys_clk_p,
-      IB => sys_clk_n,
-      O => sys_clk_IBUFDS_O
-    );
-    
--- divide input clock by 8    
-  BUFR_inst : unisim.vcomponents.BUFR
-    generic map (
-      BUFR_DIVIDE => "8", -- Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8"
-      SIM_DEVICE => "7SERIES" -- Must be set to "7SERIES"
-    )
-    port map (
-      O => clk_div8,
-      CE => '1',
-      CLR => '0', 
-      I => sys_clk_IBUFDS_O
-    );
- 
--- divide clock by 64    
-  BUFR_inst2 : unisim.vcomponents.BUFR
-    generic map (
-      BUFR_DIVIDE => "8", -- Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8"
-      SIM_DEVICE => "7SERIES" -- Must be set to "7SERIES"
-    )
-    port map (
-      O => clk_div64,
-      CE => '1',
-      CLR => '0', 
-      I => clk_div8
-    );
-  
-  -- global clock buffer for the chronopixel logic   
-  BUFG_inst : unisim.vcomponents.BUFG
-  port map (
-    O => chrono_clock,
-    I => clk_div8
-  ); 
-    
+clk_mmcm_inst : clk_mmcm 
+ port map(
+  -- Clock out ports
+  clk_20MHz => clk_20MHz, 
+  clk_5MHz => clk_5MHz,
+ -- Clock in ports
+  clk_in1_p => sys_clk_p,
+  clk_in1_n => sys_clk_n
+ );
+
   heartbeat_inst : heartbeat
   port map (
-    clk => clk_div64,
+    clk => clk_5MHz,
     rst => rst,
     led => led_heartbeat
   );

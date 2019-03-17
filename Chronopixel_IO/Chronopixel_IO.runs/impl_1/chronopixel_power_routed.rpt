@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Fri Mar 15 22:34:23 2019
+| Date             : Sat Mar 16 23:35:23 2019
 | Host             : DESKTOP-OV0R6TO running 64-bit major release  (build 9200)
 | Command          : report_power -file chronopixel_power_routed.rpt -pb chronopixel_power_summary_routed.pb -rpx chronopixel_power_routed.rpx
 | Design           : chronopixel
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.249        |
+| Total On-Chip Power (W)  | 0.343        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.173        |
+| Dynamic (W)              | 0.267        |
 | Device Static (W)        | 0.076        |
 | Effective TJA (C/W)      | 2.8          |
-| Max Ambient (C)          | 84.3         |
-| Junction Temperature (C) | 25.7         |
+| Max Ambient (C)          | 84.0         |
+| Junction Temperature (C) | 26.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.003 |        8 |       --- |             --- |
-| Slice Logic              |     0.002 |     3086 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     1118 |     32600 |            3.43 |
+| Clocks                   |     0.002 |        9 |       --- |             --- |
+| Slice Logic              |     0.002 |     3106 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     1122 |     32600 |            3.44 |
 |   LUT as Distributed RAM |    <0.001 |       32 |      9600 |            0.33 |
-|   Register               |    <0.001 |     1427 |     65200 |            2.19 |
+|   Register               |    <0.001 |     1443 |     65200 |            2.21 |
 |   CARRY4                 |    <0.001 |       60 |      8150 |            0.74 |
 |   F7/F8 Muxes            |    <0.001 |        8 |     32600 |            0.02 |
 |   LUT as Shift Register  |    <0.001 |       39 |      9600 |            0.41 |
-|   Others                 |     0.000 |       91 |       --- |             --- |
-| Signals                  |     0.002 |     2204 |       --- |             --- |
+|   Others                 |     0.000 |       95 |       --- |             --- |
+| Signals                  |     0.002 |     2221 |       --- |             --- |
 | Block RAM                |    <0.001 |      8.5 |        75 |           11.33 |
-| MMCM                     |     0.103 |        1 |         5 |           20.00 |
-| I/O                      |     0.063 |      107 |       250 |           42.80 |
+| MMCM                     |     0.197 |        2 |         5 |           40.00 |
+| I/O                      |     0.062 |      107 |       250 |           42.80 |
 | Static Power             |     0.076 |          |           |                 |
-| Total                    |     0.249 |          |           |                 |
+| Total                    |     0.343 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,9 +77,9 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.019 |       0.009 |      0.010 |
-| Vccaux    |       1.800 |     0.073 |       0.060 |      0.013 |
+| Vccaux    |       1.800 |     0.125 |       0.113 |      0.013 |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
-| Vcco25    |       2.500 |     0.002 |       0.001 |      0.001 |
+| Vcco25    |       2.500 |     0.001 |       0.000 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.033 |       0.032 |      0.001 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
@@ -129,16 +129,17 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-------------+-------------------------+-----------------+
-| Clock       | Domain                  | Constraint (ns) |
-+-------------+-------------------------+-----------------+
-| clk_div64   | clk_div64               |           320.0 |
-| clk_div8    | clk_div8                |            40.0 |
-| devclk      | sys_clk_p               |             5.0 |
-| mmcm0_clk0  | okHost_inst/mmcm0_clk0  |            20.8 |
-| mmcm0_clkfb | okHost_inst/mmcm0_clkfb |            20.8 |
-| okHostClk   | hi_in[0]                |            20.8 |
-+-------------+-------------------------+-----------------+
++--------------------+---------------------------------------+-----------------+
+| Clock              | Domain                                | Constraint (ns) |
++--------------------+---------------------------------------+-----------------+
+| clk_20MHz_clk_mmcm | clk_mmcm_inst/inst/clk_20MHz_clk_mmcm |            50.0 |
+| clk_5MHz_clk_mmcm  | clk_mmcm_inst/inst/clk_5MHz_clk_mmcm  |           200.0 |
+| clkfbout_clk_mmcm  | clk_mmcm_inst/inst/clkfbout_clk_mmcm  |            25.0 |
+| mmcm0_clk0         | okHost_inst/mmcm0_clk0                |            20.8 |
+| mmcm0_clkfb        | okHost_inst/mmcm0_clkfb               |            20.8 |
+| okHostClk          | hi_in[0]                              |            20.8 |
+| sys_clk_p          | sys_clk_p                             |             5.0 |
++--------------------+---------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -150,7 +151,9 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| chronopixel          |     0.173 |
+| chronopixel          |     0.267 |
+|   clk_mmcm_inst      |     0.097 |
+|     inst             |     0.097 |
 |   ddr3_ck_OBUFDS_0   |     0.002 |
 |   ddr3_dqs_IOBUFDS_0 |     0.002 |
 |   ddr3_dqs_IOBUFDS_1 |     0.002 |

@@ -1,13 +1,13 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Fri Mar 15 22:34:20 2019
+| Date         : Sat Mar 16 23:35:21 2019
 | Host         : DESKTOP-OV0R6TO running 64-bit major release  (build 9200)
 | Command      : report_drc -file chronopixel_drc_routed.rpt -pb chronopixel_drc_routed.pb -rpx chronopixel_drc_routed.rpx
 | Design       : chronopixel
 | Device       : xc7a50tfgg484-1
 | Speed File   : -1
-| Design State : Partially Routed
+| Design State : Fully Routed
 ---------------------------------------------------------------------------------------------------------------------------
 
 Report DRC
@@ -24,24 +24,18 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 30
-+-----------+------------------+----------------------------+------------+
-| Rule      | Severity         | Description                | Violations |
-+-----------+------------------+----------------------------+------------+
-| RTSTAT-2  | Critical Warning | Partially routed nets      | 1          |
-| BUFC-1    | Warning          | Input Buffer Connections   | 7          |
-| CHECK-3   | Warning          | Report rule limit reached  | 1          |
-| REQP-1840 | Warning          | RAMB18 async control check | 20         |
-| RTSTAT-10 | Warning          | No routable loads          | 1          |
-+-----------+------------------+----------------------------+------------+
+             Violations found: 29
++-----------+----------+----------------------------+------------+
+| Rule      | Severity | Description                | Violations |
++-----------+----------+----------------------------+------------+
+| BUFC-1    | Warning  | Input Buffer Connections   | 7          |
+| CHECK-3   | Warning  | Report rule limit reached  | 1          |
+| REQP-1840 | Warning  | RAMB18 async control check | 20         |
+| RTSTAT-10 | Warning  | No routable loads          | 1          |
++-----------+----------+----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-RTSTAT-2#1 Critical Warning
-Partially routed nets  
-1 net(s) are partially routed. The problem bus(es) and/or net(s) are clk_div8.
-Related violations: <none>
-
 BUFC-1#1 Warning
 Input Buffer Connections  
 Input buffer ddr3_dqs_IOBUFDS_0/IBUFDS (in ddr3_dqs_IOBUFDS_0 macro) has no loads. It is recommended to have an input buffer drive an internal load.

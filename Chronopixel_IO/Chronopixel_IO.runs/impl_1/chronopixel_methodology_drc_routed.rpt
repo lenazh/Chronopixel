@@ -1,13 +1,13 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Fri Mar 15 22:34:22 2019
+| Date         : Sat Mar 16 23:35:22 2019
 | Host         : DESKTOP-OV0R6TO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file chronopixel_methodology_drc_routed.rpt -pb chronopixel_methodology_drc_routed.pb -rpx chronopixel_methodology_drc_routed.rpx
 | Design       : chronopixel
 | Device       : xc7a50tfgg484-1
 | Speed File   : -1
-| Design State : Partially Routed
+| Design State : Fully Routed
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Report Methodology
@@ -23,11 +23,10 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 28
+             Violations found: 27
 +-----------+----------+---------------------------------------------------+------------+
 | Rule      | Severity | Description                                       | Violations |
 +-----------+----------+---------------------------------------------------+------------+
-| CKBF-1    | Warning  | connects_I_driver_BUFR                            | 1          |
 | LUTAR-1   | Warning  | LUT drives async reset alert                      | 4          |
 | PDRC-190  | Warning  | Suboptimally placed synchronized register chain   | 1          |
 | TIMING-17 | Warning  | Non-clocked sequential cell                       | 1          |
@@ -38,11 +37,6 @@ Table of Contents
 
 2. REPORT DETAILS
 -----------------
-CKBF-1#1 Warning
-connects_I_driver_BUFR  
-The BUFG cell BUFG_inst I pin is driven by a BUFR cell BUFR_inst. For 7-Series devices, this is not a recommended clock topology. Please analyze your clock network and remove the BUFR to BUFG cascade.
-Related violations: <none>
-
 LUTAR-1#1 Warning
 LUT drives async reset alert  
 LUT cell okHost_inst/core0/core0/a0/cb0/U0/ngwrdrst.grst.g7serrst.rd_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) okHost_inst/core0/core0/a0/cb0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]/PRE, okHost_inst/core0/core0/a0/cb0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]/PRE, okHost_inst/core0/core0/a0/cb0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
@@ -65,7 +59,7 @@ Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell fifo_inst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X7Y29 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell fifo_inst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell fifo_inst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X7Y23 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell fifo_inst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-17#1 Warning

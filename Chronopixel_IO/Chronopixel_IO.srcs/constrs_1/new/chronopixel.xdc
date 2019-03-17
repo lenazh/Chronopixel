@@ -25,7 +25,7 @@ set_property IOSTANDARD LVDS_25 [get_ports sys_clk_p]
 set_property IOSTANDARD LVDS_25 [get_ports sys_clk_n]
 set_property PACKAGE_PIN K4 [get_ports sys_clk_p]
 set_property PACKAGE_PIN J4 [get_ports sys_clk_n]
-create_clock -name devclk -period 5 [get_ports sys_clk_p]
+#create_clock -name devclk -period 5 [get_ports sys_clk_p]
 
 
 ############################################################################
