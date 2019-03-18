@@ -88,8 +88,9 @@ entity chronopixel is
     RdClk : out STD_LOGIC;
     RdParLD : out STD_LOGIC;
     Rd_out : in STD_LOGIC;
-    PDRST : out STD_LOGIC
-    -- TODO Vth, Hit_imlar are not wired to anything
+    PDRST : out STD_LOGIC;
+    Vth : out STD_LOGIC;
+    Hit_imlar : out STD_LOGIC
   );
 
 end chronopixel;
@@ -118,9 +119,6 @@ architecture STRUCTURE of chronopixel is
   
   signal i_serial : t_to_serial;
   signal o_serial : t_from_serial;
-  
-  -- TODO remove these?
-  signal Vth, Hit_imlar : STD_LOGIC;
   
   -- Opal Kelly target interface bus:
 	signal clk1      : STD_LOGIC;

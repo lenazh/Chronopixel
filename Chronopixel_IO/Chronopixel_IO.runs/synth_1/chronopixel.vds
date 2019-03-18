@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sat Mar 16 23:33:30 2019
-# Process ID: 1884
+# Start of session at: Sun Mar 17 21:45:35 2019
+# Process ID: 13192
 # Current directory: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1
 # Command line: vivado.exe -log chronopixel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source chronopixel.tcl
 # Log file: D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.vds
@@ -15,12 +15,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 25536 
+INFO: Helper process launched with PID 27884 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 400.992 ; gain = 106.758
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 401.691 ; gain = 107.906
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'chronopixel' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:97]
-INFO: [Synth 8-3491] module 'okHost' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:16' bound to instance 'okHost_inst' of component 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:239]
+INFO: [Synth 8-638] synthesizing module 'chronopixel' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:98]
+INFO: [Synth 8-3491] module 'okHost' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:16' bound to instance 'okHost_inst' of component 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:237]
 INFO: [Synth 8-638] synthesizing module 'okHost' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:28]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
@@ -422,19 +422,19 @@ INFO: [Synth 8-6155] done synthesizing module 'LUT6_2__parameterized19' (19#1) [
 INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-256] done synthesizing module 'okHost' (22#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:28]
 	Parameter N bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'okWireOR' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:151' bound to instance 'okWO' of component 'okWireOR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:250]
+INFO: [Synth 8-3491] module 'okWireOR' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:151' bound to instance 'okWO' of component 'okWireOR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:248]
 INFO: [Synth 8-638] synthesizing module 'okWireOR' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:160]
 	Parameter N bound to: 2 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'okWireOR' (23#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okLibrary.vhd:160]
-INFO: [Synth 8-3491] module 'okPipeOut' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okPipeOut.v:18' bound to instance 'pipe_out' of component 'okPipeOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:252]
-INFO: [Synth 8-3491] module 'okWireOut' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okWireOut.v:18' bound to instance 'pipe_count' of component 'okWireOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:261]
-INFO: [Synth 8-3491] module 'okWireIn' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okWireIn.v:18' bound to instance 'chrono_ctrl' of component 'okWireIn' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:269]
+INFO: [Synth 8-3491] module 'okPipeOut' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okPipeOut.v:18' bound to instance 'pipe_out' of component 'okPipeOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:250]
+INFO: [Synth 8-3491] module 'okWireOut' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okWireOut.v:18' bound to instance 'pipe_count' of component 'okWireOut' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:259]
+INFO: [Synth 8-3491] module 'okWireIn' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/XEM7010-A50/okWireIn.v:18' bound to instance 'chrono_ctrl' of component 'okWireIn' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:267]
 	Parameter DEST_SYNC_FF bound to: 2 - type: integer 
 	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
 	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
 	Parameter SRC_INPUT_REG bound to: 1 - type: integer 
 	Parameter WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_array_single' declared at 'D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903' bound to instance 'xpm_cdc_array_single_inst' of component 'xpm_cdc_array_single' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:277]
+INFO: [Synth 8-3491] module 'xpm_cdc_array_single' declared at 'D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903' bound to instance 'xpm_cdc_array_single_inst' of component 'xpm_cdc_array_single' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:275]
 	Parameter DEST_SYNC_FF bound to: 2 - type: integer 
 	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
 	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
@@ -447,30 +447,30 @@ INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [D:/Xilinx/Viva
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_0' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:292]
+INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_0' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:290]
 	Parameter DIFF_TERM bound to: 0 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_1' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:301]
+INFO: [Synth 8-113] binding component instance 'ddr3_dqs_IOBUFDS_1' to cell 'IOBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:299]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:310]
-INFO: [Synth 8-3491] module 'clk_mmcm' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-1884-DESKTOP-OV0R6TO/realtime/clk_mmcm_stub.v:5' bound to instance 'clk_mmcm_inst' of component 'clk_mmcm' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:317]
-INFO: [Synth 8-3491] module 'heartbeat' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:37' bound to instance 'heartbeat_inst' of component 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:327]
+INFO: [Synth 8-113] binding component instance 'ddr3_ck_OBUFDS_0' to cell 'OBUFDS' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:308]
+INFO: [Synth 8-3491] module 'clk_mmcm' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-13192-DESKTOP-OV0R6TO/realtime/clk_mmcm_stub.v:5' bound to instance 'clk_mmcm_inst' of component 'clk_mmcm' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:315]
+INFO: [Synth 8-3491] module 'heartbeat' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:37' bound to instance 'heartbeat_inst' of component 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:325]
 INFO: [Synth 8-638] synthesizing module 'heartbeat' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
 	Parameter counter_max bound to: 32'b00000000001001100010010110100000 
 INFO: [Synth 8-256] done synthesizing module 'heartbeat' (29#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/heartbeat.vhd:44]
-INFO: [Synth 8-3491] module 'chrono_fifo' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-1884-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6' bound to instance 'fifo_inst' of component 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:334]
-INFO: [Synth 8-3491] module 'chrono_serial' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54' bound to instance 'serial_inst' of component 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:348]
+INFO: [Synth 8-3491] module 'chrono_fifo' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/.Xil/Vivado-13192-DESKTOP-OV0R6TO/realtime/chrono_fifo_stub.v:6' bound to instance 'fifo_inst' of component 'chrono_fifo' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:332]
+INFO: [Synth 8-3491] module 'chrono_serial' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:54' bound to instance 'serial_inst' of component 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:346]
 INFO: [Synth 8-638] synthesizing module 'chrono_serial' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
 INFO: [Synth 8-256] done synthesizing module 'chrono_serial' (31#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_serial.vhd:65]
-INFO: [Synth 8-3491] module 'chrono_controller' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:39' bound to instance 'controller_inst' of component 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:370]
+INFO: [Synth 8-3491] module 'chrono_controller' declared at 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:39' bound to instance 'controller_inst' of component 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:368]
 INFO: [Synth 8-638] synthesizing module 'chrono_controller' [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
 INFO: [Synth 8-256] done synthesizing module 'chrono_controller' (32#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/new/chrono_controller.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'chronopixel' (33#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:97]
+INFO: [Synth 8-256] done synthesizing module 'chronopixel' (33#1) [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/imports/Chronopixel_IO/chronopixel.vhd:98]
 WARNING: [Synth 8-3917] design chronopixel has port hi_muxsel driven by constant 0
 WARNING: [Synth 8-3917] design chronopixel has port ddr3_addr[14] driven by constant 0
 WARNING: [Synth 8-3917] design chronopixel has port ddr3_addr[13] driven by constant 0
@@ -601,7 +601,7 @@ WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port s_axi
 WARNING: [Synth 8-3331] design fifo_generator_v13_1_2 has unconnected port s_axi_awaddr[31]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 474.836 ; gain = 180.602
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 475.203 ; gain = 181.418
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -614,10 +614,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 474.836 ; gain = 180.602
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 475.203 ; gain = 181.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 474.836 ; gain = 180.602
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 475.203 ; gain = 181.418
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 112 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -631,29 +631,21 @@ Finished Parsing XDC File [d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronop
 Parsing XDC File [d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm/clk_mmcm_in_context.xdc] for cell 'clk_mmcm_inst'
 Finished Parsing XDC File [d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm/clk_mmcm_in_context.xdc] for cell 'clk_mmcm_inst'
 Parsing XDC File [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]
-WARNING: [Constraints 18-96] Setting input delay on a clock pin 'hi_in[0]' is not supported, ignoring it [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:42]
-WARNING: [Constraints 18-96] Setting input delay on a clock pin 'hi_in[0]' is not supported, ignoring it [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:43]
-WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:82]
-WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:82]
-WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:82]
-WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:82]
-WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:82]
-WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:82]
-WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:82]
-WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:82]
+WARNING: [Constraints 18-96] Setting input delay on a clock pin 'hi_in[0]' is not supported, ignoring it [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:44]
+WARNING: [Constraints 18-96] Setting input delay on a clock pin 'hi_in[0]' is not supported, ignoring it [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc:45]
 Finished Parsing XDC File [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/chronopixel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/chronopixel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.680 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.840 ; gain = 0.000
 Sourcing Tcl File [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl] for cell 'xpm_cdc_array_single_inst'
 Finished Sourcing Tcl File [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl] for cell 'xpm_cdc_array_single_inst'
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/chronopixel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/chronopixel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.680 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.840 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.680 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.840 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 84 instances were transformed.
   IBUFG => IBUF: 1 instances
@@ -665,17 +657,17 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM128X1S => RAM128X1S (MUXF7, RAMS64E, RAMS64E): 8 instances
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.680 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 814.680 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.840 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 814.840 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 814.680 ; gain = 520.445
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 814.840 ; gain = 521.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a50tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 814.680 ; gain = 520.445
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 814.840 ; gain = 521.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -688,7 +680,7 @@ Applied set_property DONT_TOUCH = true for fifo_inst. (constraint file  auto gen
 Applied set_property DONT_TOUCH = true for clk_mmcm_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for xpm_cdc_array_single_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 814.680 ; gain = 520.445
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 814.840 ; gain = 521.055
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "led_reg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -768,7 +760,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'trcv_state_reg' using enco
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'ctrl_state_reg' using encoding 'sequential' in module 'chrono_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 814.680 ; gain = 520.445
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 814.840 ; gain = 521.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -834,6 +826,7 @@ WARNING: [Synth 8-3917] design chronopixel has port spi_dout driven by constant 
 WARNING: [Synth 8-3917] design chronopixel has port RMEM_SEL driven by constant 0
 WARNING: [Synth 8-3917] design chronopixel has port RdTstH driven by constant 0
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[129]' (FDE) to 'serial_inst/SET_buf_reg[129]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[129]' (FDE) to 'serial_inst/RAdrValid_buf_reg[129]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[129] )
@@ -847,6 +840,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (pipe_coun
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pipe_count/\wirehold_reg[15] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller_inst/ctrl_error_reg )
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[128]' (FDE) to 'serial_inst/RAdrValid_buf_reg[128]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[128]' (FDE) to 'serial_inst/SET_buf_reg[128]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[128]' (FDE) to 'serial_inst/RAdrValid_buf_reg[128]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[128]' (FDE) to 'serial_inst/RAdrValid_buf_reg[128]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[128] )
@@ -856,144 +850,142 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_i
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[128] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[128]' (FDE) to 'serial_inst/latch_buf_reg[127]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[127]' (FDE) to 'serial_inst/RAdrValid_buf_reg[127]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[128]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[127]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[127]' (FDE) to 'serial_inst/SET_buf_reg[127]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[127]' (FDE) to 'serial_inst/RAdrValid_buf_reg[127]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[127]' (FDE) to 'serial_inst/RAdrValid_buf_reg[127]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[127] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[128]' (FDE) to 'serial_inst/TIN_buf_reg[127]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[127]' (FDE) to 'serial_inst/TNIN_buf_reg[127]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[127] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[128]' (FDE) to 'serial_inst/SET_buf_reg[127]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[127] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[128]' (FDE) to 'serial_inst/CKA_buf_reg[127]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[127] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[127]' (FDE) to 'serial_inst/latch_buf_reg[126]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[126]' (FDE) to 'serial_inst/RAdrValid_buf_reg[126]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[127]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[126]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[126]' (FDE) to 'serial_inst/SET_buf_reg[126]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[126]' (FDE) to 'serial_inst/RAdrValid_buf_reg[126]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[126]' (FDE) to 'serial_inst/RAdrValid_buf_reg[126]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[126] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[127]' (FDE) to 'serial_inst/TIN_buf_reg[126]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[126]' (FDE) to 'serial_inst/TNIN_buf_reg[126]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[126] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[127]' (FDE) to 'serial_inst/SET_buf_reg[126]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[126] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[127]' (FDE) to 'serial_inst/CKA_buf_reg[126]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[126] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[126]' (FDE) to 'serial_inst/latch_buf_reg[125]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[125]' (FDE) to 'serial_inst/RAdrValid_buf_reg[125]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[126]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[125]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[125]' (FDE) to 'serial_inst/SET_buf_reg[125]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[125]' (FDE) to 'serial_inst/RAdrValid_buf_reg[125]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[125]' (FDE) to 'serial_inst/RAdrValid_buf_reg[125]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[125] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[126]' (FDE) to 'serial_inst/TIN_buf_reg[125]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[125]' (FDE) to 'serial_inst/TNIN_buf_reg[125]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[125] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[126]' (FDE) to 'serial_inst/SET_buf_reg[125]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[125] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[126]' (FDE) to 'serial_inst/CKA_buf_reg[125]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[125] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[125]' (FDE) to 'serial_inst/latch_buf_reg[124]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[124]' (FDE) to 'serial_inst/RAdrValid_buf_reg[124]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[125]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[124]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[124]' (FDE) to 'serial_inst/SET_buf_reg[124]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[124]' (FDE) to 'serial_inst/RAdrValid_buf_reg[124]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[124]' (FDE) to 'serial_inst/RAdrValid_buf_reg[124]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[124] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[125]' (FDE) to 'serial_inst/TIN_buf_reg[124]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/TIN_buf_reg[124]' (FDE) to 'serial_inst/TNIN_buf_reg[124]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[124] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[125]' (FDE) to 'serial_inst/SET_buf_reg[124]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[124] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[125]' (FDE) to 'serial_inst/CKA_buf_reg[124]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[124] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[124]' (FDE) to 'serial_inst/latch_buf_reg[123]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[123]' (FDE) to 'serial_inst/RAdrValid_buf_reg[123]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[124]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[123]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[123]' (FDE) to 'serial_inst/SET_buf_reg[123]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[123]' (FDE) to 'serial_inst/RAdrValid_buf_reg[123]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[123]' (FDE) to 'serial_inst/RAdrValid_buf_reg[123]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[123] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[124]' (FDE) to 'serial_inst/TNIN_buf_reg[123]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[123] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[124]' (FDE) to 'serial_inst/SET_buf_reg[123]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[123] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[124]' (FDE) to 'serial_inst/CKA_buf_reg[123]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[123] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[123]' (FDE) to 'serial_inst/latch_buf_reg[122]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[122]' (FDE) to 'serial_inst/RAdrValid_buf_reg[122]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[123]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[122]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[122]' (FDE) to 'serial_inst/SET_buf_reg[122]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[122]' (FDE) to 'serial_inst/RAdrValid_buf_reg[122]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[122]' (FDE) to 'serial_inst/RAdrValid_buf_reg[122]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[122] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[123]' (FDE) to 'serial_inst/TNIN_buf_reg[122]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[122] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[123]' (FDE) to 'serial_inst/SET_buf_reg[122]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[122] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[123]' (FDE) to 'serial_inst/CKA_buf_reg[122]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[122] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[122]' (FDE) to 'serial_inst/latch_buf_reg[121]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[121]' (FDE) to 'serial_inst/RAdrValid_buf_reg[121]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[122]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[121]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[121]' (FDE) to 'serial_inst/SET_buf_reg[121]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[121]' (FDE) to 'serial_inst/RAdrValid_buf_reg[121]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[121]' (FDE) to 'serial_inst/RAdrValid_buf_reg[121]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[121] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[122]' (FDE) to 'serial_inst/TNIN_buf_reg[121]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[121] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[122]' (FDE) to 'serial_inst/SET_buf_reg[121]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[121] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[122]' (FDE) to 'serial_inst/CKA_buf_reg[121]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[121] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[121]' (FDE) to 'serial_inst/latch_buf_reg[120]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[120]' (FDE) to 'serial_inst/RAdrValid_buf_reg[120]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[121]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[120]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[120]' (FDE) to 'serial_inst/SET_buf_reg[120]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[120]' (FDE) to 'serial_inst/RAdrValid_buf_reg[120]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[120]' (FDE) to 'serial_inst/RAdrValid_buf_reg[120]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[120] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[121]' (FDE) to 'serial_inst/TNIN_buf_reg[120]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[120] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[121]' (FDE) to 'serial_inst/SET_buf_reg[120]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[120] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[121]' (FDE) to 'serial_inst/CKA_buf_reg[120]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[120] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[120]' (FDE) to 'serial_inst/latch_buf_reg[119]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[119]' (FDE) to 'serial_inst/RAdrValid_buf_reg[119]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[120]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[119]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[119]' (FDE) to 'serial_inst/SET_buf_reg[119]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[119]' (FDE) to 'serial_inst/RAdrValid_buf_reg[119]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[119]' (FDE) to 'serial_inst/RAdrValid_buf_reg[119]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[119] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[120]' (FDE) to 'serial_inst/TNIN_buf_reg[119]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[119] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[120]' (FDE) to 'serial_inst/SET_buf_reg[119]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[119] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[120]' (FDE) to 'serial_inst/CKA_buf_reg[119]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[119] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[119]' (FDE) to 'serial_inst/latch_buf_reg[118]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[118]' (FDE) to 'serial_inst/RAdrValid_buf_reg[118]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[119]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[118]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[118]' (FDE) to 'serial_inst/SET_buf_reg[118]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[118]' (FDE) to 'serial_inst/RAdrValid_buf_reg[118]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[118]' (FDE) to 'serial_inst/RAdrValid_buf_reg[118]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[118] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[119]' (FDE) to 'serial_inst/TNIN_buf_reg[118]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[118] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[119]' (FDE) to 'serial_inst/SET_buf_reg[118]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[118] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[119]' (FDE) to 'serial_inst/CKA_buf_reg[118]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[118] )
 INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[118]' (FDE) to 'serial_inst/latch_buf_reg[117]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[117]' (FDE) to 'serial_inst/RAdrValid_buf_reg[117]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[118]' (FDE) to 'serial_inst/Hit_imlar_buf_reg[117]'
+INFO: [Synth 8-3886] merging instance 'serial_inst/Hit_imlar_buf_reg[117]' (FDE) to 'serial_inst/SET_buf_reg[117]'
 INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[117]' (FDE) to 'serial_inst/RAdrValid_buf_reg[117]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[117]' (FDE) to 'serial_inst/RAdrValid_buf_reg[117]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[118]' (FDE) to 'serial_inst/TNIN_buf_reg[117]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[118]' (FDE) to 'serial_inst/SET_buf_reg[117]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[118]' (FDE) to 'serial_inst/CKA_buf_reg[117]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[117] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[117]' (FDE) to 'serial_inst/latch_buf_reg[116]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[116]' (FDE) to 'serial_inst/RAdrValid_buf_reg[116]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[116]' (FDE) to 'serial_inst/RAdrValid_buf_reg[116]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdClk_buf_reg[116]' (FDE) to 'serial_inst/RAdrValid_buf_reg[116]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/TNIN_buf_reg[117]' (FDE) to 'serial_inst/TNIN_buf_reg[116]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/SET_buf_reg[117]' (FDE) to 'serial_inst/SET_buf_reg[116]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/CKA_buf_reg[117]' (FDE) to 'serial_inst/CKA_buf_reg[116]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[116] )
-INFO: [Synth 8-3886] merging instance 'serial_inst/RAdrValid_buf_reg[116]' (FDE) to 'serial_inst/latch_buf_reg[115]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/latch_buf_reg[115]' (FDE) to 'serial_inst/RAdrValid_buf_reg[115]'
-INFO: [Synth 8-3886] merging instance 'serial_inst/RdParLd_buf_reg[115]' (FDE) to 'serial_inst/RAdrValid_buf_reg[115]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[117] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[117] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[117] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[117] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[116] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/TNIN_buf_reg[116] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[116] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[116] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/RAdrValid_buf_reg[115] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/SET_buf_reg[115] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\serial_inst/CKA_buf_reg[115] )
@@ -1040,7 +1032,7 @@ WARNING: [Synth 8-3332] Sequential element (la85eaf42c58af45585f858cdefb86492_re
 WARNING: [Synth 8-3332] Sequential element (wirehold_reg[14]) is unused and will be removed from module okWireOut.
 WARNING: [Synth 8-3332] Sequential element (wirehold_reg[15]) is unused and will be removed from module okWireOut.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 814.680 ; gain = 520.445
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 814.840 ; gain = 521.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1055,13 +1047,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_mmcm_inst/clk_20MHz' 
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_mmcm_inst/clk_5MHz' to pin 'clk_mmcm_inst/bbstub_clk_5MHz/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 814.680 ; gain = 520.445
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 814.840 ; gain = 521.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 814.680 ; gain = 520.445
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 814.840 ; gain = 521.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1073,7 +1065,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 822.078 ; gain = 527.844
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 817.695 ; gain = 523.910
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1097,7 +1089,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 822.078 ; gain = 527.844
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 817.695 ; gain = 523.910
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1110,7 +1102,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 822.078 ; gain = 527.844
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 817.695 ; gain = 523.910
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1122,25 +1114,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 822.078 ; gain = 527.844
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 817.695 ; gain = 523.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 822.078 ; gain = 527.844
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 817.695 ; gain = 523.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 822.078 ; gain = 527.844
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 817.695 ; gain = 523.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 822.078 ; gain = 527.844
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 817.695 ; gain = 523.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1164,11 +1156,11 @@ Report Cell Usage:
 |4     |CARRY4      |    40|
 |5     |DNA_PORT    |     1|
 |6     |LUT1        |    89|
-|7     |LUT2        |   178|
-|8     |LUT3        |   289|
-|9     |LUT4        |   138|
-|10    |LUT5        |   135|
-|11    |LUT6        |   417|
+|7     |LUT2        |   437|
+|8     |LUT3        |    82|
+|9     |LUT4        |   137|
+|10    |LUT5        |   119|
+|11    |LUT6        |   421|
 |12    |LUT6_2      |    50|
 |13    |MMCME2_BASE |     1|
 |14    |RAM128X1S   |     8|
@@ -1179,27 +1171,27 @@ Report Cell Usage:
 |19    |SRLC32E     |     4|
 |20    |FDCE        |   128|
 |21    |FDPE        |    47|
-|22    |FDRE        |   723|
-|23    |FDSE        |   422|
+|22    |FDRE        |   729|
+|23    |FDSE        |   454|
 |24    |IBUF        |     8|
 |25    |IBUFG       |     1|
 |26    |IOBUF       |    17|
 |27    |IOBUFDS     |     2|
-|28    |OBUF        |    73|
+|28    |OBUF        |    75|
 |29    |OBUFDS      |     1|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 822.078 ; gain = 527.844
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 817.695 ; gain = 523.910
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 99 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 822.078 ; gain = 188.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 822.078 ; gain = 527.844
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 817.695 ; gain = 184.273
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 817.695 ; gain = 523.910
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 126 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 822.078 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 817.695 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 84 instances were transformed.
   IBUFG => IBUF: 1 instances
@@ -1212,12 +1204,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-578 Infos, 171 Warnings, 0 Critical Warnings and 0 Errors encountered.
+578 Infos, 163 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 822.078 ; gain = 539.313
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 822.078 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 817.695 ; gain = 535.379
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 817.695 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.runs/synth_1/chronopixel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file chronopixel_utilization_synth.rpt -pb chronopixel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 16 23:34:20 2019...
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 17 21:46:27 2019...

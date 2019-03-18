@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sat Mar 16 23:35:23 2019
+| Date             : Sun Mar 17 21:47:31 2019
 | Host             : DESKTOP-OV0R6TO running 64-bit major release  (build 9200)
 | Command          : report_power -file chronopixel_power_routed.rpt -pb chronopixel_power_summary_routed.pb -rpx chronopixel_power_routed.rpx
 | Design           : chronopixel
@@ -52,19 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.002 |        9 |       --- |             --- |
-| Slice Logic              |     0.002 |     3106 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     1122 |     32600 |            3.44 |
+| Clocks                   |     0.003 |        9 |       --- |             --- |
+| Slice Logic              |     0.002 |     3183 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     1138 |     32600 |            3.49 |
 |   LUT as Distributed RAM |    <0.001 |       32 |      9600 |            0.33 |
-|   Register               |    <0.001 |     1443 |     65200 |            2.21 |
+|   Register               |    <0.001 |     1481 |     65200 |            2.27 |
 |   CARRY4                 |    <0.001 |       60 |      8150 |            0.74 |
 |   F7/F8 Muxes            |    <0.001 |        8 |     32600 |            0.02 |
 |   LUT as Shift Register  |    <0.001 |       39 |      9600 |            0.41 |
 |   Others                 |     0.000 |       95 |       --- |             --- |
-| Signals                  |     0.002 |     2221 |       --- |             --- |
+| Signals                  |     0.002 |     2259 |       --- |             --- |
 | Block RAM                |    <0.001 |      8.5 |        75 |           11.33 |
 | MMCM                     |     0.197 |        2 |         5 |           40.00 |
-| I/O                      |     0.062 |      107 |       250 |           42.80 |
+| I/O                      |     0.062 |      109 |       250 |           43.60 |
 | Static Power             |     0.076 |          |           |                 |
 | Total                    |     0.343 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+

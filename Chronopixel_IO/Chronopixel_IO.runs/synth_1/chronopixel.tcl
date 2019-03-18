@@ -49,7 +49,7 @@ set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronop
 set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/chrono_fifo/chrono_fifo_clocks.xdc]
 set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/chrono_fifo/chrono_fifo_ooc.xdc]
 
-read_ip -quiet d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm.xci
+read_ip -quiet D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm.xci
 set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm_board.xdc]
 set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm.xdc]
 set_property used_in_implementation false [get_files -all d:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/sources_1/ip/clk_mmcm/clk_mmcm_late.xdc]

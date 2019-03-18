@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1552793608">
+<GenRun Id="impl_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1552873533">
   <File Type="BITSTR-BMM" Name="chronopixel_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="chronopixel_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="chronopixel_timing_summary_init.rpt"/>
@@ -147,12 +147,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sim_serial/imports/new/LFSR.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okBTPipeIn.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/LFSR.vhd"/>
-        <Attr Name="ImportTime" Val="1552506751"/>
+        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okBTPipeIn.v"/>
+        <Attr Name="ImportTime" Val="1525201188"/>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -160,16 +161,6 @@
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okBTPipeOut.v"/>
-        <Attr Name="ImportTime" Val="1525201188"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/XEM7010-A50/okBTPipeIn.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="C:/Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM7010-A50/okBTPipeIn.v"/>
         <Attr Name="ImportTime" Val="1525201188"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -203,6 +194,15 @@
         <Attr Name="ImportTime" Val="1525201188"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sim_serial/imports/new/LFSR.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/LFSR.vhd"/>
+        <Attr Name="ImportTime" Val="1552506751"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>

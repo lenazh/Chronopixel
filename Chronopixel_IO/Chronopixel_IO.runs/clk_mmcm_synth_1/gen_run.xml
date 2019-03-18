@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="clk_mmcm_synth_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1552771995">
   <File Type="PA-TCL" Name="clk_mmcm.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="clk_mmcm_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="clk_mmcm_reports.tcl"/>
   <File Type="RDS-RDS" Name="clk_mmcm.vds"/>
   <File Type="RDS-UTIL" Name="clk_mmcm_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="clk_mmcm_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="clk_mmcm.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="clk_mmcm_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="clk_mmcm_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_mmcm">
     <File Path="$PSRCDIR/sources_1/ip/clk_mmcm/clk_mmcm.xci">
       <FileInfo>
@@ -42,9 +39,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

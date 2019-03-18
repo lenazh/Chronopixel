@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Mar 16 23:35:22 2019
+| Date         : Sun Mar 17 21:47:30 2019
 | Host         : DESKTOP-OV0R6TO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file chronopixel_methodology_drc_routed.rpt -pb chronopixel_methodology_drc_routed.pb -rpx chronopixel_methodology_drc_routed.rpx
 | Design       : chronopixel
@@ -59,7 +59,7 @@ Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell fifo_inst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X7Y23 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell fifo_inst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell fifo_inst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X15Y39 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell fifo_inst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-17#1 Warning
@@ -76,140 +76,140 @@ XDCH-1#1 Warning
 Hold option missing in multicycle path constraint  
 A multicycle constraint has been set to override the setup relationship, but no multicycle constraint has been defined to change the hold relationship. As a result, the default hold for those paths is derived from the setup and may not be evaluated as expected.
 set_multicycle_path -setup -from [get_ports {hi_in[*]}] 2
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 44)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
 Related violations: <none>
 
 XDCH-1#2 Warning
 Hold option missing in multicycle path constraint  
 A multicycle constraint has been set to override the setup relationship, but no multicycle constraint has been defined to change the hold relationship. As a result, the default hold for those paths is derived from the setup and may not be evaluated as expected.
 set_multicycle_path -setup -from [get_ports {hi_inout[*]}] 2
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 41)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 43)
 Related violations: <none>
 
 XDCH-2#1 Warning
 Same min and max delay values on IO port  
 The same output delay of 8.900 ns has been defined on port 'hi_out[0]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 8.900 [get_ports {hi_out[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 45)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 47)
 Related violations: <none>
 
 XDCH-2#2 Warning
 Same min and max delay values on IO port  
 The same output delay of 8.900 ns has been defined on port 'hi_out[1]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 8.900 [get_ports {hi_out[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 45)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 47)
 Related violations: <none>
 
 XDCH-2#3 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[0]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#4 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[10]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#5 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[11]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#6 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[12]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#7 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[13]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#8 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[14]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#9 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[15]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#10 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[1]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#11 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[2]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#12 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[3]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#13 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[4]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#14 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[5]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#15 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[6]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#16 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[7]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#17 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[8]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#18 Warning
 Same min and max delay values on IO port  
 The same output delay of 9.200 ns has been defined on port 'hi_inout[9]' relative to clock okHostClk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks okHostClk] -add_delay 9.200 [get_ports {hi_inout[*]}]
-D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 46)
+D:/Users/zhivu/Chronopixel/Chronopixel_vivado/Chronopixel_IO/Chronopixel_IO.srcs/constrs_1/new/chronopixel.xdc (Line: 48)
 Related violations: <none>
 
 
