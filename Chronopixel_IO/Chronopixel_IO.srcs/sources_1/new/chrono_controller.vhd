@@ -15,9 +15,6 @@
 -- Revision:
 -- Revision 0.01 - File Created
 -- Additional Comments:
---  TODO:
---    - Write to fifo
---    - How to implement Imlar_hit?
 ----------------------------------------------------------------------------------
 
 
