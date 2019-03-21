@@ -184,7 +184,7 @@ component clk_mmcm is
   clk_in1_n : IN STD_LOGIC
  );
  end component;
-
+ 
 begin
   led <= not(led_reg);
   rst <= '0'; -- there are no buttons on board to do reset, tie to GND for now

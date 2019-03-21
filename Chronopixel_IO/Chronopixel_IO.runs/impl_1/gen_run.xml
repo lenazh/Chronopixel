@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1552873533">
+<GenRun Id="impl_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1553191584">
   <File Type="BITSTR-BMM" Name="chronopixel_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="chronopixel_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="chronopixel_timing_summary_init.rpt"/>

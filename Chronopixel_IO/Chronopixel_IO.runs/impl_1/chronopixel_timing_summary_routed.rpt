@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun Mar 17 21:47:31 2019
+| Date         : Thu Mar 21 14:07:31 2019
 | Host         : DESKTOP-OV0R6TO running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file chronopixel_timing_summary_routed.rpt -pb chronopixel_timing_summary_routed.pb -rpx chronopixel_timing_summary_routed.rpx -warn_on_violation
 | Design       : chronopixel
