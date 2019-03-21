@@ -19,8 +19,6 @@
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ---- The following library declaration should be present if 
 ---- instantiating any Xilinx primitives in this code.
